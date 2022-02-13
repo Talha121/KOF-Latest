@@ -1,0 +1,474 @@
+<!-- <div class="row" >
+
+  <div>
+
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-blue card1-icon"></i>
+        <span class="text-c-blue f-w-600">Today's Sale</span>
+        <h4>{{Dashboarddata?.todaySale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Today's Profit</span>
+        <h4>{{Dashboarddata?.todayProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-pink card1-icon"></i>
+        <span class="text-c-pink f-w-600">Today's App Sale</span>
+        <h4>{{Dashboarddata?.todayAppdsale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-pink f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-yellow card1-icon"></i>
+        <span class="text-c-yellow f-w-600">Today's App Profit</span>
+        <h4>{{Dashboarddata?.todayAppProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-yellow card1-icon"></i>
+        <span class="text-c-yellow f-w-600">Today's Pos Sale</span>
+        <h4>{{Dashboarddata?.todaywalksale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-pink card1-icon"></i>
+        <span class="text-c-pink f-w-600">Today's Pos Profit</span>
+        <h4>{{Dashboarddata?.todaywalkProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-blue card1-icon"></i>
+        <span class="text-c-blue f-w-600">Today's Total Profit</span>
+        <h4>{{Dashboarddata?.todaywalkProfit+Dashboarddata?.todayAppProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Monthly Sale</span>
+        <h4>{{Dashboarddata?.monthlysale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-pink card1-icon"></i>
+        <span class="text-c-pink f-w-600">Monthly Profit</span>
+        <h4>{{Dashboarddata?.monthlyProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-yellow card1-icon"></i>
+        <span class="text-c-yellow f-w-600">Monthly App's Profit</span>
+        <h4>{{Dashboarddata?.monthlyAppProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-blue card1-icon"></i>
+        <span class="text-c-blue f-w-600">Monthly App's Sale</span>
+        <h4>{{Dashboarddata?.monthlyAppSale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Monthly Pos Profit</span>
+        <h4>{{Dashboarddata?.monthlywalkProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Monthly Pos Sale</span>
+        <h4>{{Dashboarddata?.monthlywalkSale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+ <div class="col-md-6 col-xl-3">
+  <div class="card widget-card-1">
+    <div class="card-block-small">
+      <i class="fa fa-money bg-c-pink card1-icon"></i>
+      <span class="text-c-pink f-w-600">Total App's Profit</span>
+      <h4>{{Dashboarddata?.totalAppProfit}}</h4>
+      <div>
+        <span class="f-left m-t-10 text-muted">
+          <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-xl-3">
+  <div class="card widget-card-1">
+    <div class="card-block-small">
+      <i class="fa fa-money bg-c-yellow card1-icon"></i>
+      <span class="text-c-yellow f-w-600">Total App's Sale</span>
+      <h4>{{Dashboarddata?.totalAppsale}}</h4>
+      <div>
+        <span class="f-left m-t-10 text-muted">
+          <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-xl-3">
+  <div class="card widget-card-1">
+    <div class="card-block-small">
+      <i class="fa fa-money bg-c-blue card1-icon"></i>
+      <span class="text-c-blue f-w-600">Total Pos Profit</span>
+      <h4>{{Dashboarddata?.totalwalkProfit}}</h4>
+      <div>
+        <span class="f-left m-t-10 text-muted">
+          <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-6 col-xl-3">
+  <div class="card widget-card-1">
+    <div class="card-block-small">
+      <i class="fa fa-money bg-c-blue card1-icon"></i>
+      <span class="text-c-blue f-w-600">Total Pos Sale </span>
+      <h4>{{Dashboarddata?.totalwalksale}}</h4>
+      <div>
+        <span class="f-left m-t-10 text-muted">
+          <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-6 col-xl-3">
+  <div class="card widget-card-1">
+    <div class="card-block-small">
+      <i class="fa fa-money bg-c-pink card1-icon"></i>
+      <span class="text-c-pink f-w-600">Total Products</span>
+          <h4>{{Dashboarddata?.totalProducts}}</h4>
+          <div>
+            <span class="f-left m-t-10 text-muted">
+              <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+            </span>
+          </div>
+        </div>
+      </div>
+ 
+  </div>
+  
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
+        <span class="text-c-pink f-w-600">Total Inventory</span>
+        <h4>{{Dashboarddata?.totalInventory}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-list-alt bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Total Categories</span>
+        <h4>{{Dashboarddata?.totalCategories}}
+
+        </h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-pink card1-icon"></i>
+        <span class="text-c-pink f-w-600">Total Brands</span>
+        <h4>{{Dashboarddata?.totalBrands}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+ 
+
+  
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-yellow card1-icon"></i>
+        <span class="text-c-yellow f-w-600">TotalApp Orders</span>
+        <h4>{{Dashboarddata?.apporders}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Total Pos Orders</span>
+        <h4>{{Dashboarddata?.walkinorders}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-blue card1-icon"></i>
+        <span class="text-c-blue f-w-600">Total Orders</span>
+        <h4>{{Dashboarddata?.apporders+Dashboarddata?.walkinorders}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+ 
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Total Customers</span>
+        <h4>{{Dashboarddata?.totalVendors}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 col-xl-12">
+    
+    
+    <div class="card widget-card-1">
+     
+       
+      <div class="table-responsive" style="padding: 2%;">
+        <br>
+        <h2 style="float: left;">Top Selling Products(App) </h2>
+    <br>
+        <div class="row" [formGroup]="Datefilterform">
+          <div class="col-md-1">
+          
+          </div>
+          <div class="col-md-4">
+            <label style="float: left;">From Date</label>
+             <input type="date" class="form-control" formControlName="FromDate">
+          </div>
+          <div class="col-md-4">
+            <label style="float: left;">To Date</label>
+             <input type="date" class="form-control" formControlName="ToDate">
+          </div>
+          <div class="col-md-2">
+            <br>
+          <button type="submit" class="btn btn-success" (click)="filterdate()" >filter</button>
+             
+          </div>
+        </div>
+        <br>  <br>
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+            <th (click)="Sort('productInfo.productName')" style="text-align: justify;" >Product Name<i class="fa fa-sort"></i></th>
+            <th (click)="Sort('productInfo.barcode')">Barcode<i class="fa fa-sort"></i></th>
+            <th (click)="Sort('productInfo.brandName')">Brand<i class="fa fa-sort"></i></th>
+            <th (click)="Sort('productInfo.category')">Category<i class="fa fa-sort"></i></th>
+            <th (click)="Sort('orderInfo.qty')">Sale Qty<i class="fa fa-sort"></i></th>
+            <th (click)="Sort('inventory.purchanseQty')">Purchase Qty<i class="fa fa-sort"></i></th>
+            <th (click)="Sort('inventory.remainingQty')">Remaining Qty<i class="fa fa-sort"></i></th>
+
+          <th (click)="Sort('inventory.purchasePrice')">Purchase Price(Unit)<i class="fa fa-sort"></i></th>
+           <th (click)="Sort('inventory.purchasePrice')">Purchase Amount(Total)<i class="fa fa-sort"></i></th>
+           <th (click)="Sort('productInventory_SellingPrice')">Selling Amount(Total)<i class="fa fa-sort"></i></th>
+         
+  
+  
+  
+          </tr>
+          </thead>
+          <tbody>
+         
+            <tr *ngFor="let item of Datewisedata |orderBy:key :reverse | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+              <td style="width: 2px;">{{i+1}}</td>
+              <td style="text-align: justify;" >{{item.productInfo.productName}}</td>
+              <td>{{item.productInfo?.barcode}}</td>
+              <td>{{item.productInfo?.brandName}}</td>
+              <td>{{item.productInfo?.category}}</td>
+              <td>{{item.orderInfo.qty}}</td>
+         
+              <td>{{item.inventory.purchanseQty}}</td>
+              <td>{{item.inventory.remainingQty}}</td>
+          
+              <td>{{item.inventory.purchasePrice}}</td>
+              <td>{{item.inventory.purchasePrice*item.orderInfo.qty}}</td>
+              <td>{{item.orderInfo.saleprice}}</td>
+            </tr>
+          </tbody>
+        
+        </table>
+        <div class="row">
+          <div style="right: 10%;">
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </div>
+      </div>
+      </div>
+      </div>  
+
+  </div>
+  
+ 
+
+
+
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+  <p style="color: white">Please Wait. </p>  
+  </ngx-spinner>  -->

@@ -1,0 +1,93 @@
+
+    <div class="row">
+      <div class="col-sm-12">
+<!-- Hover table card start -->
+<app-card [title]="'All Invertory'" [classHeader]="true" [blockClass]="'table-border-style'">
+  <span class="code-header"></span>
+
+  <div class="row">
+    <div class="col-sm-12" >
+      <div class="col-sm-2" style="float: right;padding-bottom: 8px;">
+        <select class="custom-select"#mySelect
+        (change)='onOptionsSelected(mySelect.value)' >
+          <option selected value="0">All</option>
+         <option value="1">Activated</option>
+         <option value="2">InActivated</option>
+         
+    
+        </select>
+        </div>
+      <div class="col-sm-2" style="float: right;padding-bottom: 8px;">
+        <!-- <input type="text" class="form-control" [(ngModel)]="Barcode" (ngModelChange)="SearchProduct()"placeholder="Enter Barcode to search" >
+            -->
+         
+     </div>
+    </div>
+  </div>
+  <div class="table-responsive" style="padding: 2%;">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productName')">Supplier Name<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productName')">Category Name<i class="fa fa-sort"></i></th> 
+        <th (click)="Sort('productName')">Product Name<i class="fa fa-sort"></i></th> 
+        <th (click)="Sort('barcode')">Unit<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('purchasedQty')">Purchase Qty<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productInventory_Qty')">Remaining Qty<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('product_TotalPrice')">Unit  Cost<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('product_TotalPrice')">Total  Cost<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productInventory_UnitPrice')">Unit Price<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productInventory_SellingPrice')">Total Price<i class="fa fa-sort"></i></th>
+        
+        <th (click)="Sort('productInventory_Status')">Status<i class="fa fa-sort"></i></th>
+        <th >Action</th>
+        <!-- <th>Image</th> -->
+      </tr>
+      </thead>
+      <tbody>
+     
+        <tr *ngFor="let products of Searchinvertorylist |orderBy:key :reverse | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+          <td style="width: 2px;">{{i+1}}</td>
+          <td>{{products.suppliername}}</td>
+          
+          <td>{{products.productinfo.categoryname}}</td> 
+          <td>{{products.productinfo.name}}</td>       
+          <td>{{products.inventory.unit}}</td>
+          <td>{{products.inventory.quantity}}</td>
+          <td>{{products.inventory.remainingQuantity}}</td>
+          <td>{{products.inventory.costPerUnit}}</td>
+          <td>{{products.inventory.totalCost}}</td>
+          <td>{{products.inventory.pricePerUnit}}</td>
+          <td>{{products.inventory.totalPrice}}</td>
+        
+        <td *ngIf="products.inventory.status;else falsee "><img style="height: 20px;" src="assets/icon/check.png"/></td>
+        <ng-template #falsee>
+          <td><img style="height: 20px;" src="assets/icon/cancel.png"/></td>
+        </ng-template>
+
+          <td *ngIf="products.inventory.status;else deact "> <img src="assets/images/on.png" title="Active Supplier" (click)="changestatus(products.inventory)"  >  </td>
+          <ng-template #deact>
+            <td>   <img src="assets/images/off.png" title="DeActive Product"(click)="changestatus(products.inventory)" > | <i class="fa fa-trash-o" (click)="RemoveInventory(products.inventory)" style="font-size:21px;color:red"></i>
+
+            </td>
+          </ng-template>
+        </tr>
+      </tbody>
+    
+    </table>
+    <div class="row">
+      <div style="right: 10%;">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
+  </div>
+  </div>
+</app-card>
+<!-- Hover table card end -->
+      </div>
+    </div>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+      <p style="color: white">Please Wait. </p>  
+      </ngx-spinner> 
+  
+  

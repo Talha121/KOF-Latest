@@ -1,0 +1,118 @@
+
+
+    <div class="row">
+      <div class="col-sm-12">
+<!-- Hover table card start -->
+<app-card [title]="'Orders'" [classHeader]="true" [blockClass]="'table-border-style'">
+  <span class="code-header">All POS Orders Detail </span>
+
+  <div class="row">
+    <div class="col-sm-12" >
+     
+    </div>
+    <div class="col-sm-12" >
+      
+      <div class="col-sm-2" style="float: right;">
+        <input type="text" class="form-control" [(ngModel)]="ordercode" (ngModelChange)="SearchRider()" placeholder="Enter Order No. to search" >
+           
+         
+     </div>
+    </div>
+  </div>
+  <div class="table-responsive" style="padding: 2%;">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('orderId')">Order No.<i class="fa fa-sort"></i></th>
+    
+        <th (click)="Sort('billinginfo.percentageDiscount')">Date<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('billinginfo.subtotal')">Sub Total<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('billinginfo.subtotal')">Discount<i class="fa fa-sort"></i></th>
+
+      <th (click)="Sort('billinginfo.grandTotal')">Grand Total<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('Action')">Action<i class="fa fa-sort"></i></th>
+      <!-- <th>Image</th> -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let obj of SearchOrdersList | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+        <td style="width: 2px;">{{i+1}}</td>
+        <td>{{obj.ordercode}}</td>
+     
+        <td>{{obj.date}}</td>
+       
+      
+     
+        <td>{{obj.billinginfo?.subtotal}}</td>
+        <td>{{obj.billinginfo?.discounted_Amount}}</td>
+        <td>{{obj.billinginfo?.grandTotal}}</td>
+    
+       <td>  <div class="row">
+
+        <div style="padding: 4px;">
+          <i class="fa fa-desktop" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)"  (click)="openOrderDetailLg(OrderDetailcontent,obj.orderId)" ></i> 
+        </div>
+        <!-- <div style="padding: 4px;">
+          <i class="fa fa-edit" aria-hidden="true" style="font-size:18px;color:rgb(113, 147, 240)"  (click)="openOrderUpdateLg(EditStatuscontent,obj.orderId)" ></i> 
+        </div> -->
+    </div></td>
+      </tr>
+     
+      </tbody>
+    
+    </table>
+    <div class="row">
+      <div style="right: 10%;">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
+  </div>
+  </div>
+</app-card>
+<!-- Hover table card end -->
+      </div>
+    </div>
+
+    <ng-template #OrderDetailcontent let-modal>
+      
+      <div class="modal-header">
+        <h4 class="modal-title">Order Detail</h4>
+      
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-hover">
+      <thead>
+           <tr>
+             <th>Product Name</th>
+             <th>Barcode</th>
+             <th>Qty</th>
+             <th>Unit Price</th>
+             <th>Total price</th>
+           </tr>
+      </thead>
+      <tbody *ngFor="let obj of orderitemns">
+        <tr>
+          <th>{{obj?.productName}}</th>
+          <th>{{obj?.barcode}}</th>
+          <th>{{obj?.qty}}</th>
+          <th>{{obj?.price}}</th>
+          <th>{{obj?.totalprice}}</th>
+        </tr>
+      </tbody>
+    </table>
+           </div>
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+      <p style="color: white">Please Wait. </p>  
+      </ngx-spinner> 
+  
+  
+  
+  
+  

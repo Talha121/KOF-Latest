@@ -1,0 +1,163 @@
+<div class="row">
+  <div class="col-sm-12">
+    <!-- Hover table card start -->
+    <app-card
+      [title]="'Categories'"
+      [classHeader]="true"
+      [blockClass]="'table-border-style'"
+    >
+      <span class="code-header">All Categories Detail</span>
+
+      <div class="row" *ngIf="!showform">
+        <div class="col-sm-11">
+          <button
+            class="btn btn-success pull-right"
+            (click)="createCategory(categoryModal)"
+          >
+            Add Category
+          </button>
+        </div>
+      </div>
+  
+      <div class="table-responsive" style="padding: 2%">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+              <th (click)="Sort('name')">
+                Category Name<i class="fa fa-sort"></i>
+              </th>
+              <th (click)="Sort('status')">
+                Status<i class="fa fa-sort"></i>
+              </th>
+              
+              <th >
+                Image<i class="fa fa-sort"></i>
+              </th>
+              <th (click)="Sort('description')">
+                Actions<i class="fa fa-sort"></i>
+              </th>
+              <!-- <th>Image</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let obj of CategoriesList
+                  | orderBy: key:reverse
+                  | paginate: { itemsPerPage: 10, currentPage: p };
+                let i = index
+              "
+            >
+              <td style="width: 2px">{{ i + 1 }}</td>
+              <td>{{ obj.name }}</td>
+              <td *ngIf="obj.status;else falsee "><img style="height: 20px;" src="assets/icon/check.png"/></td>
+              <ng-template #falsee>
+                <td><img style="height: 20px;" src="assets/icon/cancel.png"/></td>
+              </ng-template>
+              <td *ngIf="obj.imageUrl != noimage; else nImage">
+                <img
+                  [src]="ImagebaseUrl+obj.imageUrl"
+                  style="height: 40px"
+                />
+              </td>
+              <ng-template #nImage>
+                <td>No Image</td>
+              </ng-template>
+              <td>
+                <div class="row">
+                  <!-- <div style="padding: 4px">
+                    <i
+                      class="fa fa-upload"
+                      aria-hidden="true"
+                      style="font-size: 18px; color: rgb(255, 0, 0)"
+                      title="Upload Image"
+                      (click)="openLg(uploadfilecontent, obj.category_Id)"
+                    ></i>
+                  </div> -->
+                  <div style="padding: 4px">
+                    <div *ngIf="obj.status;else deact ">  <i
+                      class="fa fa-edit"
+                      style="font-size: 18px;margin-right: 5px; color: rgb(0, 195, 255)"
+                      (click)="UpdateView(categoryModal, obj.id)"
+                    ></i> | <img src="assets/images/on.png" title="Active Supplier" (click)="changestatus(obj)"  >  </div>
+                    <ng-template #deact>    <i
+                      class="fa fa-edit"
+                      style="font-size: 18px;margin-right: 5px; color: rgb(0, 195, 255)"
+                      (click)="UpdateView(categoryModal, obj.id)"
+                    ></i>  | 
+                     <img src="assets/images/off.png" title="DeActive Product"(click)="changestatus(obj)" >                 
+                    </ng-template>
+                  
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <div style="right: 10%">
+            <pagination-controls
+              (pageChange)="p = $event"
+            ></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </app-card>
+    <!-- Hover table card end -->
+  </div>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  size="default"
+  type="ball-spin-clockwise"
+>
+  <p style="color: white">Please Wait.</p>
+</ngx-spinner>
+
+<ng-template #categoryModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{ modalContent }} Category</h4>
+  </div>
+  <div class="modal-body">
+    <form class="needs-validation" novalidate [formGroup]="CategoryForm">
+      <div class="form-row">
+        <div class="col-md-5 mb-3">
+          <label for="validationCustom01">Category Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            placeholder="Category Name"
+            formControlName="name"
+            required
+          />
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="validationCustom01">Category Image</label>
+          <div class="form-group">
+            <input type="file"  (change)="uploadFile($event)" required />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+    style="float: right"
+    class="btn btn-primary"
+    (click)="submit()"
+    type="submit"
+  >
+    Submit
+  </button>
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>

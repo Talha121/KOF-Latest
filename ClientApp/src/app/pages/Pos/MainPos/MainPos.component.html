@@ -1,0 +1,328 @@
+
+ <ng-template #uploadfilecontent let-modal class=" modal-fullscreen-sm-down">
+  <div class="modal-header">
+    <h4 class="modal-title">
+  
+    
+      <input type="text" class="search" formControlName="ProductName" placeholder="Enter Product Name" size="50"> 
+    
+   
+  
+    </h4>
+  
+  </div>
+  <div class="modal-body">
+
+    <div class="container">
+      <p>Results</p>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light"  (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template> 
+
+ <ul >
+  <li><a href="#">E Whosaler Pos </a></li>
+  <li><a href="#">Goto Dashboard</a></li>
+  <li style="float:right" (click)= "logout()"><a class="active"(click)= "logout()" ><i class="fa fa-sign-out" aria-hidden="true" (click)= "logout()" ></i>Signout</a></li>
+</ul>
+
+  <div class="left">
+         
+              
+           
+    <br>
+    <br>
+     <div class="row">
+       <div  class="col-md-1">
+
+       </div>
+       <div  class="col-md-5">
+        <input type="text" style="font-size:15px;" size="50%" class="no-outline"[(ngModel)]="Barcode" #barcodevalue placeholder="Scan Barcode"(input)="barcodevalue.value.length > 5 && onBarcodechange(barcodevalue.value)">
+               
+
+       </div>
+       <!-- <div  class="col-md-5">
+        <input type="text" style="font-size:15px;" size="50%" class="no-outline"  (click)="openLg(uploadfilecontent)"  (keypress)="openLg(uploadfilecontent)" placeholder="Search Product">
+      </div> -->
+      </div>
+     <br>
+       <div class="row">
+        
+         
+   </div>
+   <br>
+   <br>
+       <div class="row">
+         <div  class="col-md-1">
+
+         </div>
+         <div  class="col-md-10"style="background-color:#333" >
+         
+         <h6 style="color: white;padding: 5px;"> Total Items({{cart.length}})</h6>
+         </div>
+         <div  class="col-md-1">
+
+        </div>
+     
+   </div>
+   <br>
+   <br>
+       <div class="row">
+     
+         <div  class="col-md-1">
+
+         </div>
+         <div  class="col-md-10"  style="background-color:gry;" >
+           <div class="table-responsive tableFixHead ">
+             <table class="table" >
+               
+               <thead>
+                 <tr>
+                  <th >Action</th>
+                                <th>#</th>
+                                <th>Product</th>
+                                <th>Barcode</th>
+                                <th>Brand</th>
+                                <th>Categorey</th>
+                             
+                               
+                                <th>Quantity</th>
+                                <th>price</th>
+                                <th>Total Price</th>
+                         
+                 </tr>
+               </thead>  
+             
+             <tbody>
+               <tr *ngFor="let item of cart;let i=index;">
+              <td><h6 (click)="Remove(i)"><i class="fa fa-trash " style="color:red;"></i></h6></td>
+              <td>{{i+1}}</td>
+              <td>{{item?.productName}}</td>
+              <td>{{item?.barcode}}</td>
+              <td>{{item?.brandNameEng}}</td>
+              <td>{{item?.category_Name}}</td>
+            
+              <td><img src="assets/icon/negative.png" (click)="removequantity(i)">&nbsp; {{item?.Quantity}}&nbsp;<img (click)="addquantity(i)" src="assets/icon/plus.png"></td>
+              <td>{{item?.singleQuantityprice}}</td>
+
+              <td>{{item?.TotalPrice}}</td>
+            
+              
+            </tr>
+             </tbody>
+       </table>
+           </div>
+        
+         </div>
+         <div  class="col-md-1">
+
+        </div>
+   </div>
+  
+</div>
+
+<div class="right"> 
+<br>
+<br>
+
+     
+<div class="row">
+ <div class="col-md-12">
+   <span style="float: right;font-weight: bold;font-size: 20Px;"><sup>Order No# {{NextOrderNo}}</sup> &nbsp; &nbsp;</span>
+    
+   <br>
+   <h5 style="font-size:20px ;font-weight: bold;">&nbsp; {{date| date:'medium'}} &nbsp;</h5>
+ </div>
+ 
+</div>
+<hr>
+<div class="row">
+<div class="col-md-6">
+   <h6 style="font-weight: bold;"> &nbsp;&nbsp; Gross Amount</h6>
+</div>
+<div class="col-md-6">
+ <h6 class="number" style="font-weight: bold;">{{(grossamount) || "0"}} &nbsp; &nbsp;</h6>
+</div>
+<div class="col-md-6">
+ <h6 style="font-weight: bold;"> &nbsp;&nbsp;Discount</h6>
+ </div>
+<div class="col-md-6">
+ <h6 class="number" style="font-weight: bold;">0 &nbsp;&nbsp;&nbsp;</h6>
+ </div>
+
+
+<div class="col-md-6">
+ <h6 style="font-weight: bold;">&nbsp;&nbsp;Tax&nbsp;&nbsp;&nbsp; </h6>
+</div>
+ <div class="col-md-6">
+   <h6 class="number">0 &nbsp;&nbsp;&nbsp;</h6>
+ </div>
+
+</div>
+<hr>
+<div class="row">
+<div class="col-md-6">
+<h6 style="font-weight: bold;"> &nbsp;&nbsp;&nbsp;Net Total &nbsp;&nbsp;&nbsp;</h6>
+
+</div>
+<div class="col-md-6">
+<h6 class="number">&nbsp;&nbsp;{{(grossamount) || "0"}} &nbsp;&nbsp;&nbsp;</h6>
+</div>
+
+
+<div class="col-md-6">
+<h6 style="font-weight: bold;"> &nbsp;&nbsp;&nbsp;Cash  Receieved</h6>
+</div>
+<div class="col-md-6">
+  <div class="row">
+<div class="col-md-11">
+  <input type="number" size="10" class="form-control" #amn (input)="amn.value>0&& returnamount(amn.value)"placeholder="Cash Recieved" >
+
+</div>
+  </div>
+</div>
+<div class="col-md-6">
+ <h6 style="font-weight: bold;">&nbsp;&nbsp;&nbsp;Returnable Amount </h6>
+
+</div>
+<div class="col-md-6">
+ <h6 class="number" style="font-weight: bold;">{{(returnableamount) || "0"}} &nbsp;&nbsp;&nbsp;</h6>
+</div>
+
+</div>
+<hr>
+
+
+<br>
+<br>
+<br>
+<div class="row">
+<div class="col-md-2">
+
+</div>
+<div class="col-md-4">
+  <button class="btn btn-danger pull-right" (click)="cancel()">Cancel</button> 
+</div>
+<div class="col-md-4">
+  <button class="btn btn-success pull-left" (click)="saveorder()"  printSectionId="print-section" ngxPrint  [disabled]="amn.value === '' ||amn.value<grossamount">Save</button>
+
+</div>
+
+<div class="col-md-2">
+
+</div>
+
+</div>
+<br>
+<br>
+
+
+</div>
+
+
+<div id="print-section"  style="display: none;"  >
+  <div > 
+    <div id="invoice-POS">
+      
+      <center id="top">
+     
+        <div class="info"> 
+          <img _ngcontent-deb-c2="" class="img-fluid" alt="E-wholeSaler" src="assets/images/invoicelogo.png" style="height:40px;width: 150;">
+        </div><!--End Info-->
+      </center><!--End InvoiceTop-->
+      
+      <div id="mid">
+        <div class="info">
+       
+          <p> 
+              Address : Adbullah Store ,Gopal Nager  city Main  Bazar Gulberg III Lahore<br>
+                     
+              Phone   : 0347-4085209<br>
+              Date    :{{date | date:'short'}}<br>
+              Bil No  :  <span style="font-weight: bold;">{{NextOrderNo}}</span>
+          </p>
+         
+        </div>
+
+      </div><!--End Invoice Mid-->
+      
+      <div id="bot">
+        <hr>
+            <div id="table">
+              <table id="table1" style=" border-collapse: collapse;  border: 1px solid black;width: 100%;">
+          
+             
+                <tr class="tabletitle" style=" border-collapse: collapse;  border: 1px solid black" >
+                  <td class="item"style=" border-collapse: collapse;  border: 1px solid black" ><h5>#</h5></td>
+           
+                  <td class="item"style=" border-collapse: collapse;  border: 1px solid black" ><h5>Item</h5></td>
+               
+                  <td class="item" style=" border-collapse: collapse;  border: 1px solid black"><h5>Qty</h5></td>
+                  <td class="item"style=" border-collapse: collapse;  border: 1px solid black" ><h5>Unit</h5></td>
+                  <td class="item" style=" border-collapse: collapse;  border: 1px solid black"><h5>Amount</h5></td>
+                </tr>
+  
+                <tr class="service" *ngFor="let item of cart;let i=index;" style=" border-collapse: collapse;  border: 1px solid black" >
+                  <td class="tableitem" style=" border-collapse: collapse;  border: 1px solid black"><p class="itemtext" >{{i+1}}</p></td>
+                  <td class="tableitem" style=" border-collapse: collapse;  border: 1px solid black"><p class="itemtext"  >{{item?.productName}}</p></td>
+          
+                  <td class="tableitem" style=" border-collapse: collapse;  border: 1px solid black"><p class="itemtext" >{{item?.Quantity}}</p></td>
+               
+                  <td class="tableitem" style=" border-collapse: collapse;  border: 1px solid black"><p class="itemtext" >{{item?.singleQuantityprice}}</p></td>
+                  <td class="tableitem" style=" border-collapse: collapse;  border: 1px solid black"><p class="itemtext">{{item?.TotalPrice}}</p></td>
+                </tr>
+  
+  <br>
+             
+               
+              
+           
+              
+                 
+                   
+                   
+                 
+  
+              </table>
+              <div class="row">
+                <hr>
+                <div class="col-md-5">
+                  <div class="row">
+                       <div class="col-md-3">
+                        Qty :   <span style="float:right ;">{{TotalQty}}</span> 
+                       </div>
+                       <div class="col-md-3">
+                        Gross Amount : <span style="float:right ;">{{grossamount}}</span>
+                      </div>
+                      <div class="col-md-3">
+                        Receieve Amount : <span style="float:right ;">{{printreceiveamount}}</span>
+                      </div>
+                      <div class="col-md-3">
+                        Returnable Amount  :<span style="float:right ;">{{returnableamount}}</span>
+                      </div>
+                  </div>
+
+                </div>
+
+               
+              
+                
+              </div>
+            </div><!--End Table-->
+  
+            <div id="legalcopy">
+              <p class="legal"><strong>Thank you for your business!</strong>
+              <p>Developed By Demit Tech </p>
+           
+            </div>
+  
+          </div><!--End InvoiceBot-->
+    </div><!--End Invoice-->
+  </div>
+  
+  
+  </div>
+  
+  

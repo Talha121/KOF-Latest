@@ -1,0 +1,220 @@
+
+
+    <div class="row">
+      <div class="col-sm-12">
+<!-- Hover table card start -->
+<app-card [title]="'Salesman'" [classHeader]="true" [blockClass]="'table-border-style'">
+  <span class="code-header">All salesman Detail</span>
+<div [formGroup]="AddSalesmanForm" *ngIf="trigger" >
+  <div class="row" >
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-sm-11 fa-pull-right" >
+ 
+       <div class="row">
+            
+             <div class="col-md-3">
+              <label for="usr">Name:</label>
+              <input type="text" class="form-control" formControlName="name" >
+              </div>
+               <div class="col-md-3">
+                <label for="usr">Contact No:</label>
+                <input type="text" class="form-control" formControlName="contact_Number" >
+             </div> 
+             <div class="col-md-3">
+              <label for="usr">Email:</label>
+              <input type="text" class="form-control" formControlName="email" >
+           </div> 
+       
+      <div class="col-md-1">
+
+        </div> 
+          
+     </div>
+    </div>
+  </div>
+ <div class="row" >
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-sm-11 fa-pull-right" >
+ 
+       <div class="row">
+             <div class="col-md-3">
+              <label for="usr">CNIC:</label>
+              <input type="text" class="form-control" formControlName="cnic">
+                
+             </div>
+             <div class="col-md-3">
+              <label for="usr">Address:</label>
+              <input type="text" class="form-control" formControlName="address">
+      
+          </div>
+          <div class="col-md-3">
+            <label for="usr">Gender:</label>
+            <select  formControlName="gender" class="form-control">
+              <option disabled>Select Gender</option>
+                     <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+            </select >
+          
+         
+        </div>
+      
+    <div class="col-md-1">
+
+    </div>
+         
+     </div>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-sm-11 fa-pull-right" >
+ 
+       <div class="row">
+        
+        <div class="col-md-3">
+          <label for="usr">Password:</label>
+          <input type="text" class="form-control" formControlName="password">
+       
+      </div>
+    <div class="col-md-1">
+
+    </div>
+         
+     </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+<div class="col-md-11">
+  <button class="btn btn-success pull-right" (click)="AddSalesman()">Save</button> 
+</div>
+  </div>
+
+</div>
+<div *ngIf="!trigger">
+<div class="row">
+<div class="col-md-11">
+  <button class="btn btn-info pull-right" (click)="ViewForm()">Add Salesman</button> 
+</div>
+</div>
+</div>
+<div >
+
+</div>
+<br>
+<div class="table-responsive"style="padding: 2%;">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+   
+      <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('salesMan_UserName')">User Name<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('salesMan_Name')"> Name<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('salesMan_Contact_Number')">Cell No<i class="fa fa-sort"></i></th>
+
+      <th (click)="Sort('salesMan_Cnic')">CNIC<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('salesMan_Cnic')">Registered Shops<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('action')">Action<i class="fa fa-sort"></i></th>
+      <!-- <th>Image</th> -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let obj of SalesmanList |orderBy:key :reverse | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+      <td style="width: 2px;">{{i+1}}</td>
+      
+      <td>
+        <span >{{obj.salesmanInfo?.salesMan_UserName}}</span>
+      
+     </td>
+        <td>
+        <span >{{obj.salesmanInfo?.salesMan_Name}}</span>
+    </td>
+    <td>
+      <span >{{obj.salesmanInfo?.salesMan_Contact_Number}}</span>
+  </td>
+   
+      <td>
+        <span>{{obj.salesmanInfo?.salesMan_Cnic}}</span>
+    </td>
+    <td>
+      <span>
+        <i aria-hidden="true"   (click)="openLg(Showdetail,obj.salesmanInfo.salesMan_id)">{{obj.venders.length}}</i>
+      </span>
+  </td>
+ 
+     <td> 
+     
+      <h5 >
+        <button (click)="clickFunction(obj.salesmanInfo.salesMan_id)" *ngIf="!obj.salesmanInfo.salesMan_Status" class=" btn btn-default-outline btn-xs"><img src="assets/images/off.png" title="Active Vendor" ></button>  
+        <button (click)="clickFunction(obj.salesmanInfo.salesMan_id)" *ngIf="obj.salesmanInfo.salesMan_Status" class="btn btn-default-outline"><img src="assets/images/on.png" title="DeActive Vendor" ></button> &nbsp;
+     
+       </h5>
+   </td>
+    </tr>
+   
+    </tbody>
+  
+  </table>
+  <div class="row">
+    <div style="right: 10%;">
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </div>
+</div>
+</div>
+
+</app-card>
+      </div>
+    </div>
+  
+    <ng-template #Showdetail let-modal>
+      
+      <div class="modal-header">
+        <h4 class="modal-title">Vendors Detail</h4>
+      
+      </div>
+      <div class="modal-body table-responsive">
+           <table class="table table-bordered">
+            <thead>
+              <tr>
+                
+                  <th>Store Name</th>
+                  <th>Name</th>
+                  <th>Contact No</th>
+                  <th>CNIC NO</th>
+                  <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data">
+                  <th [routerLink]="['/allvendors/venderDetails',item?.vender_id]">{{item?.storeName}}</th>
+                  <th [routerLink]="['/allvendors/venderDetails',item.vender_id]">{{item?.vender_Name}}</th>
+                  <th>{{item?.vender_Contact_Number}}</th>
+                  <th>{{item?.vender_Cnic}}</th>
+                  <th>
+                    <div class="row">
+                       <div class="col-md-12">
+                        {{item?.vender_Address}}
+                       </div>
+                    </div>
+                  </th>
+              </tr>
+            </tbody>
+           </table>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+      <p style="color: white">Please Wait. </p>  
+      </ngx-spinner> 
+
+
+  

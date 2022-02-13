@@ -1,0 +1,74 @@
+
+
+    <div class="row">
+      <div class="col-sm-12">
+<!-- Hover table card start -->
+<app-card [title]="'Vendors'" [classHeader]="true" [blockClass]="'table-border-style'">
+  <span class="code-header">All Vendors Detail</span>
+
+  <div class="row">
+    <div class="col-sm-12" >
+      <div class="col-sm-2" style="float: right;padding-bottom: 8px;">
+       
+         
+     </div>
+    </div>
+  </div>
+  <div class="table-responsive" style="padding:2%;">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('storeName')">Store Name<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('vender_Name')">Name<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('lateLong')">Address<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('vender_Contact_Number')">Contact No<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('vender_Contact_Number')">Status<i class="fa fa-sort"></i></th>
+      
+        
+      <th (click)="Sort('Action')">Action<i class="fa fa-sort"></i></th>
+      <!-- <th>Image</th> -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let obj of VendorsList | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+        <td style="width: 2px;">{{i+1}}</td>
+        <td>{{obj.storeName}}</td>
+        <td>{{obj.vender_Name}}</td>
+        <td>{{obj.vender_Address}}</td>
+        <td>{{obj.vender_Contact_Number}}</td>
+        <td *ngIf="obj.status;else falsee "><img style="height: 20px;" src="assets/icon/check.png"/></td>
+        <ng-template #falsee>
+          <td><img style="height: 20px;" src="assets/icon/cancel.png"/></td>
+        </ng-template>
+        
+       
+    
+       <td>  <h5 >
+        <button (click)="clickFunction(obj.vender_id)" *ngIf="!obj.status" class=" btn btn-default-outline btn-xs"><img src="assets/images/off.png" title="Active Vendor" ></button>  
+        <button (click)="clickFunction(obj.vender_id)" *ngIf="obj.status" class="btn btn-default-outline"><img src="assets/images/on.png" title="DeActive Vendor" ></button> &nbsp;
+     <button class="btn btn-default-outline"[routerLink]="['/allvendors/venderDetails',obj?.vender_id]">Detail</button>
+       </h5>
+    </td>
+      </tr>
+     
+      </tbody>
+    
+    </table>
+    <div class="row">
+      <div style="right: 10%;">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
+  </div>
+  </div>
+</app-card>
+<!-- Hover table card end -->
+      </div>
+    </div>
+
+  
+  
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+      <p style="color: white">Please Wait. </p>  
+      </ngx-spinner> 
+  

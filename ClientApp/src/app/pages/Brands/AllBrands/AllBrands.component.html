@@ -1,0 +1,162 @@
+
+
+    <div class="row">
+      <div class="col-sm-12">
+<!-- Hover table card start -->
+<app-card [title]="'Brands'" [classHeader]="true" [blockClass]="'table-border-style'">
+  <span class="code-header">All Brands Detail</span>
+
+  <div class="row" *ngIf="!showform">
+    <div class="col-sm-10" >
+     <button class="btn btn-success pull-right" (click)="showinput()"> Add Brand</button>
+    </div>
+    
+  </div>
+  <div class="row" *ngIf="showform">
+    <div class="col-sm-1">
+
+    </div>
+    <div class="col-sm-10">
+      <div class="row">
+        <form [formGroup]="brandform">
+          <div class="col-sm-12">
+            <!-- <label for="validationCustom01">Brand Name(English)</label> -->
+            <input type="text" placeholder="Brand Name(English)"  formControlName="brandNameEng"  class="form-control" >
+      </div>
+      <br>
+      <div class="col-sm-12">
+        <!-- <label for="validationCustom01">Brand Name(Urdu)</label> -->
+        <input type="text" placeholder="Brand Name(Urdu)" formControlName="brandNameUrdu"   class="form-control">
+     </div>
+     <br>
+     <div class="col-sm-12">
+     <button class="btn btn-info" (click)="AddBrand()" type="submit">Save</button>
+     </div>
+    </form>
+        
+      </div>
+
+    </div>
+    <div class="col-sm-1">
+
+    </div>
+    
+  </div>
+  <div class="table-responsive" style="padding: 2%;">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('brandNameEng')">Brand Name<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('brandNameUrdu')">Catehory Name(Urdu)<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('brandImagePath')">Image<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('description')">Actions<i class="fa fa-sort"></i></th>
+        <!-- <th>Image</th> -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let obj of brandsList |orderBy:key :reverse | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+        <td style="width: 2px;">{{i+1}}</td>
+        <td>{{obj.brandNameEng}}</td>
+        <td>{{obj.brandNameUrdu}}</td>
+        <td *ngIf="obj.brandImagePath!=noimage;else nImage"><img [src]="ImagebaseUrl+obj.brandImagePath" style="height: 40px;" /></td>
+        <ng-template #nImage>
+          <td >No Image</td>
+        </ng-template>
+       <td>  <div class="row">
+
+        <div style="padding: 4px;">
+      <i class="fa fa-upload" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)" title="Upload Image"  (click)="openLg(uploadfilecontent,obj.brandId)"></i> 
+      </div>
+      <div style="padding: 4px;">
+        <i class="fa fa-edit" style="font-size:18px;color:rgb(0, 195, 255)"(click)="UpdateView(Update,obj.brandId)"></i>
+      </div>
+    </div></td>
+      </tr>
+     
+      </tbody>
+    
+    </table>
+    <div class="row">
+      <div style="right: 10%;">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>                
+  </div>
+  </div>
+</app-card>
+<!-- Hover table card end -->
+      </div>
+    </div>
+
+    <ng-template #uploadfilecontent let-modal>
+      
+      <div class="modal-header">
+        <h4 class="modal-title">Upload file</h4>
+      
+      </div>
+      <div class="modal-body">
+           
+        <div class="container">
+          <form  [formGroup]="form" (ngSubmit)="SubmitImage()">
+      
+            <!-- Progress Bar -->
+            <div class="progress form-group" *ngIf="progress > 0">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <input type="file" (change)="uploadFile($event)" required>
+            </div>
+    
+          
+    
+            <div class="form-group">
+                <button class="btn btn-danger btn-block btn-lg" [disabled]="form.get('avatar')==null">Upload</button>
+            </div>
+        </form>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+      <p style="color: white">Please Wait. </p>  
+      </ngx-spinner> 
+      <ng-template #Update let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Update  Brand</h4>
+        
+        </div>
+        <div class="modal-body">
+          <form class="needs-validation" novalidate [formGroup]="brandform">
+            <div class="form-row">
+              <div class="col-md-5 mb-3">
+                <label for="validationCustom01">Brand Name(English)</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Brand Name(English)" formControlName="brandNameEng"  required>
+                
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="validationCustom01">Brand Name(Urdu)</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Brand Name(Urdu)" formControlName="brandNameUrdu"  required>
+                
+              </div>
+             
+            </div>
+
+            
+           
+             
+          
+      
+            <button style="float: right;" class="btn btn-primary"(click)="UpdateBrand()" type="submit">Submit</button>
+          </form>
+      
+      
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+      </ng-template>

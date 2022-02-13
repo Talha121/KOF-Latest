@@ -1,0 +1,110 @@
+<app-card [title]="'Inventory'" [classHeader]="true" [blockClass]="'table-border-style'">
+    <!-- <span class="code-header">use class <code>table-hover</code> inside table element</span> -->
+    <div class="row">
+      <div class="col-sm-11" >
+         <input type="text" class="form-control" style="float: right;"[(ngModel)]="Barcode" (ngModelChange)="SearchProduct()"placeholder="Enter Barcode to search" >
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th (click)="Sort('productId')">#<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('productName')">Product Name<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('productName_Urdu')">Product Name Urdu<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('barcode')">Barcode<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('category')">Category<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('brand_Name')">brand Name<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('brand_Name_Urdu')">brand Name Urdu<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('description')">Description<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('description_Urdu')">Description Urdu<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('status')">Status<i class="fa fa-sort"></i></th>
+          <th (click)="Sort('dateTime')">DateTime<i class="fa fa-sort"></i></th>
+          <!-- <th>Image</th> -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let stock of stockinList |orderBy:key :reverse | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+          <td>{{stock.product.productId}}</td>
+          <td>{{stock.product.productName}}</td>
+          <td>{{stock.product.productName_Urdu}}</td>
+          <td>{{stock.product.barcode}}</td>
+          <td>{{stock.product.category}}</td>
+          <td>{{stock.product.brand_Name}}</td>
+          <td>{{stock.product.brand_Name_Urdu}}</td>
+          <td>{{stock.product.description}}</td>
+          <td>{{stock.product.description_Urdu}}</td>
+          <td>{{stock.product.status}}</td>
+          <td>{{stock.product.dateTime}}</td>
+          <td><button class="btn btn-success btn-round" (click)="openInventory(content)">Inventory</button></td>
+            
+        </tr>
+
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Product Details</h4>
+    <div class="modal-body"> 
+      <form class="needs-validation"></form> </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th (click)="Sort('productInvertory_Id')">#<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productId')">#<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('product_TotalPrice')">product_TotalPrice<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productInventory_UnitPrice')">productInventory_UnitPrice<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productInventory_SellingPrice')">productInventory_SellingPrice<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productInventory_Qty')">productInventory_Qty<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('productInventory_Status')">productInventory_Status<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('dateTime')">dateTime<i class="fa fa-sort"></i></th>
+        <!--<th>Image</th> -->  
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let items of inventoryList |orderBy:key :reverse | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" >
+        <td>{{items.inventory.productInvertory_Id}</td>
+        <td>{{items.inventory.ProductId}}</td>
+        <td>{{items.inventory.Product_TotalPrice}}</td>
+        <td>{{items.inventory.productInventory_UnitPrice}}</td>
+        <td>{{items.inventory.ProductInventory_SellingPrice}}</td>
+        <td>{{items.inventory.productInventory_Qty}}</td>
+        <td>{{items.inventory.productInventory_Status}}</td>
+        <td>{{items.inventory.dateTime}}</td>
+          
+      </tr>
+
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+
+
+
+
+<!-- <table id="stockIn">
+    <tr>
+        <th>productivity num</th>
+        <th>user ID</th>
+        <th>amount</th>
+        <th>Special comments</th>
+        <th>Accept/reject</th>
+    </tr>
+    <tr *ngFor="let item of stockinList">
+        <td>{{item.ProductName}}</td>
+        <td>{{item.Category}}</td>
+        <td>{{item.Supplier}}</td>
+        <td>
+            <div>
+                <button class="button is-success">accept</button>
+                <button class="button is-danger">reject</button>
+            </div>
+        </td>
+    </tr>
+</table> -->

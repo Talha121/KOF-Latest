@@ -1,0 +1,342 @@
+<div class="row">
+  <div class="col-sm-11" >
+    <button class="btn btn-outline-primary mb-2 mr-2" style="float: right;" (click)="openLg(uploadfilecontent)">Upload Excel </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <!-- Basic table card start -->
+    <app-card [title]="'Suppliers Information'" [classHeader]="true" [blockClass]="'table-border-style'">
+      <div class="row">
+        <div class="col-sm-11" >
+          <button class="btn btn-outline-primary mb-2 mr-2" style="float: right;" (click)="openVerticallyCentered(content)">Add Supplier</button>
+        </div>
+      </div>
+      <br>
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+      <div class="col-sm-5">
+        <div>
+           <label>Select Supplier</label>
+          <select class="custom-select custom-select-lg sm-1"#mySelect
+          (change)='onOptionsSelected(mySelect.value)'>
+            <option selected>Open this select menu</option>
+            <option *ngFor="let option of supplierlist" [value]="option.supplier_Id">
+              {{option.supplier_Name}}
+            </option>
+
+          </select>
+
+        </div>
+      </div>
+      <div class="col-sm-1">
+
+      </div>
+      <div class="col-sm-4" style="float: right;"*ngIf="selectedsupplier!=null">
+
+
+        <div class="col-sm-12 "  >
+          <!-- Basic table card start -->
+          <app-card [title]="'Suppliers Information'" [classHeader]="true" [blockClass]="'table-border-style'">
+            <div class="row">
+              <div class="col-md-1">
+
+              </div>
+              <div class="col-md-5" >
+                    <h5><b> Supplier Name</b></h5>
+              </div>
+              <div class="col-md-5">
+                    <h5>{{selectedsupplier?.supplier_Name}}</h5>
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-1">
+
+              </div>
+              <div class="col-md-5">
+                    <h5><b>Contact No</b></h5>
+              </div>
+              <div class="col-md-5">
+                    <h5>{{selectedsupplier?.supplier_ContactNo}}</h5>
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-1">
+
+              </div>
+              <div class="col-md-5">
+                    <h5><b>Address</b></h5>
+              </div>
+              <div class="col-md-5">
+                    <h5>{{selectedsupplier?.supplier_Address}}</h5>
+              </div>
+
+            </div>
+            <br>
+            <br>
+          </app-card>
+        </div>
+
+      </div>
+      <div class="col-sm-1">
+
+      </div>
+      </div>
+      <br>
+      <br>
+    </app-card>
+    <!-- Basic table card end -->
+
+    <app-card [title]="'Product Category'" [classHeader]="true" [blockClass]="'table-border-style'" *ngIf="showcategoreysection">
+      <div class="row">
+        <div class="col-sm-11" >
+          <button class="btn btn-outline-primary mb-2 mr-2" style="float: right;" (click)="openVerticallyCentered(categoreycontent)">Add Categorey</button>
+        </div>
+      </div>
+      <br>
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+      <div class="col-sm-5">
+        <div>
+           <label>Select categorey</label>
+          <select class="custom-select custom-select-lg sm-1"#categoreySelect
+          (change)='onOptionsCategoreySelected(categoreySelect.value)'>
+            <option selected>Open this select menu</option>
+            <option *ngFor="let option of categoreylist" [ngValue]="option.category_Id">
+              {{option.category_Name}}
+            </option>
+
+          </select>
+
+        </div>
+      </div>
+   
+      
+  </div>
+  <br>
+  <div class="row" *ngIf="singlecategorey!=null">
+    <div class="col-sm-1">
+
+    </div>
+    <div class="col-sm-11">
+      <app-card [title]="'Products Information'" [classHeader]="true" [blockClass]="'table-border-style'">
+        <form class="needs-validation" novalidate [formGroup]="productinfos" >
+
+          <div class="form-row" formArrayName="products">
+               
+         
+              <div class="col-sm-11" >
+                <div class="col text-center " > 
+                  <button type="button" style="    margin-bottom: 2%;"  (click)="addNewRow()" class="btn btn-primary pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                  </div>
+                <br>
+          
+
+              </div>
+         
+                <div class="col-sm-11" >
+               
+                  <div class="row">
+                   
+                    <div class="col-sm-2 mb-3" style="margin-left:2%;">
+                      <label for="validationCustom03" >Barcode</label>
+                    </div>
+                     <div class="col-sm-2 mb-3" style="margin-left:2%;">
+                      <label for="validationCustom03">Name</label>
+                    </div>
+                    <div class="col-sm-2 mb-3" style="margin-left:2%;">
+                      <label for="validationCustom03">Brand</label>
+                    </div>
+                    <div class="col-sm-1 mb-3" style="margin-left:1%;">
+                      <label for="validationCustom03" >Qty</label>
+                    </div>
+                    <div class="col-sm-1 mb-3"style="margin-left:1%;" >
+                      <label for="validationCustom03">Unit Price</label>
+                    </div>
+                    <div class="col-sm-1 mb-3" style="margin-left:1%;">
+                      <label for="validationCustom03">Sale Price</label>
+                    </div>
+                    <div class="col-sm-1 mb-3">
+                      <label for="validationCustom03">Detail</label>
+                    </div>
+                  
+                  </div>
+                
+                  <div style="margin-top: -25px;">
+                    <hr>
+                   </div>
+  
+                </div>
+        
+
+            
+            
+          
+     
+            <div class="row" *ngFor="let itemrow of productinfos.controls.products['controls']; let i=index"  [formGroupName]="i">
+         
+              <input type="hidden" id="{{i}}"class="form-control" placeholder="Barcode" formControlName="ProductId"  required>
+            
+            
+              <div class="col-sm-2 mb-3" style="margin-left:2%;">
+            
+                <input type="text" id="Barcode{{i}}" value="" #barcodevalue class="form-control" placeholder="Barcode" formControlName="Barcode" (change)="onBarcodechange(barcodevalue.value,i)" required>
+                
+              </div>
+              <div class="col-sm-2 mb-3">
+             
+                <input type="text" id="ProductName{{i}}" #ProductName{{i}} class="form-control"  placeholder="Product Name"   formControlName="ProductName"   required>
+                
+              </div>
+              <div class="col-sm-2 mb-3">
+               
+                <input type="text" id="Brand_Name{{i}}"class="form-control"  placeholder="Brand Name"   formControlName="Brand_Name"   required>
+                
+              </div>
+              <div class="col-sm-1 mb-3">
+            
+                <div class="input-group">
+      
+                  <input type="number" id="Product_Qty{{i}}"class="form-control"  width="120px" placeholder="Qty"formControlName="Product_Qty"  aria-describedby="inputGroupPrepend" required>
+                  
+                </div>
+              </div>
+              <div class="col-sm-1 mb-3">
+             
+                <div class="input-group">
+      
+                  <input type="number"id="Unit_Price{{i}}" class="form-control" placeholder="Unit Price"formControlName="Unit_Price"  aria-describedby="inputGroupPrepend" required>
+                  <!-- <input type="hidden"id="Product_TotalPrice{{i}}" class="form-control" placeholder="Total Price" formControlName="Product_TotalPrice"  required>
+               -->
+                </div>
+              </div>
+              <!-- <div class="col-md-1 mb-3">
+                <label for="validationCustom02">Total Price</label>
+                <input type="hidden"id="Product_TotalPrice{{i}}" class="form-control" placeholder="Total Price" formControlName="Product_TotalPrice"  required>
+              
+              </div> -->
+              <div class="col-sm-1 mb-3">
+            
+                <input type="number"id="sellingprice{{i}}" class="form-control"    placeholder="Sale Price" formControlName="ProductInventory_SellingPrice"  required>
+              
+              </div>
+              <div class="col-sm-1 mb-3">
+              
+                <input type="text"id="Description{{i}}" class="form-control"  formControlName="Description"  placeholder="Detail" required>
+               
+              </div>
+              <div class="col-sm-1 mb-3">
+                <i class="fa fa-trash" aria-hidden="true" *ngIf="hidden"  (click)="removeQuantity(i)" style="color: red;"></i> 
+              </div>
+             
+            </div>
+          
+          </div>
+          <div class="row">
+             <div class="col-sm-11">
+              <button style="float: right;" class="btn btn-primary"(click)="saveproduct()" type="submit">Submit</button>
+             </div>
+          </div>
+         
+    <br>
+
+        </form>
+    
+      </app-card>
+    </div>
+    <div class="col-sm-1">
+
+    </div>
+  </div>
+      <br>
+      <br>
+    </app-card>
+    <!-- Basic table card end -->
+  </div>
+</div>
+
+<ng-template #categoreycontent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Category Registration Form</h4>
+  
+  </div>
+  <div class="modal-body">
+    <form class="needs-validation" novalidate [formGroup]="categorey">
+      <div class="form-row">
+        <div class="col-md-8 mb-3">
+          <label for="validationCustom01">New Categorey Name</label>
+          <input type="text" class="form-control" id="validationCustom01" placeholder="Please Enter Category Name "formControlName="category_Name"  required>
+         
+        </div>
+     
+      </div>
+  
+
+      <button style="float: right;" class="btn btn-primary"(click)="savecategorey()" type="submit">Submit</button>
+    </form>
+
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<ng-template #uploadfilecontent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Upload file</h4>
+  
+  </div>
+  <div class="modal-body">
+
+    <div class="container">
+      <form [formGroup]="form" (ngSubmit)="submitUser()">
+  
+          <!-- Progress Bar -->
+          <div class="progress form-group" *ngIf="progress > 0">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <input type="file" (change)="uploadFile($event)">
+          </div>
+  
+        
+  
+          <div class="form-group">
+              <button class="btn btn-danger btn-block btn-lg">Upload</button>
+          </div>
+      </form>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

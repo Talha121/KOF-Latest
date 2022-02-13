@@ -1,0 +1,103 @@
+
+
+    <div class="row">
+      <div class="col-sm-12">
+<!-- Hover table card start -->
+<app-card [title]="'Salesman'" [classHeader]="true" [blockClass]="'table-border-style'">
+  <span class="code-header">All salesman Detail</span>
+
+  <div class="row">
+    <div class="col-sm-12" >
+      <div class="col-sm-2" style="float: right;padding-bottom: 8px;">
+       
+         
+     </div>
+    </div>
+  </div>
+
+
+  <div class="table-responsive"style="padding: 2%;">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+     
+        <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('user_Name')">User Name<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('name')"> Name<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('contact_Number')">Cell No<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('email')">Email<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('cnic')">CNIC<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('action')">Action<i class="fa fa-sort"></i></th>
+        <!-- <th>Image</th> -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let obj of SalesmanList |orderBy:key :reverse | paginate:{itemsPerPage:10,currentPage:p}; let i=index;" [formGroup]="AddSalesmanForm" >
+        <td style="width: 2px;">{{i+1}}</td>
+        
+        <td>
+          <span [hidden]="obj.inedit">{{obj.user_Name}}</span>
+        
+        <input type="text"  [hidden]="!obj.inedit" class="form-control"  formControlName="user_Name" value="{{obj.user_Name}}"/>
+        </td>
+          <td>
+          <span [hidden]="obj.inedit">{{obj.name}}</span>
+          <input type="text" [hidden]="!obj.inedit" class="form-control"  formControlName="name"  value="{{obj.name}}"/>
+        </td>
+        <td>
+          <span [hidden]="obj.inedit">{{obj.email}}</span>
+          <input type="text" [hidden]="!obj.inedit" class="form-control"  formControlName="email"  value="{{obj.email}}"/>
+        </td>
+        <td>
+          <span [hidden]="obj.inedit">{{obj.cnic}}</span>
+          <input type="text" [hidden]="!obj.inedit" class="form-control"  formControlName="email"  value="{{obj.cnic}}"/>
+        </td>
+       <td> 
+       
+  
+          <div class="row">
+ 
+        <!-- <div style="padding: 4px;">
+          <p class="fa fa-edit" style="font-size: 20px;color:blue" [hidden]="obj.inedit" title="Edit or Update"  (click)="onEditClick($event, i,obj.category_Id)" data-toggle="modal"
+          data-target="#editModal">&nbsp;</p>
+          <p class="fa fa-save"  [hidden]="!obj.inedit" title="Save Changes" style="font-size: 20px;color:green"  (click)="UpdateCategory()">&nbsp;</p>
+          <p class="fa fa-close"  [hidden]="!obj.inedit" title="Cancel" style="font-size: 20px;color:brown(247, 241, 241)" (click)="onCancelClick(i)" data-toggle="modal"
+        data-target="#editModal"> &nbsp;</p>
+          <i class="fa fa-upload" aria-hidden="true" style="font-size:18px;color:rgb(0, 47, 255)" title="Upload Image"  (click)="openLg(uploadfilecontent,obj.category_Id)">&nbsp;</i> 
+          <i class="fa fa-trash" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)" title="Delete"  (click)="openLg()"(click)="onCancelClick(i)" data-toggle="modal"
+          data-target="#editModal"></i>
+        </div> -->
+    </div></td>
+      </tr>
+     
+      </tbody>
+    
+    </table>
+    <div class="row">
+      <div style="right: 10%;">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
+  </div>
+  </div>
+</app-card>
+<!-- Hover table card end -->
+      </div>
+    </div>
+  
+    <ng-template #uploadfilecontent let-modal>
+      
+      <div class="modal-header">
+        <h4 class="modal-title">Upload file</h4>
+      
+      </div>
+      <div class="modal-body">
+           
+        <div class="container">
+     
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>
+  
