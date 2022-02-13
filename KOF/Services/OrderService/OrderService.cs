@@ -1,5 +1,7 @@
 ﻿using KOF.Context;
 using KOF.Models;
+using KOF.Models.Email;
+using KOF.Services.EmailService;
 using KOF.Services.GenericService;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -14,11 +16,13 @@ namespace KOF.Services.OrderService
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ApplicationDbContext _context;
-        public OrderService(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment) : base(context)
+        private readonly IEmailService _emailservice;
+        public OrderService(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment, IEmailService emailservice) : base(context)
         {
 
             _webHostEnvironment = webHostEnvironment;
             _context = context;
+            _emailservice = emailservice;
         }
 
         public async Task<object> Changestatus(Order dto)
@@ -32,6 +36,20 @@ namespace KOF.Services.OrderService
 
             try
             {
+                EmailInfo obj = new EmailInfo()
+                {
+                    EmailTo = email,
+                    Subject = "test",
+                    Body = "body"
+                };
+                _emailservice.SendEmailAsync(obj);
+                EmailInfo obj2 = new EmailInfo()
+                {
+                    EmailTo = "info@khanorganicfoods.pk",
+                    Subject = "test",
+                    Body = "body"
+                };
+                _emailservice.SendEmailAsync(obj2);
                 var orderno = _context.Orders.Max(x => x.OrderNumber);
                 int no = 10000;
                 if(orderno==null)
@@ -80,6 +98,7 @@ namespace KOF.Services.OrderService
                 }
                 _context.Carts.RemoveRange(mycart);
                 _context.SaveChanges();
+
                 return "Success";
             }
             catch (Exception ex)

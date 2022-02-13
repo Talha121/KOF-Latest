@@ -7,10 +7,10 @@ namespace KOF.Models.Email
 {
     public class EmailSettings
     {
-        public string EMail { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string Host { get; set; }
-        public int Port { get; set; }
+        public string EMail { get; set; } = "testingkof0786@gmail.com";
+        public string Name { get; set; } = "KOF";
+        public string Password { get; set; } = "Admin@123";
+        public string Host { get; set; } = "smtp.gmail.com";
+        public int Port { get; set; }=587;
     }
 }

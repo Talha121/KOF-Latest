@@ -20,34 +20,43 @@ namespace KOF.Services.EmailService
         }
         public async Task SendEmailAsync(EmailInfo emailInfo)
         {
-            var email = new MimeMessage();
-            email.Sender = MailboxAddress.Parse(_mailSettings.EMail);
-            email.To.Add(MailboxAddress.Parse(emailInfo.EmailTo));
-            email.Subject = emailInfo.Subject;
-            var builder = new BodyBuilder();
-            if (emailInfo.Attachments != null)
+            try
             {
-                byte[] fileBytes;
-                foreach (var file in emailInfo.Attachments)
+                var email = new MimeMessage();
+                email.Sender = MailboxAddress.Parse(_mailSettings.EMail);
+                email.To.Add(MailboxAddress.Parse(emailInfo.EmailTo));
+                email.Subject = emailInfo.Subject;
+                var builder = new BodyBuilder();
+                if (emailInfo.Attachments != null)
                 {
-                    if (file.Length > 0)
+                    byte[] fileBytes;
+                    foreach (var file in emailInfo.Attachments)
                     {
-                        using (var ms = new MemoryStream())
+                        if (file.Length > 0)
                         {
-                            file.CopyTo(ms);
-                            fileBytes = ms.ToArray();
+                            using (var ms = new MemoryStream())
+                            {
+                                file.CopyTo(ms);
+                                fileBytes = ms.ToArray();
+                            }
+                            builder.Attachments.Add(file.FileName, fileBytes, ContentType.Parse(file.ContentType));
                         }
-                        builder.Attachments.Add(file.FileName, fileBytes, ContentType.Parse(file.ContentType));
                     }
                 }
+                builder.HtmlBody = emailInfo.Body;
+                email.Body = builder.ToMessageBody();
+                using var smtp = new SmtpClient();
+                smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTls);
+                smtp.Authenticate(_mailSettings.EMail, _mailSettings.Password);
+                await smtp.SendAsync(email);
+                smtp.Disconnect(true);
             }
-            builder.HtmlBody = emailInfo.Body;
-            email.Body = builder.ToMessageBody();
-            using var smtp = new SmtpClient();
-            smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTls);
-            smtp.Authenticate(_mailSettings.EMail, _mailSettings.Password);
-            await smtp.SendAsync(email);
-            smtp.Disconnect(true);
+            catch (Exception ex)
+            {
+                var me = ex.Message;
+                throw;
+            }
+
         }
 
         public async Task SendEmailTemplateAsync(EmailSource emailSource)
