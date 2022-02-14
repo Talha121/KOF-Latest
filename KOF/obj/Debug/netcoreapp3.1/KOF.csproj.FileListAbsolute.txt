@@ -747,3 +747,4 @@ D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.dll
 D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.pdb
 D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.genruntimeconfig.cache
 D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.AssemblyReference.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\TermsAndServices.cshtml.g.cs
