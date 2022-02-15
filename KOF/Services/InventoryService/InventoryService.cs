@@ -39,13 +39,42 @@ namespace KOF.Services.InventoryService
                 var sdata = mysession.Where(x => x.inventoryId == inventoryid).FirstOrDefault();
                 if (sdata != null)
                 {
-                    sdata.Quantity = sdata.Quantity + Qty;
-                    sdata.TotalPrice = sdata.Quantity * sdata.PerUnitPrice;
-                    var rs = mysession.Where(x => x.inventoryId == inventoryid).FirstOrDefault();
-                    mysession.Remove(rs);
-                    mysession.Add(sdata);
-                    var str = JsonConvert.SerializeObject(mysession);
-                    _session.SetString("mycart", str);
+                    if(sdata.unit==unit)
+                    {
+                        sdata.Quantity = sdata.Quantity + Qty;
+                        sdata.TotalPrice = sdata.Quantity * sdata.PerUnitPrice;
+                        var rs = mysession.Where(x => x.inventoryId == inventoryid).FirstOrDefault();
+
+                        mysession.Remove(rs);
+                        mysession.Add(sdata);
+                        var str = JsonConvert.SerializeObject(mysession);
+                        _session.SetString("mycart", str);
+                    }
+                    else
+                    {
+                        if (unit == "1/2 Kg")
+                        {
+                            price = (inv.PricePerUnit / 2);
+                        }
+                        else
+                        {
+                            price = inv.PricePerUnit;
+                        }
+                        Cart obj = new Cart
+                        {
+                            ProductId = productid,
+                            unit = unit,
+                            inventoryId = inventoryid,
+                            Quantity = Qty,
+                            PerUnitPrice = price,
+                            TotalPrice = price * Qty
+
+                        };
+                        mysession.Add(obj);
+                        var str = JsonConvert.SerializeObject(mysession);
+                        _session.SetString("mycart", str);
+                    }
+                 
                 }
                 else
                 {

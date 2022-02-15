@@ -1,4 +1,6 @@
 ﻿using KOF.Models;
+using KOF.Models.Email;
+using KOF.Services.EmailService;
 using KOF.Services.OrderService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -60,5 +62,6 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
+       
     }
 }

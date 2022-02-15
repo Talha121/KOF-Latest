@@ -1,4 +1,5 @@
-﻿using KOF.Models.Email;
+﻿using KOF.Models;
+using KOF.Models.Email;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace KOF.Services.EmailService
    public interface IEmailService
     {
         Task SendEmailAsync(EmailInfo emailInfo);
-        Task SendEmailTemplateAsync(EmailSource emailSource);
+        Task SendEmailTemplateAsync(EmailSource emailSource, IEnumerable<Cart> items, Order order);
     }
 }

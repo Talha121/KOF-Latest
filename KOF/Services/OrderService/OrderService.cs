@@ -104,17 +104,18 @@ namespace KOF.Services.OrderService
                     UserName = email
 
                 };
-                _emailservice.SendEmailTemplateAsync(useremail);
-                EmailInfo obj2 = new EmailInfo()
+                _emailservice.SendEmailTemplateAsync(useremail,mysession, order);
+             
+                EmailSource useremail2 = new EmailSource()
                 {
                     EmailTo = "info@khanorganicfoods.pk",
-                    Subject = "test",
-                    Body = "body"
+                    UserName = "Admin"
+
                 };
-                _emailservice.SendEmailAsync(obj2);
-                //var cart = new List<Cart>();
-                //var str = JsonConvert.SerializeObject(cart);
-                //_session.SetString("mycart", str);
+                _emailservice.SendEmailTemplateAsync(useremail2, mysession, order);
+                var cart = new List<Cart>();
+                var str = JsonConvert.SerializeObject(cart);
+                _session.SetString("mycart", str);
                 return "Success";
             }
             catch (Exception ex)
