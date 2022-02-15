@@ -20,7 +20,7 @@ namespace KOF.Models
         public string Order_emailaddress { get; set; }
         public string Order_Notes { get; set; }
         public int TotalAmount { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         [JsonIgnore]
         public virtual AllUser User { get; set; }
         public IList<OrderItem> OrderItems { get; set; }

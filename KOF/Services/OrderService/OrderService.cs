@@ -4,7 +4,9 @@ using KOF.Models.Email;
 using KOF.Services.EmailService;
 using KOF.Services.GenericService;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +19,15 @@ namespace KOF.Services.OrderService
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ApplicationDbContext _context;
         private readonly IEmailService _emailservice;
-        public OrderService(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment, IEmailService emailservice) : base(context)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private ISession _session => _httpContextAccessor.HttpContext.Session;
+        public OrderService(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment, IEmailService emailservice, IHttpContextAccessor httpContextAccessor) : base(context)
         {
 
             _webHostEnvironment = webHostEnvironment;
             _context = context;
             _emailservice = emailservice;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<object> Changestatus(Order dto)
@@ -31,25 +36,20 @@ namespace KOF.Services.OrderService
             return "success";
         }
 
-        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote, int userid)
+        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote)
         {
 
             try
             {
-                EmailInfo obj = new EmailInfo()
-                {
-                    EmailTo = email,
-                    Subject = "test",
-                    Body = "body"
-                };
-                _emailservice.SendEmailAsync(obj);
-                EmailInfo obj2 = new EmailInfo()
-                {
-                    EmailTo = "info@khanorganicfoods.pk",
-                    Subject = "test",
-                    Body = "body"
-                };
-                _emailservice.SendEmailAsync(obj2);
+           
+                var sessionid = _session.Id;
+                //EmailInfo obj = new EmailInfo()
+                //{
+                //    EmailTo = email,
+                //    Subject = "test",
+                //    Body = "body"
+                //};
+           
                 var orderno = _context.Orders.Max(x => x.OrderNumber);
                 int no = 10000;
                 if(orderno==null)
@@ -60,10 +60,12 @@ namespace KOF.Services.OrderService
                 {
                     no = Convert.ToInt32(orderno)+1;
                 }
-                var mycart =  _context.Carts.Where(x => x.UserId == userid).ToList();
+                var cartinfo = _session.GetString("mycart");
+                var mysession = JsonConvert.DeserializeObject<IEnumerable<Cart>>(cartinfo);
+                var mycart =  _context.Carts.Where(x => x.sessionid == sessionid).ToList();
                 Order order = new Order()
                 {
-                    UserId = userid,
+                    
                     Order_phoneno = phone,
                     Order_emailaddress = email,
                     order_streataddress = streadaddress,
@@ -80,7 +82,7 @@ namespace KOF.Services.OrderService
                 _context.Orders.Add(order);
                 _context.SaveChanges();
                 var orderid = order.Id;
-                foreach (var item in mycart)
+                foreach (var item in mysession)
                 {
                     OrderItem items = new OrderItem()
                     {
@@ -96,9 +98,23 @@ namespace KOF.Services.OrderService
                     _context.OrderItems.Add(items);
                     _context.SaveChanges();
                 }
-                _context.Carts.RemoveRange(mycart);
-                _context.SaveChanges();
+                EmailSource useremail = new EmailSource()
+                {
+                    EmailTo = email,
+                    UserName = email
 
+                };
+                _emailservice.SendEmailTemplateAsync(useremail);
+                EmailInfo obj2 = new EmailInfo()
+                {
+                    EmailTo = "info@khanorganicfoods.pk",
+                    Subject = "test",
+                    Body = "body"
+                };
+                _emailservice.SendEmailAsync(obj2);
+                //var cart = new List<Cart>();
+                //var str = JsonConvert.SerializeObject(cart);
+                //_session.SetString("mycart", str);
                 return "Success";
             }
             catch (Exception ex)

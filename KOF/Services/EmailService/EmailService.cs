@@ -61,7 +61,9 @@ namespace KOF.Services.EmailService
 
         public async Task SendEmailTemplateAsync(EmailSource emailSource)
         {
-            string FilePath = Directory.GetCurrentDirectory() + "\\Templates\\CustomTemplate.html";
+            try
+            {
+                   string FilePath = Directory.GetCurrentDirectory() + "/wwwroot/Templates/CustomTemplate.html";
             StreamReader str = new StreamReader(FilePath);
             string MailText = str.ReadToEnd();
             str.Close();
@@ -78,6 +80,14 @@ namespace KOF.Services.EmailService
             smtp.Authenticate(_mailSettings.EMail, _mailSettings.Password);
             await smtp.SendAsync(email);
             smtp.Disconnect(true);
+            }
+            catch (Exception ex)
+            {
+                var ff = ex.Message;
+
+                throw;
+            }
+         
         }
     }
 }

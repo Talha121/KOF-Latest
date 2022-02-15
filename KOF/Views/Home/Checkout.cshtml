@@ -1,37 +1,38 @@
 ﻿@inject KOF.Context.ApplicationDbContext _dbContext
-@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@using Newtonsoft.Json;
+@{ ViewData["Title"] = "MyAccount";
+                Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
+          
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
-@{
-    ViewData["Title"] = "MyAccount";
-    Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
-    var mycart = _dbContext.Carts.ToList();
-    var netuserid = UserManager.GetUserId(User);
-    var userid = _dbContext.AllUsers.Where(x => x.IdentityUserId == netuserid).SingleOrDefault().Id;
+                List<Cart> mycart = new List<Cart>();
 
-}
+                var data = @HttpContextAccessor.HttpContext.Session.GetString("mycart");
+
+                if (data != null)
+                {
+                    var data2 = JsonConvert.DeserializeObject<IEnumerable<Cart>>(data);
+                    mycart.AddRange(data2);
+                } }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css" integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.all.min.js" integrity="sha512-IZ95TbsPTDl3eT5GwqTJH/14xZ2feLEGJRbII6bRKtE/HC6x3N4cHye7yyikadgAsuiddCY2+6gMntpVHL1gHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-@{
-    if (ViewBag.orderadded == "Success")
-    {
-        <script>
+@{ if (ViewBag.orderadded == "Success")
+                {
+    <script>
 
 
-            Swal.fire(
-                'Order Placed Successfully!',
-                'We Will Contact You Soon!',
-                'success'
-            )
+        Swal.fire(
+            'Order Placed Successfully!',
+            'We Will Contact You Soon!',
+            'success'
+        )
 
 
 
-        </script>
-    }
-}
+    </script> } }
 <div class="page-heading">
     <div class="page-title">
         <h2>Cart</h2>
@@ -68,7 +69,7 @@
                         <form name="checkout" method="post" class="checkout woocommerce-checkout" action="/Home/Checkout" novalidate="novalidate">
 
 
-                            <input type="hidden" name="userid" value="@userid" />
+
                             <div class="col2-set" id="customer_details">
                                 <div class="col-1">
                                     <div class="woocommerce-billing-fields">
@@ -129,16 +130,14 @@
                                         @foreach (var item in mycart)
                                         {
                                             var productname = _dbContext.Products.Where(x => x.Id == item.ProductId).SingleOrDefault().Name;
-                                            <tr class="cart_item">
-                                                <td class="product-name">
-                                                    @productname&nbsp;						 <strong class="product-quantity">(@item.Quantity×&nbsp;@item.PerUnitPrice)</strong>
-                                                </td>
-                                                <td class="product-total">
-                                                    <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs : </span>@(item.Quantity*item.PerUnitPrice)</bdi></span>
-                                                </td>
-                                            </tr>
-
-                                        }
+                            <tr class="cart_item">
+                                <td class="product-name">
+                                    @productname&nbsp;						 <strong class="product-quantity">(@item.Quantity×&nbsp;@item.PerUnitPrice)</strong>
+                                </td>
+                                <td class="product-total">
+                                    <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs : </span>@(item.Quantity*item.PerUnitPrice)</bdi></span>
+                                </td>
+                            </tr>}
 
                                     </tbody>
                                     <tfoot>
@@ -197,9 +196,7 @@
                                         </div>
                                         @if (mycart.Count() > 0)
                                         {
-                                            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">Place order</button>
-
-                                        }
+                            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">Place order</button>}
 
 
                                     </div>
