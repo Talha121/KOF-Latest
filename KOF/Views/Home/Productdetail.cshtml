@@ -14,7 +14,7 @@
 
     }).SingleOrDefault();
 }
-<div class="page-heading"style=" padding: 280px 0 380px 0 !important; filter:grayscale(10%)">
+<div class="page-heading" style=" padding: 280px 0 380px 0 !important; filter:grayscale(10%)">
     <div class="breadcrumbs">
         <div class="container">
             <div class="row">
@@ -42,7 +42,7 @@
                     <div class="product-essential container">
                         <div class="row">
                             <div class="product-img-box col-lg-5 col-sm-5 col-xs-12">
-                         
+
                                 <div class="product-image woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 0; transition: opacity .25s ease-in-out;">
                                     <figure class="woocommerce-product-gallery__wrapper">
                                         @{
@@ -50,7 +50,7 @@
                                         }
                                         @foreach (var item in productimages)
                                         {
-                                            <div data-thumb="/Images/ProductImages/@Url.Content(item.ImageUrl)"  data-thumb-alt="" class="woocommerce-product-gallery__image"><a href="/Images/ProductImages/@Url.Content(item.ImageUrl)" ><img width="600" height="600" src="/Images/ProductImages/@Url.Content(item.ImageUrl)"  class="wp-post-image" alt="" loading="lazy" title="p6" data-caption="" data-src="/Images/ProductImages/@Url.Content(item.ImageUrl)"  data-large_image="/Images/ProductImages/@Url.Content(item.ImageUrl)"  data-large_image_width="800" data-large_image_height="800" srcset="/Images/ProductImages/@Url.Content(item.ImageUrl) 600w, /Images/ProductImages/@Url.Content(item.ImageUrl) 150w,/Images/ProductImages/@Url.Content(item.ImageUrl)  300w,/Images/ProductImages/@Url.Content(item.ImageUrl)  768w,/Images/ProductImages/@Url.Content(item.ImageUrl)  450w,/Images/ProductImages/@Url.Content(item.ImageUrl)  80w,/Images/ProductImages/@Url.Content(item.ImageUrl) 99w, /Images/ProductImages/@Url.Content(item.ImageUrl) 800w" sizes="(max-width: 600px) 100vw, 600px" /></a></div>
+                                            <div data-thumb="/Images/ProductImages/@Url.Content(item.ImageUrl)" data-thumb-alt="" class="woocommerce-product-gallery__image"><a href="/Images/ProductImages/@Url.Content(item.ImageUrl)"><img width="600" height="600" src="/Images/ProductImages/@Url.Content(item.ImageUrl)" class="wp-post-image" alt="" loading="lazy" title="p6" data-caption="" data-src="/Images/ProductImages/@Url.Content(item.ImageUrl)" data-large_image="/Images/ProductImages/@Url.Content(item.ImageUrl)" data-large_image_width="800" data-large_image_height="800" srcset="/Images/ProductImages/@Url.Content(item.ImageUrl) 600w, /Images/ProductImages/@Url.Content(item.ImageUrl) 150w,/Images/ProductImages/@Url.Content(item.ImageUrl)  300w,/Images/ProductImages/@Url.Content(item.ImageUrl)  768w,/Images/ProductImages/@Url.Content(item.ImageUrl)  450w,/Images/ProductImages/@Url.Content(item.ImageUrl)  80w,/Images/ProductImages/@Url.Content(item.ImageUrl) 99w, /Images/ProductImages/@Url.Content(item.ImageUrl) 800w" sizes="(max-width: 600px) 100vw, 600px" /></a></div>
                                         }
                                     </figure>
                                 </div>
@@ -58,7 +58,7 @@
                             <div class="product-shop col-lg- col-sm-7 col-xs-12">
                                 <div class="product-next-prev">
                                     @*<a rel="next" class="product-next" href="https://klbtheme.com/qualis/product/native-organic-cucumber/" title="Native Organic Cucumber"><span></span></a>
-                        <a rel="prev" href="https://klbtheme.com/qualis/product/organic-sweet-corn/" title="Organic Sweet Corn" class="product-prev"><span></span></a>*@
+                                        <a rel="prev" href="https://klbtheme.com/qualis/product/organic-sweet-corn/" title="Organic Sweet Corn" class="product-prev"><span></span></a>*@
                                 </div>
                                 <div class="product-name">
                                     <h1 class="product_title entry-title">
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="woocommerce-product-rating">
                                     @*<div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span></div>
-                        <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span class="count">1</span> customer review)</a>*@
+                                        <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span class="count">1</span> customer review)</a>*@
                                 </div>
                                 <p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs.</span><span id="updatedprice">@productinf.inv.PricePerUnit</span> </bdi></span></p>
                                 <div class="add-to-box">
@@ -143,11 +143,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
 
 
-                                                    <button type="submit" name="add-to-cart" value="94" class="button btn-cart single_add_to_cart_button button alt">Add to cart</button>
-                                             
+
+                                                <button type="submit" name="add-to-cart" value="94" class="button btn-cart single_add_to_cart_button button alt">Add to cart</button>
+
 
 
 
@@ -168,27 +168,14 @@
                                 <div class="woocommerce-product-details__short-description">
                                     <p>@productinf.product.About</p>
                                 </div>
-                                <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-shortcode-add-to-cart"
-                                     data-product_id="94">
-                                    <div class="tinv-wishlist-clear"></div>
-                                    @*<a role="button" tabindex="0" aria-label="Add to Wishlist" class="tinvwl_add_to_wishlist_button tinvwl-icon-heart  tinvwl-position-shortcode" data-tinv-wl-producttype="simple" data-tinv-wl-action="add"><span class="tinvwl_add_to_wishlist-text">Add to Wishlist</span></a>*@
-                                    <div class="tinv-wishlist-clear"></div>
-                                    @*<div class="tinvwl-tooltip">Add to Wishlist</div>*@
-                                </div>
-                                <div class="social social-container">
+                        
+                                @*<div class="social social-container">
                                     <ul class="link">
                                         <li class="fb"><a href="https://www.facebook.com/Khanorganicfoods.pk" target="_blank" class="facebook" aria-label="Share this page with Facebook" role="button"></a></li>
-                                        <li class="linkedin"><a href="https://www.instagram.com/khanorganicfoods.pk/" target="_blank" class="instagram" aria-label="Share this page with Twitter"></a></li>
-                                        @*<li class="pintrest"><a href="#" class="googleplus" aria-label="Share this page with Google Plus"></a></li>
-        <li class="pintrest"><a href="#" class="pinterest" aria-label="Share this page with Pinterest"></a></li>
-        <li class="linkedin"><a href="#" class="linkedin" aria-label="Share this page with Linkedin"></a></li>*@
+                                        <li class="fb"><a href="https://www.instagram.com/khanorganicfoods.pk/" target="_blank" class="facebook" aria-label="Share this page with Facebook" role="button"></a></li>
+                  
                                     </ul>
-                                </div>
-                                <ul class="shipping-pro">
-                                    <li>Free Wordwide Shipping</li>
-                                    <li>30 Days Return</li>
-                                    <li>Member Discount</li>
-                                </ul>
+                                </div>*@
                                 <div class="product_meta">
                                     @*<span class="sku_wrapper">SKU: <span class="sku">K27SA62</span></span>*@
                                     <span class="posted_in">Category: <a href="#">@productinf.category.Name</a></span>
@@ -204,129 +191,129 @@
                                         Description
                                     </a>
                                 </li>
-             
+
                             </ul>
                             <div id="productTabContent" class="tab-content">
                                 <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
                                     <p>@productinf.product.Description</p>
                                 </div>
-          
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row our-features-box">
-        <ul>
-            <li>
-                <div class="feature-box klb-footer-box">
-                    <i class="fa fa-truck"></i>
-                    <div class="content">FREE SHIPPING in Lahore</div>
-                </div>
-            </li>
-            <li>
-                <div class="feature-box klb-footer-box">
-                    <i class="fa fa-phone"></i>
-                    <div class="content">HAVE A QUESTIONS? <a href="tel:+923107771866">+92 3107771866</a></div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-<script>
-    (function () {
-        var c = document.body.className;
-        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-        document.body.className = c;
-    })();
-</script>
-<script id='contact-form-7-js-extra'>var wpcf7 = { "api": { "root": "https:\/\/klbtheme.com\/qualis\/wp-json\/", "namespace": "contact-form-7\/v1" } };</script>
-<script id='wc-single-product-js-extra'>var wc_single_product_params = { "i18n_required_rating_text": "Please select a rating", "review_rating_required": "yes", "flexslider": { "rtl": false, "animation": "slide", "smoothHeight": true, "directionNav": false, "controlNav": "thumbnails", "slideshow": false, "animationSpeed": 500, "animationLoop": false, "allowOneSlide": false }, "zoom_enabled": "", "zoom_options": [], "photoswipe_enabled": "1", "photoswipe_options": { "shareEl": false, "closeOnScroll": false, "history": false, "hideAnimationDuration": 0, "showAnimationDuration": 0 }, "flexslider_enabled": "1" };</script>
-<script id='woocommerce-js-extra'>var woocommerce_params = { "ajax_url": "\/qualis\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/qualis\/?wc-ajax=%%endpoint%%" };</script>
-<script id='wc-cart-fragments-js-extra'>var wc_cart_fragments_params = { "ajax_url": "\/qualis\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/qualis\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_b82fd1e602d3929a2e8e26009ed3c00d", "fragment_name": "wc_fragments_b82fd1e602d3929a2e8e26009ed3c00d", "request_timeout": "5000" };</script>
-<script id='yith-woocompare-main-js-extra'>var yith_woocompare = { "ajaxurl": "\/qualis\/?wc-ajax=%%endpoint%%", "actionadd": "yith-woocompare-add-product", "actionremove": "yith-woocompare-remove-product", "actionview": "yith-woocompare-view-table", "actionreload": "yith-woocompare-reload-product", "added_label": "Added", "table_title": "Product Comparison", "auto_open": "yes", "loader": "https:\/\/klbtheme.com\/qualis\/wp-content\/plugins\/yith-woocommerce-compare\/assets\/images\/loader.gif", "button_text": "Compare", "cookie_name": "yith_woocompare_list", "close_label": "Close" };</script>
-<script id='tinvwl-js-extra'>var tinvwl_add_to_wishlist = { "text_create": "Create New", "text_already_in": "Product already in Wishlist", "simple_flow": "", "hide_zero_counter": "", "i18n_make_a_selection_text": "Please select some product options before adding this product to your wishlist.", "tinvwl_break_submit": "No items or actions are selected.", "tinvwl_clipboard": "Copied!", "allow_parent_variable": "", "block_ajax_wishlists_data": "", "update_wishlists_data": "", "hash_key": "ti_wishlist_data_b82fd1e602d3929a2e8e26009ed3c00d", "nonce": "ea6fcea398", "rest_root": "https:\/\/klbtheme.com\/qualis\/wp-json\/", "plugin_url": "https:\/\/klbtheme.com\/qualis\/wp-content\/plugins\/ti-woocommerce-wishlist\/" };</script>
-<script id='qualis-quick-ajax-js-extra'>var MyAjax = { "ajaxurl": "https:\/\/klbtheme.com\/qualis\/wp-admin\/admin-ajax.php", "current_page": "1", "per_page": "0" };</script>
-<script id='qualis-slidetext-js-extra'>var slidetext = { "speed": "3000" };</script>
-<script id='qualis-plus-minus-js-extra'>var quantityklb = { "maxklb": "" };</script>
-<script id='qualis-related-products-js-extra'>var related = { "displayitem": "5" };</script>
-<script src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/lktapqc1/e7cyb.js'></script>
-<script>
-    function setREVStartSize(e) {
-        try {
-            var pw = document.getElementById(e.c).parentNode.offsetWidth,
-                newh;
-            pw = pw === 0 || isNaN(pw) ? window.innerWidth : pw;
-            e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
-            e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
-            e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
-            e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
-            e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
-            e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
-            e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
-            if (e.layout === "fullscreen" || e.l === "fullscreen")
-                newh = Math.max(e.mh, window.innerHeight);
-            else {
-                e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-                for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
-                e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
-                e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-                for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
-                var nl = new Array(e.rl.length),
-                    ix = 0,
-                    sl;
-                e.tabw = e.tabhide >= pw ? 0 : e.tabw;
-                e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
-                e.tabh = e.tabhide >= pw ? 0 : e.tabh;
-                e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
-                for (var i in e.rl) nl[i] = e.rl[i] < window.innerWidth ? 0 : e.rl[i];
-                sl = nl[0];
-                for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
-                var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
-                newh = (e.type === "carousel" && e.justify === "true" ? e.gh[ix] : (e.gh[ix] * m)) + (e.tabh + e.thumbh);
-            }
-            if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));
-            document.getElementById(e.c).height = newh;
-            window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
-        } catch (e) {
-            console.log("Failure at Presize of Slider:" + e)
-        }
-    };
-</script>
-<script>
-    (function () {
-        window.mc4wp = window.mc4wp || {
-            listeners: [],
-            forms: {
-                on: function (evt, cb) {
-                    window.mc4wp.listeners.push({
-                        event: evt,
-                        callback: cb
+        <div class="container">
+            <div class="row our-features-box">
+                <ul>
+                    <li>
+                        <div class="feature-box klb-footer-box">
+                            <i class="fa fa-truck"></i>
+                            <div class="content">FREE SHIPPING in Lahore</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box klb-footer-box">
+                            <i class="fa fa-phone"></i>
+                            <div class="content">HAVE A QUESTIONS? <a href="tel:+923107771866">+92 3107771866</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            (function () {
+                var c = document.body.className;
+                c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+                document.body.className = c;
+            })();
+        </script>
+        <script id='contact-form-7-js-extra'>var wpcf7 = { "api": { "root": "https:\/\/klbtheme.com\/qualis\/wp-json\/", "namespace": "contact-form-7\/v1" } };</script>
+        <script id='wc-single-product-js-extra'>var wc_single_product_params = { "i18n_required_rating_text": "Please select a rating", "review_rating_required": "yes", "flexslider": { "rtl": false, "animation": "slide", "smoothHeight": true, "directionNav": false, "controlNav": "thumbnails", "slideshow": false, "animationSpeed": 500, "animationLoop": false, "allowOneSlide": false }, "zoom_enabled": "", "zoom_options": [], "photoswipe_enabled": "1", "photoswipe_options": { "shareEl": false, "closeOnScroll": false, "history": false, "hideAnimationDuration": 0, "showAnimationDuration": 0 }, "flexslider_enabled": "1" };</script>
+        <script id='woocommerce-js-extra'>var woocommerce_params = { "ajax_url": "\/qualis\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/qualis\/?wc-ajax=%%endpoint%%" };</script>
+        <script id='wc-cart-fragments-js-extra'>var wc_cart_fragments_params = { "ajax_url": "\/qualis\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/qualis\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_b82fd1e602d3929a2e8e26009ed3c00d", "fragment_name": "wc_fragments_b82fd1e602d3929a2e8e26009ed3c00d", "request_timeout": "5000" };</script>
+        <script id='yith-woocompare-main-js-extra'>var yith_woocompare = { "ajaxurl": "\/qualis\/?wc-ajax=%%endpoint%%", "actionadd": "yith-woocompare-add-product", "actionremove": "yith-woocompare-remove-product", "actionview": "yith-woocompare-view-table", "actionreload": "yith-woocompare-reload-product", "added_label": "Added", "table_title": "Product Comparison", "auto_open": "yes", "loader": "https:\/\/klbtheme.com\/qualis\/wp-content\/plugins\/yith-woocommerce-compare\/assets\/images\/loader.gif", "button_text": "Compare", "cookie_name": "yith_woocompare_list", "close_label": "Close" };</script>
+        <script id='tinvwl-js-extra'>var tinvwl_add_to_wishlist = { "text_create": "Create New", "text_already_in": "Product already in Wishlist", "simple_flow": "", "hide_zero_counter": "", "i18n_make_a_selection_text": "Please select some product options before adding this product to your wishlist.", "tinvwl_break_submit": "No items or actions are selected.", "tinvwl_clipboard": "Copied!", "allow_parent_variable": "", "block_ajax_wishlists_data": "", "update_wishlists_data": "", "hash_key": "ti_wishlist_data_b82fd1e602d3929a2e8e26009ed3c00d", "nonce": "ea6fcea398", "rest_root": "https:\/\/klbtheme.com\/qualis\/wp-json\/", "plugin_url": "https:\/\/klbtheme.com\/qualis\/wp-content\/plugins\/ti-woocommerce-wishlist\/" };</script>
+        <script id='qualis-quick-ajax-js-extra'>var MyAjax = { "ajaxurl": "https:\/\/klbtheme.com\/qualis\/wp-admin\/admin-ajax.php", "current_page": "1", "per_page": "0" };</script>
+        <script id='qualis-slidetext-js-extra'>var slidetext = { "speed": "3000" };</script>
+        <script id='qualis-plus-minus-js-extra'>var quantityklb = { "maxklb": "" };</script>
+        <script id='qualis-related-products-js-extra'>var related = { "displayitem": "5" };</script>
+        <script src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/lktapqc1/e7cyb.js'></script>
+        <script>
+            function setREVStartSize(e) {
+                try {
+                    var pw = document.getElementById(e.c).parentNode.offsetWidth,
+                        newh;
+                    pw = pw === 0 || isNaN(pw) ? window.innerWidth : pw;
+                    e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
+                    e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
+                    e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
+                    e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
+                    e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
+                    e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
+                    e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
+                    if (e.layout === "fullscreen" || e.l === "fullscreen")
+                        newh = Math.max(e.mh, window.innerHeight);
+                    else {
+                        e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+                        for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+                        e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
+                        e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+                        for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+                        var nl = new Array(e.rl.length),
+                            ix = 0,
+                            sl;
+                        e.tabw = e.tabhide >= pw ? 0 : e.tabw;
+                        e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
+                        e.tabh = e.tabhide >= pw ? 0 : e.tabh;
+                        e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
+                        for (var i in e.rl) nl[i] = e.rl[i] < window.innerWidth ? 0 : e.rl[i];
+                        sl = nl[0];
+                        for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
+                        var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
+                        newh = (e.type === "carousel" && e.justify === "true" ? e.gh[ix] : (e.gh[ix] * m)) + (e.tabh + e.thumbh);
                     }
-                    );
+                    if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));
+                    document.getElementById(e.c).height = newh;
+                    window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
+                } catch (e) {
+                    console.log("Failure at Presize of Slider:" + e)
                 }
-            }
-        }
-    })();
-</script>
-<script>
-    (function () {
-        function maybePrefixUrlField() {
-            if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
-                this.value = "http://" + this.value;
-            }
-        }
-        var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
-        if (urlFields) {
-            for (var j = 0; j < urlFields.length; j++) {
-                urlFields[j].addEventListener('blur', maybePrefixUrlField);
-            }
-        }
-    })();
-</script>
-<script defer src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/ft8kh6tj/e7doh.js'></script>
-<script defer src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/o8l0w9j/e7cyb.js' id='tinvwl-js'></script>
-<script defer src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/m8w6zd/e7doh.js'></script>
-<script>document.addEventListener('DOMContentLoaded', function () { function wpfcgl() { var wgh = document.querySelector('noscript#wpfc-google-fonts').innerText, wgha = wgh.match(/<link[^\>]+>/gi); for (i = 0; i < wgha.length; i++) { var wrpr = document.createElement('div'); wrpr.innerHTML = wgha[i]; document.body.appendChild(wrpr.firstChild); } } wpfcgl(); });</script>
+            };
+        </script>
+        <script>
+            (function () {
+                window.mc4wp = window.mc4wp || {
+                    listeners: [],
+                    forms: {
+                        on: function (evt, cb) {
+                            window.mc4wp.listeners.push({
+                                event: evt,
+                                callback: cb
+                            }
+                            );
+                        }
+                    }
+                }
+            })();
+        </script>
+        <script>
+            (function () {
+                function maybePrefixUrlField() {
+                    if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                        this.value = "http://" + this.value;
+                    }
+                }
+                var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+                if (urlFields) {
+                    for (var j = 0; j < urlFields.length; j++) {
+                        urlFields[j].addEventListener('blur', maybePrefixUrlField);
+                    }
+                }
+            })();
+        </script>
+        <script defer src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/ft8kh6tj/e7doh.js'></script>
+        <script defer src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/o8l0w9j/e7cyb.js' id='tinvwl-js'></script>
+        <script defer src='//klbtheme.com/qualis/wp-content/cache/wpfc-minified/m8w6zd/e7doh.js'></script>
+        <script>document.addEventListener('DOMContentLoaded', function () { function wpfcgl() { var wgh = document.querySelector('noscript#wpfc-google-fonts').innerText, wgha = wgh.match(/<link[^\>]+>/gi); for (i = 0; i < wgha.length; i++) { var wrpr = document.createElement('div'); wrpr.innerHTML = wgha[i]; document.body.appendChild(wrpr.firstChild); } } wpfcgl(); });</script>

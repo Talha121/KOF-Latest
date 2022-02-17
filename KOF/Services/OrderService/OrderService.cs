@@ -108,12 +108,12 @@ namespace KOF.Services.OrderService
              
                 EmailSource useremail2 = new EmailSource()
                 {
-                    EmailTo = "info@khanorganicfoods.pk",
+                    EmailTo = "Khanorganicfoods.pk@gmail.com",
                     UserName = "Admin"
 
                 };
                 _emailservice.SendEmailTemplateAsync(useremail2, mysession, order);
-                var cart = new List<Cart>();
+                 var cart = new List<Cart>();
                 var str = JsonConvert.SerializeObject(cart);
                 _session.SetString("mycart", str);
                 return "Success";
