@@ -52,7 +52,7 @@ export class AllOrdersComponent implements OnInit {
      debugger;
      console.log(this.FromDate)
      console.log(this.toDate)
-      this.OrdersList2=this.OrdersListdata.filter(x=>new Date(x.order.createdOn)>= new Date(this.FromDate)&&new Date(x.order.createdOn)<=new Date(this.FromDate) );
+      // this.OrdersList2=this.OrdersListdata.filter(x=>new Date(x.order.createdOn)>= new Date(this.FromDate)&&new Date(x.order.createdOn)<=new Date(this.FromDate) );
   }
   public toCanvas() {
         let elem = document.getElementById("invoice-POS");
@@ -151,9 +151,9 @@ data.orderStatus=status;
      });
 }
   GetOrders(){
-    
+    debugger
     this.orderservice.GetOrders().subscribe((next:any) => {
-      
+      debugger
       this.OrdersList2=[];
       this.OrdersList2=next;
     

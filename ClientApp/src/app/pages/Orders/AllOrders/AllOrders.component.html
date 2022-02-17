@@ -82,7 +82,7 @@
           <button class="btn btn-info"  *ngIf="obj.order.orderStatus=='Active'" class="btn btn-info"  style="    padding: 1px;" (click)="changeorderstatus(obj.order,'Completed')" >Complate Now</button>
           <button class="btn btn-info" *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-success" style="    padding: 1px;"(click)="changeorderstatus(obj.order,'Active')" >Active Now</button>
        
-          <button class="btn btn-dark" style="    padding: 1px;margin-left: 5px;" >View And Print</button>
+          <button class="btn btn-dark" style="    padding: 1px;margin-left: 5px;"   (click)="openOrderUpdateLg(EditStatuscontent,obj.order)">View And Print</button>
           <!-- <i class="fa fa-desktop" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)"  (click)="openOrderDetailLg(OrderDetailcontent,obj)" ></i> 
        
         <div style="padding: 4px;"*ngIf="obj.order.orderStatus!='Completed'">
