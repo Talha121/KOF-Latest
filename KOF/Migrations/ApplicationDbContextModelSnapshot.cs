@@ -236,6 +236,9 @@ namespace KOF.Migrations
                     b.Property<string>("HouseNo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("OrderFrom")
                         .HasColumnType("nvarchar(max)");
 

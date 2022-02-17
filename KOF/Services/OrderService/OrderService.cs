@@ -36,7 +36,7 @@ namespace KOF.Services.OrderService
             return "success";
         }
 
-        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote)
+        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote,string Name)
         {
 
             try
@@ -77,6 +77,7 @@ namespace KOF.Services.OrderService
                     OrderStatus = "Pending",
                     OrderType = "Online",
                     CreatedOn = DateTime.Now,
+                    Name=Name
                 };
                 
                 _context.Orders.Add(order);

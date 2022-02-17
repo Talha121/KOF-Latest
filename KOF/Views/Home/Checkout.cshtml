@@ -3,36 +3,37 @@
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @using Newtonsoft.Json;
 @{ ViewData["Title"] = "MyAccount";
-                Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
-          
+    Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
 
-                List<Cart> mycart = new List<Cart>();
 
-                var data = @HttpContextAccessor.HttpContext.Session.GetString("mycart");
+    List<Cart> mycart = new List<Cart>();
 
-                if (data != null)
-                {
-                    var data2 = JsonConvert.DeserializeObject<IEnumerable<Cart>>(data);
-                    mycart.AddRange(data2);
-                } }
+    var data = @HttpContextAccessor.HttpContext.Session.GetString("mycart");
+
+    if (data != null)
+    {
+        var data2 = JsonConvert.DeserializeObject<IEnumerable<Cart>>(data);
+        mycart.AddRange(data2);
+    } }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css" integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.all.min.js" integrity="sha512-IZ95TbsPTDl3eT5GwqTJH/14xZ2feLEGJRbII6bRKtE/HC6x3N4cHye7yyikadgAsuiddCY2+6gMntpVHL1gHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 @{ if (ViewBag.orderadded == "Success")
-                {
-    <script>
+    {
+        <script>
 
 
-        Swal.fire(
-            'Order Placed Successfully!',
-            'We Will Contact You Soon!',
-            'success'
-        )
+            Swal.fire(
+                'Order Placed Successfully!',
+                'We Will Contact You Soon!',
+                'success'
+            )
 
 
 
-    </script> } }
+        </script>
+ } }
 <div class="page-heading">
     <div class="page-title">
         <h2>Cart</h2>
@@ -44,29 +45,8 @@
             <section class="col-main col-sm-12">
                 <div class="one-page-checkout">
                     <div class="woocommerce">
-                        <div class="woocommerce-notices-wrapper"></div><div class="woocommerce-form-coupon-toggle">
 
-                            <div class="woocommerce-info">
-                                Have a coupon? <a href="#" class="showcoupon">Click here to enter your code</a>
-                            </div>
-                        </div>
-
-                        <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
-
-                            <p>If you have a coupon code, please apply it below.</p>
-
-                            <p class="form-row form-row-first">
-                                <input type="text" name="coupon_code" class="input-text" placeholder="Coupon code" id="coupon_code" value="">
-                            </p>
-
-                            <p class="form-row form-row-last">
-                                <button type="submit" class="button" name="apply_coupon" value="Apply coupon">Apply coupon</button>
-                            </p>
-
-                            <div class="clear"></div>
-                        </form>
-                        <div class="woocommerce-notices-wrapper"></div>
-                        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="/Home/Checkout" >
+                        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="/Home/Checkout">
 
 
 
@@ -80,7 +60,7 @@
 
                                         <div class="woocommerce-billing-fields__field-wrapper">
 
-
+                                            <p class="form-row address-field validate-required form-row-wide" id="billing_address_0_field" data-priority="50"><label for="billing_address_0" class="">Full Name&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input required type="text" class="input-text " name="Name" id="billing_address_0" placeholder="Full Name" ></span></p>
                                             <p class="form-row address-field validate-required form-row-wide" id="billing_address_1_field" data-priority="50"><label for="billing_address_1" class="">Street address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input required type="text" class="input-text " name="streadaddress" id="billing_address_1" placeholder="House number and street name" value="" autocomplete="address-line1" data-placeholder="House number and street name"></span></p>
                                             <p class="form-row address-field form-row-wide" id="billing_address_2_field" data-priority="60"><label for="billing_address_2" class="screen-reader-text">Apartment, suite, unit, etc.&nbsp;<span class="optional">(optional)</span></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="homeadderess" id="billing_address_2" placeholder="Apartment, suite, unit, etc. (optional)" value="" autocomplete="address-line2" data-placeholder="Apartment, suite, unit, etc. (optional)"></span></p>
                                             <p class="form-row address-field validate-required form-row-wide" id="billing_city_field" data-priority="70" data-o_class="form-row form-row-wide address-field validate-required"><label for="billing_city" class="">Town / City&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input required type="text" class="input-text " name="city" id="billing_city" placeholder="" value="" autocomplete="address-level2"></span></p>
@@ -130,14 +110,15 @@
                                         @foreach (var item in mycart)
                                         {
                                             var productname = _dbContext.Products.Where(x => x.Id == item.ProductId).SingleOrDefault().Name;
-                            <tr class="cart_item">
-                                <td class="product-name">
-                                    @productname&nbsp;						 <strong class="product-quantity">(@item.Quantity×&nbsp;@item.PerUnitPrice)</strong>
-                                </td>
-                                <td class="product-total">
-                                    <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs : </span>@(item.Quantity*item.PerUnitPrice)</bdi></span>
-                                </td>
-                            </tr>}
+                                            <tr class="cart_item">
+                                                <td class="product-name">
+                                                    @productname&nbsp;						 <strong class="product-quantity">(@item.Quantity×&nbsp;@item.PerUnitPrice)</strong>
+                                                </td>
+                                                <td class="product-total">
+                                                    <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs : </span>@(item.Quantity*item.PerUnitPrice)</bdi></span>
+                                                </td>
+                                            </tr>
+}
 
                                     </tbody>
                                     <tfoot>
@@ -162,7 +143,7 @@
                                 </table>
 
                                 <div id="payment" class="woocommerce-checkout-payment">
-                                    
+
                                     <div class="form-row place-order">
                                         <noscript>
                                             Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.			<br /><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Update totals">Update totals</button>
@@ -170,12 +151,12 @@
 
                                         <div class="woocommerce-terms-and-conditions-wrapper">
                                             <div class="woocommerce-privacy-policy-text">
-                                                <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a  class="woocommerce-privacy-policy-link" target="_blank">privacy policy</a>.</p>
+                                                <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a class="woocommerce-privacy-policy-link" target="_blank">privacy policy</a>.</p>
                                             </div>
                                         </div>
                                         @if (mycart.Count() > 0)
                                         {
-                            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">Place order</button>}
+                                            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">Place order</button>}
 
 
                                     </div>

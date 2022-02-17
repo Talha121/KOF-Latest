@@ -12,6 +12,6 @@ namespace KOF.Services.OrderService
         Task<object> GetOrders();
         Task<object> contactus();
         Task<object> Changestatus(Order dto);
-        Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote);
+        Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote, string Name);
     }
 }
