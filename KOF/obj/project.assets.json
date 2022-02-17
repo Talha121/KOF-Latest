@@ -9515,28 +9515,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\toqeer.yousaf\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KOF Latest\\KOF-Latest\\KOF\\KOF.csproj",
+      "projectUniqueName": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj",
       "projectName": "KOF",
-      "projectPath": "D:\\KOF Latest\\KOF-Latest\\KOF\\KOF.csproj",
-      "packagesPath": "C:\\Users\\toqeer.yousaf\\.nuget\\packages\\",
-      "outputPath": "D:\\KOF Latest\\KOF-Latest\\KOF\\obj\\",
+      "projectPath": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\toqeer.yousaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9636,7 +9628,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

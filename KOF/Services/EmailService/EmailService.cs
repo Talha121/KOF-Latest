@@ -74,7 +74,7 @@ namespace KOF.Services.EmailService
                                     </style></head><body> Order No#"+order.OrderNumber+ @"<br> Order Note:"+ order.Order_Notes + @"
                                  <table><tr><th>Item</th><th>Quntity</th><th>Amount</th></tr>";
          
-            var footer = @"<tr><th>Total</th><th>"+items.Sum(x=>x.Quantity)+ @"</th><th>" + items.Sum(x => x.TotalPrice) + @"</th></tr> </table><br>Delivery Information: <br> StreatAddress:"+order.order_streataddress +@"<br>House No: "+order.HouseNo+ @"<br>City:" + order.Order_city + @"<br> Contact No:" + order.Order_phoneno + @" </body></html>";
+            var footer = @"<tr><th>Total</th><th>"+items.Sum(x=>x.Quantity)+ @"</th><th>" + items.Sum(x => x.TotalPrice) + @"</th></tr> </table><br>Delivery Information: <br> Order Person Name:" + order.Name + @"<br> StreatAddress:" + order.order_streataddress +@"<br>House No: "+order.HouseNo+ @"<br>City:" + order.Order_city + @"<br> Contact No:" + order.Order_phoneno + @" </body></html>";
 
             var bb = "";
             var bodydata = new List<string>();    

@@ -1,180 +1,362 @@
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\appsettings.Development.json
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\appsettings.json
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.StaticWebAssets.xml
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.exe
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.deps.json
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.runtimeconfig.json
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.runtimeconfig.dev.json
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.pdb
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.Views.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.Views.pdb
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\AutoMapper.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\MailKit.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\MimeKit.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\KOF Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.GeneratedMSBuildEditorConfig.editorconfig
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.AssemblyInfoInputs.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.AssemblyInfo.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.CoreCompileInputs.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.MvcApplicationPartsAssemblyInfo.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.MvcApplicationPartsAssemblyInfo.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorAssemblyInfo.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorAssemblyInfo.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\staticwebassets\KOF.StaticWebAssets.Manifest.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\staticwebassets\KOF.StaticWebAssets.xml
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\scopedcss\bundle\KOF.styles.css
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.TagHelpers.input.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.TagHelpers.output.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorCoreGenerate.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Checkout.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ContactUs.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\MyAccount.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Productdetail.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductGridView.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductListView.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\WishList.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutWebsite.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorTargetAssemblyInfo.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorTargetAssemblyInfo.cs
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.Views.pdb
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.CopyComplete
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.dll
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.pdb
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.genruntimeconfig.cache
-D:\KOF Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.AssemblyReference.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\appsettings.json
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.StaticWebAssets.xml
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.exe
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.deps.json
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.runtimeconfig.json
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.runtimeconfig.dev.json
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.pdb
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.Views.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\KOF.Views.pdb
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\MailKit.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\MimeKit.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.AssemblyReference.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.GeneratedMSBuildEditorConfig.editorconfig
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.AssemblyInfoInputs.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.AssemblyInfo.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.CoreCompileInputs.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.MvcApplicationPartsAssemblyInfo.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.MvcApplicationPartsAssemblyInfo.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.RazorAssemblyInfo.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.RazorAssemblyInfo.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\staticwebassets\KOF.StaticWebAssets.Manifest.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\staticwebassets\KOF.StaticWebAssets.xml
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\scopedcss\bundle\KOF.styles.css
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.TagHelpers.input.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.TagHelpers.output.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.RazorCoreGenerate.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Checkout.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ContactUs.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\MyAccount.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Productdetail.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductGridView.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductListView.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\TermsAndServices.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\WishList.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutWebsite.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.RazorTargetAssemblyInfo.cache
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.RazorTargetAssemblyInfo.cs
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.Views.pdb
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.CopyComplete
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.dll
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.pdb
+D:\personal\KOF-12-2-2022\KOF\KOF\obj\Debug\netcoreapp3.1\KOF.genruntimeconfig.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\appsettings.json
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\appsettings.Development.json
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.StaticWebAssets.xml
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.exe
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.deps.json
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.runtimeconfig.json
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.runtimeconfig.dev.json
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.pdb
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.Views.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\KOF.Views.pdb
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\AutoMapper.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\MailKit.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\MimeKit.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.AssemblyReference.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.AssemblyInfoInputs.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.AssemblyInfo.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.CoreCompileInputs.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.MvcApplicationPartsAssemblyInfo.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.MvcApplicationPartsAssemblyInfo.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorAssemblyInfo.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorAssemblyInfo.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\staticwebassets\KOF.StaticWebAssets.Manifest.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\staticwebassets\KOF.StaticWebAssets.xml
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\scopedcss\bundle\KOF.styles.css
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.TagHelpers.input.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.TagHelpers.output.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorCoreGenerate.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Checkout.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ContactUs.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\MyAccount.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\Productdetail.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductGridView.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductListView.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\TermsAndServices.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Home\WishList.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutWebsite.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorTargetAssemblyInfo.cache
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.RazorTargetAssemblyInfo.cs
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.Views.pdb
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.csproj.CopyComplete
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.dll
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.pdb
+G:\Projects\KOF-Latest\KOF-Latest\KOF\obj\Debug\netcoreapp3.1\KOF.genruntimeconfig.cache

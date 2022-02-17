@@ -36,7 +36,7 @@ namespace KOF.Services.OrderService
             return "success";
         }
 
-        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote)
+        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote,string Name)
         {
 
             try
@@ -77,6 +77,7 @@ namespace KOF.Services.OrderService
                     OrderStatus = "Pending",
                     OrderType = "Online",
                     CreatedOn = DateTime.Now,
+                    Name=Name
                 };
                 
                 _context.Orders.Add(order);
@@ -108,12 +109,12 @@ namespace KOF.Services.OrderService
              
                 EmailSource useremail2 = new EmailSource()
                 {
-                    EmailTo = "info@khanorganicfoods.pk",
+                    EmailTo = "Khanorganicfoods.pk@gmail.com",
                     UserName = "Admin"
 
                 };
                 _emailservice.SendEmailTemplateAsync(useremail2, mysession, order);
-                var cart = new List<Cart>();
+                 var cart = new List<Cart>();
                 var str = JsonConvert.SerializeObject(cart);
                 _session.SetString("mycart", str);
                 return "Success";
