@@ -140,7 +140,8 @@ namespace KOF.Services.OrderService
             var data = await _context.Orders.Include(x=>x.OrderItems).ThenInclude(x=>x.Product).Select(x=>new { 
               order=x,
               total=_context.OrderItems.Where(z => z.OrderId == x.Id).Sum(x=>x.TotalPrice),
-              orderitems=_context.OrderItems.Where(z=>z.OrderId==x.Id).Select(z=> new { 
+              qty= _context.OrderItems.Where(z => z.OrderId == x.Id).Sum(x => x.Quantity),
+              orderitems =_context.OrderItems.Where(z=>z.OrderId==x.Id).Select(z=> new { 
                 item=z,
                 product=_context.Products.Where(p=>p.Id==z.ProductId).Select(p=>p.Name).SingleOrDefault(),
                   unit = _context.Inventories.Where(q => q.ProductId == z.ProductId).Select(p => p.Unit).SingleOrDefault(),

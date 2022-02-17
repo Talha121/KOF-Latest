@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PosOrderComponent } from './PosOrder/PosOrder.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { ContactusComponent } from './contactus/contactus.component';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     Ng2SearchPipeModule,
     NgxPaginationModule,
     NgxSpinnerModule,
+    NgxPrintModule
   ],
   declarations: [ContactusComponent,OrdersComponent,AllOrdersComponent,OrderStatusComponent,PosOrderComponent],
   providers: [
