@@ -14,6 +14,7 @@ import html2canvas from 'html2canvas';
 export class AllOrdersComponent implements OnInit {
   OrdersList:OrderDto[];
   OrdersList2:any[];
+  OrdersListdata:any[];
   orderamount:number=0;
   orderquntity:number=0;
   SearchOrdersList:OrderDto[];
@@ -35,14 +36,29 @@ export class AllOrdersComponent implements OnInit {
     status: new FormControl('')
   
    });
-   
-  constructor(private SpinnerService: NgxSpinnerService,private orderservice:OrderService,private modalService: NgbModal,) { }
+   Datefilterform:FormGroup=new FormGroup({
+    FromDate: new FormControl(Date),
+    ToDate: new FormControl(Date),
+
+   });
+  constructor(private SpinnerService: NgxSpinnerService,private orderservice:OrderService,private modalService: NgbModal,) { 
+    let currentDate=new Date();
+    this.Datefilterform.setValue({
+      FromDate:currentDate,
+      ToDate:currentDate,
+    });
+  }
 
   ngOnInit() {
    
     this.GetOrders();
  
   
+  }
+     filterdate(){
+     debugger;
+     console.log(this.Datefilterform.value)
+     this.OrdersList2=this.OrdersListdata.filter(function(order) { return new Date(order.createdOn) >= new Date(this.Datefilterform.FromDate)  && new Date(order.createdOn) <= new Date(this.Datefilterform.ToDate) });
   }
   public toCanvas() {
         let elem = document.getElementById("invoice-POS");
@@ -81,36 +97,41 @@ this.orderservice.UpdateOrderStatus(orderinfo.order).subscribe(next => {
    console.log(error);
  });
 
-    // ((this.orderstatus.get('orderId').patchValue(this.statusorderid)));
-    // this.orderservice.UpdateOrderStatus(this.orderstatus.value).subscribe((next:any) => {
-    //  this.OrdersList.forEach(x=>{if(x.orderId==this.statusorderid){x.status=this.orderstatus.value.status}})
-    //   this.modalService.dismissAll();
-    //   this.orderstatus.reset();
 
-    // }, error => {
-    //   console.log(error);
-    // });
     
   }
+  changeorderstatus(data:any,status:string){
+debugger;
+data.orderStatus=status;
+    this.orderservice.UpdateOrderStatus(data).subscribe(next => {
+      this.GetOrders();
+     }, error => {
+       console.log(error);
+     });
+    
+    
+        
+      }
   onOptionsSelected(num){
+    debugger
     if(num=="0"){
-      this.SearchOrdersList=this.OrdersList;
+      this.OrdersList2=this.OrdersListdata;
     }
     if(num=="1"){
       this.status="Pending";
-      this.OrdersList2=this.OrdersList2.filter(x=>x.order.orderStatus ==this.status);
+      this.OrdersList2=this.OrdersListdata.filter(x=>x.order.orderStatus ==this.status);
     }
     if(num=="2"){
       this.status="Active";
-      this.OrdersList2=this.OrdersList2.filter(x=>x.order.orderStatus ==this.status);
+      this.OrdersList2=this.OrdersListdata.filter(x=>x.order.orderStatus ==this.status);
     }
     if(num=="3"){
       this.status="Completed";
-      this.OrdersList2=this.OrdersList2.filter(x=>x.order.orderStatus ==this.status);
+      this.OrdersList2=this.OrdersListdata.filter(x=>x.order.orderStatus ==this.status);
     }
     if(num=="4"){
       this.status="Cancelled";
-      this.OrdersList2=this.OrdersList2.filter(x=>x.order.orderStatus ==this.status);
+      this.OrdersList2=this.OrdersListdata.filter(x=>x.order.orderStatus ==this.status);
     }
 
   }
@@ -127,19 +148,13 @@ this.orderservice.UpdateOrderStatus(orderinfo.order).subscribe(next => {
     
      }
   }
-
-  changestatus(data:any){
  
-    
-    
-
+  changestatus(data:any){
     this.orderservice.UpdateOrderStatus(data).subscribe(next => {
       this.GetOrders();
      }, error => {
        console.log(error);
      });
-  
-
 }
   GetOrders(){
     
@@ -148,7 +163,7 @@ this.orderservice.UpdateOrderStatus(orderinfo.order).subscribe(next => {
       this.OrdersList2=[];
       this.OrdersList2=next;
     
-     // this.SearchOrdersList2=this.OrdersList2;
+      this.OrdersListdata=next;
    
      
     }, error => {

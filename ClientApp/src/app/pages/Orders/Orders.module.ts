@@ -14,6 +14,7 @@ import { PosOrderComponent } from './PosOrder/PosOrder.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { ContactusComponent } from './contactus/contactus.component';
 import { NgxPrintModule } from 'ngx-print';
+import { MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -22,6 +23,10 @@ import { NgxPrintModule } from 'ngx-print';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     HttpClientModule,
     NgxDropzoneModule,
     Ng2SearchPipeModule,

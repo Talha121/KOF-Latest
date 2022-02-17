@@ -11,22 +11,41 @@
      
     </div>
     <div class="col-sm-12" >
-      <div class="col-sm-2" style="float: right;padding-bottom: 8px;">
-        <select class="custom-select"#mySelect
-        (change)='onOptionsSelected(mySelect.value)' >
-          <option selected value="0">All</option>
-         <option value="1">Pending</option>
-         <option value="2">Active</option>
-         <option value="3">Completed</option>
-         <option value="4">Cancelled</option>
-    
-        </select>
+      <div class="container">
+        <div class="row" [formGroup]="Datefilterform">
+          <div class="col-md-4">
+     
+          </div>
+          <div class="col-md-2">
+            <label style="float: left;">From Date</label>
+             <input type="date" class="form-control" formControlName="FromDate">
+          </div>
+          <div class="col-md-2">
+            <label style="float: left;">To Date</label>
+             <input type="date" class="form-control" formControlName="ToDate">
+          </div>
+        
+          <div class="col-md-2" >
+            <br>
+            <select class="custom-select"#mySelect
+            (change)='onOptionsSelected(mySelect.value)' >
+              <option selected value="0">All</option>
+             <option value="1">Pending</option>
+             <option value="2">Active</option>
+             <option value="3">Completed</option>
+             <option value="4">Cancelled</option>
+        
+            </select>
+            </div>
+            <div class="col-md-2">
+              <br>
+            <button type="submit" style="    padding: 5px;" class="btn btn-success" (click)="filterdate()" >filter</button>
+               
+            </div>
         </div>
-      <div class="col-sm-2" style="float: right;">
-        <!-- <input type="text" class="form-control" [(ngModel)]="vendorname" (ngModelChange)="SearchRider()" placeholder="Enter Name to search" >
-            -->
-         
-     </div>
+      </div>
+     
+      
     </div>
   </div>
   <div class="table-responsive" style="padding: 2%;">
@@ -36,9 +55,7 @@
         <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
         <th (click)="Sort('code')">Order No.<i class="fa fa-sort"></i></th>
         <th (click)="Sort('storename')">Contact No<i class="fa fa-sort"></i></th>
-        <th (click)="Sort('storename')">Email<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Order Type<i class="fa fa-sort"></i></th>
-        <th (click)="Sort('createDate')">Order From<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Quantity<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Total Amount<i class="fa fa-sort"></i></th>
         <th (click)="Sort('status')">Status<i class="fa fa-sort"></i></th>
@@ -52,20 +69,23 @@
         <td style="width: 2px;">{{i+1}}</td>
         <td>{{obj.order.orderNumber}}</td>
         <td>{{obj.order.order_phoneno}}</td>
-       <td>{{obj.order.order_emailaddress}}</td> 
         <td>{{obj.order?.orderType}}</td>
-        <td>{{obj.order?.orderFrom}}</td>
         <td>{{obj.qty}}</td>
         <td>{{obj.total}}</td>
-        <td>{{obj.order?.orderStatus}}</td>
+        <td> <p *ngIf="obj.order.orderStatus=='Completed'" class="btn btn-info" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
+          <p *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-danger" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
+          <p *ngIf="obj.order.orderStatus=='Active'" class="btn btn-success" style="    padding: 1px;">{{obj.order?.orderStatus}}</p>  </td>
     
        <td>  
-
-          <i class="fa fa-desktop" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)"  (click)="openOrderDetailLg(OrderDetailcontent,obj)" ></i> 
+          <button class="btn btn-info"  *ngIf="obj.order.orderStatus=='Active'" class="btn btn-info"  style="    padding: 1px;" (click)="changeorderstatus(obj.order,'Completed')" >Complate Now</button>
+          <button class="btn btn-info" *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-success" style="    padding: 1px;"(click)="changeorderstatus(obj.order,'Active')" >Active Now</button>
+       
+          <button class="btn btn-dark" style="    padding: 1px;margin-left: 5px;" >View And Print</button>
+          <!-- <i class="fa fa-desktop" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)"  (click)="openOrderDetailLg(OrderDetailcontent,obj)" ></i> 
        
         <div style="padding: 4px;"*ngIf="obj.order.orderStatus!='Completed'">
           <i class="fa fa-edit" aria-hidden="true" style="font-size:18px;color:rgb(113, 147, 240)"  (click)="openOrderUpdateLg(EditStatuscontent,obj.order)" ></i> 
-        </div>
+        </div> -->
    </td>
       </tr>
      
