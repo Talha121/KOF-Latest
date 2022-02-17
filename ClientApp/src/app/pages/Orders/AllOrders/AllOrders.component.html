@@ -12,17 +12,17 @@
     </div>
     <div class="col-sm-12" >
       <div class="container">
-        <div class="row" [formGroup]="Datefilterform">
+        <div class="row" >
           <div class="col-md-4">
      
           </div>
           <div class="col-md-2">
             <label style="float: left;">From Date</label>
-             <input type="date" class="form-control" formControlName="FromDate">
+             <input type="date" class="form-control" [(ngModel)]="FromDate">
           </div>
           <div class="col-md-2">
             <label style="float: left;">To Date</label>
-             <input type="date" class="form-control" formControlName="ToDate">
+             <input type="date" class="form-control"  [(ngModel)]="toDate">
           </div>
         
           <div class="col-md-2" >
@@ -56,6 +56,7 @@
         <th (click)="Sort('code')">Order No.<i class="fa fa-sort"></i></th>
         <th (click)="Sort('storename')">Contact No<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Order Type<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('createDate')">Created Date<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Quantity<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Total Amount<i class="fa fa-sort"></i></th>
         <th (click)="Sort('status')">Status<i class="fa fa-sort"></i></th>
@@ -70,6 +71,7 @@
         <td>{{obj.order.orderNumber}}</td>
         <td>{{obj.order.order_phoneno}}</td>
         <td>{{obj.order?.orderType}}</td>
+        <td>{{obj.order.createdOn |date :'medium'}}</td>
         <td>{{obj.qty}}</td>
         <td>{{obj.total}}</td>
         <td> <p *ngIf="obj.order.orderStatus=='Completed'" class="btn btn-info" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 

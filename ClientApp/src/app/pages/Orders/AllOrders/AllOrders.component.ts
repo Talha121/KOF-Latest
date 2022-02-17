@@ -36,17 +36,10 @@ export class AllOrdersComponent implements OnInit {
     status: new FormControl('')
   
    });
-   Datefilterform:FormGroup=new FormGroup({
-    FromDate: new FormControl(Date),
-    ToDate: new FormControl(Date),
-
-   });
+   FromDate:Date=new Date();
+   toDate:Date=new Date();
   constructor(private SpinnerService: NgxSpinnerService,private orderservice:OrderService,private modalService: NgbModal,) { 
-    let currentDate=new Date();
-    this.Datefilterform.setValue({
-      FromDate:currentDate,
-      ToDate:currentDate,
-    });
+
   }
 
   ngOnInit() {
@@ -57,8 +50,9 @@ export class AllOrdersComponent implements OnInit {
   }
      filterdate(){
      debugger;
-     console.log(this.Datefilterform.value)
-     this.OrdersList2=this.OrdersListdata.filter(function(order) { return new Date(order.createdOn) >= new Date(this.Datefilterform.FromDate)  && new Date(order.createdOn) <= new Date(this.Datefilterform.ToDate) });
+     console.log(this.FromDate)
+     console.log(this.toDate)
+      this.OrdersList2=this.OrdersListdata.filter(x=>new Date(x.order.createdOn)>= new Date(this.FromDate)&&new Date(x.order.createdOn)<=new Date(this.FromDate) );
   }
   public toCanvas() {
         let elem = document.getElementById("invoice-POS");
