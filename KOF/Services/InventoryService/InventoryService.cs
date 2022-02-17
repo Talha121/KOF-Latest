@@ -2,7 +2,9 @@
 using KOF.Models;
 using KOF.Services.GenericService;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,30 +16,98 @@ namespace KOF.Services.InventoryService
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ApplicationDbContext _context;
-        public InventoryService(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment) : base(context)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private ISession _session => _httpContextAccessor.HttpContext.Session;
+        public InventoryService(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor) : base(context)
         {
             _webHostEnvironment = webHostEnvironment;
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<int> addtocart(int inventoryid, int productid, int Qty, int userid,string unit)
         {
             var price = 0;
             var inv = _context.Inventories.Where(x=>x.Id==inventoryid).SingleOrDefault();
-            var cartinfo = _context.Carts.Where(x => x.inventoryId == inventoryid && x.ProductId == productid && x.unit == unit&&x.UserId==userid).SingleOrDefault();
-            if(cartinfo !=null)
+            var cart = new List<Cart>();
+          
+           var cartinfo=  _session.GetString("mycart");
+          
+            if (cartinfo != null)
             {
-                cartinfo.Quantity=cartinfo.Quantity+Qty;
-                cartinfo.TotalPrice = cartinfo.Quantity * cartinfo.PerUnitPrice;
-                _context.Carts.Update(cartinfo);
-                _context.SaveChanges();
+                var mysession = JsonConvert.DeserializeObject<IEnumerable<Cart>>(cartinfo).ToList();
+                var sdata = mysession.Where(x => x.inventoryId == inventoryid).FirstOrDefault();
+                if (sdata != null)
+                {
+                    if(sdata.unit==unit)
+                    {
+                        sdata.Quantity = sdata.Quantity + Qty;
+                        sdata.TotalPrice = sdata.Quantity * sdata.PerUnitPrice;
+                        var rs = mysession.Where(x => x.inventoryId == inventoryid).FirstOrDefault();
+
+                        mysession.Remove(rs);
+                        mysession.Add(sdata);
+                        var str = JsonConvert.SerializeObject(mysession);
+                        _session.SetString("mycart", str);
+                    }
+                    else
+                    {
+                        if (unit == "1/2 Kg")
+                        {
+                            price = (inv.PricePerUnit / 2);
+                        }
+                        else
+                        {
+                            price = inv.PricePerUnit;
+                        }
+                        Cart obj = new Cart
+                        {
+                            ProductId = productid,
+                            unit = unit,
+                            inventoryId = inventoryid,
+                            Quantity = Qty,
+                            PerUnitPrice = price,
+                            TotalPrice = price * Qty
+
+                        };
+                        mysession.Add(obj);
+                        var str = JsonConvert.SerializeObject(mysession);
+                        _session.SetString("mycart", str);
+                    }
+                 
+                }
+                else
+                {
+                    if (unit == "1/2 Kg")
+                    {
+                        price = (inv.PricePerUnit / 2);
+                    }
+                    else
+                    {
+                        price = inv.PricePerUnit;
+                    }
+                    Cart obj = new Cart
+                    {
+                        ProductId = productid,
+                        unit = unit,
+                        inventoryId = inventoryid,
+                        Quantity = Qty,
+                        PerUnitPrice = price,
+                        TotalPrice = price * Qty
+
+                    };                  
+                    mysession.Add(obj);
+                    var str = JsonConvert.SerializeObject(mysession);
+                    _session.SetString("mycart", str);
+                }
+            
 
             }
             else
             {
-                if(unit== "1/2 Kg")
+                if (unit == "1/2 Kg")
                 {
-                    price=(inv.PricePerUnit / 2);
+                    price = (inv.PricePerUnit / 2);
                 }
                 else
                 {
@@ -46,18 +116,17 @@ namespace KOF.Services.InventoryService
                 Cart obj = new Cart
                 {
                     ProductId = productid,
-                    UserId = userid,
-                    unit=unit,
+                    unit = unit,
                     inventoryId = inventoryid,
                     Quantity = Qty,
                     PerUnitPrice = price,
                     TotalPrice = price * Qty
-
                 };
-                await _context.Carts.AddAsync(obj);
-                await _context.SaveChangesAsync();
+                cart.Add(obj);
+                var str = JsonConvert.SerializeObject(cart);
+                _session.SetString("mycart", str);
             }
-      
+
             return productid;
         }
 
@@ -92,18 +161,24 @@ namespace KOF.Services.InventoryService
         public async Task<int> removecart(int id)
         {
          
-            try
+           
+                var cartinfo = _session.GetString("mycart");
+
+            if (cartinfo != null)
             {
-                var data =  _context.Carts.Find(id);
-                _context.Carts.Remove(data);
-                 _context.SaveChanges();
+                var mysession = JsonConvert.DeserializeObject<IEnumerable<Cart>>(cartinfo).ToList();
+                var sdata = mysession.Where(x => x.inventoryId == id).FirstOrDefault();
+                if (sdata != null)
+                {
+
+                    mysession.Remove(sdata);
+
+                    var str = JsonConvert.SerializeObject(mysession);
+                    _session.SetString("mycart", str);
+                };
+
+
             }
-            catch (Exception ex)
-            {
-                var dat = ex.Message;
-                throw;
-            }
-     
             return 0;
 
         }

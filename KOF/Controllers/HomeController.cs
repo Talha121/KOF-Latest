@@ -89,21 +89,25 @@ namespace KOF.Controllers
         {
             return View();
         }
-        [Authorize]
+     
         public IActionResult Checkout()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Checkout(string   streadaddress,string homeadderess,string city,string phone,string    email,string    Ordernote,int userid)
+        public IActionResult Checkout(string   streadaddress,string homeadderess,string city,string phone,string    email,string  Ordernote,string Name)
         {
-           var data= _orderserviceService.Checkout(streadaddress, homeadderess,  city,  phone,     email,     Ordernote,  userid);
+           var data= _orderserviceService.Checkout(streadaddress, homeadderess,  city,  phone,  email, Ordernote,Name);
 
 
             ViewBag.orderadded = "Success";
             return View();
         }
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult TermsAndServices()
         {
             return View();
         }

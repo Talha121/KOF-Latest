@@ -1,4 +1,4 @@
-﻿using KOF.EntityConfigurations;
+﻿
 using KOF.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

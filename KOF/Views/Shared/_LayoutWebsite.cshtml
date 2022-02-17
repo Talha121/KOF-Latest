@@ -1,24 +1,19 @@
-﻿@inject KOF.Context.ApplicationDbContext _dbContext
-@using Microsoft.AspNetCore.Identity
+﻿@inject KOF.Context.ApplicationDbContext _dbContext;
+@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@using Newtonsoft.Json;
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
-
-@{
-    @inject UserManager<IdentityUser> UserManager
-    var categories = _dbContext.Categories.Where(x => x.Status == true).ToList();
+@{ var categories = _dbContext.Categories.Where(x => x.Status == true).ToList();
     List<Cart> mycart = new List<Cart>();
 
-    @if (SignInManager.IsSignedIn(User))
+    var data = @HttpContextAccessor.HttpContext.Session.GetString("mycart");
+
+    if (data != null)
     {
-        var netuserid = UserManager.GetUserId(User);
-        var username = _dbContext.AllUsers.Where(x => x.IdentityUserId == netuserid).SingleOrDefault().Id;
-        mycart = _dbContext.Carts.Where(x => x.UserId == username).ToList();
-
+      var data2=   JsonConvert.DeserializeObject<IEnumerable<Cart>>(data);
+        mycart.AddRange(data2);
     }
-
-    }
-
+}
     <!DOCTYPE html>
     <html lang="en-US">
     <head>
@@ -26,7 +21,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>KOF - Khan Organic Food</title>
         <meta name='robots' content='noindex, nofollow' />
-      
+
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 
         <link rel="alternate" type="application/rss+xml" title="Qualis - Responsive eCommerce Theme &raquo; Feed" href="https://klbtheme.com//WebContent/qualis/feed/" />
@@ -755,7 +750,7 @@
         <script data-wpfc-render="false">var Wpfcll = { s: [], osl: 0, scroll: false, i: function () { Wpfcll.ss(); window.addEventListener('load', function () { window.addEventListener("DOMSubtreeModified", function (e) { Wpfcll.osl = Wpfcll.s.length; Wpfcll.ss(); if (Wpfcll.s.length > Wpfcll.osl) { Wpfcll.ls(false); } }, false); Wpfcll.ls(true); }); window.addEventListener('scroll', function () { Wpfcll.scroll = true; Wpfcll.ls(false); }); window.addEventListener('resize', function () { Wpfcll.scroll = true; Wpfcll.ls(false); }); window.addEventListener('click', function () { Wpfcll.scroll = true; Wpfcll.ls(false); }); }, c: function (e, pageload) { var w = document.documentElement.clientHeight || body.clientHeight; var n = 0; if (pageload) { n = 0; } else { n = (w > 800) ? 800 : 200; n = Wpfcll.scroll ? 800 : n; } var er = e.getBoundingClientRect(); var t = 0; var p = e.parentNode ? e.parentNode : false; if (typeof p.getBoundingClientRect == "undefined") { var pr = false; } else { var pr = p.getBoundingClientRect(); } if (er.x == 0 && er.y == 0) { for (var i = 0; i < 10; i++) { if (p) { if (pr.x == 0 && pr.y == 0) { if (p.parentNode) { p = p.parentNode; } if (typeof p.getBoundingClientRect == "undefined") { pr = false; } else { pr = p.getBoundingClientRect(); } } else { t = pr.top; break; } } }; } else { t = er.top; } if (w - t + n > 0) { return true; } return false; }, r: function (e, pageload) { var s = this; var oc, ot; try { oc = e.getAttribute("data-wpfc-original-src"); ot = e.getAttribute("data-wpfc-original-srcset"); originalsizes = e.getAttribute("data-wpfc-original-sizes"); if (s.c(e, pageload)) { if (oc || ot) { if (e.tagName == "DIV" || e.tagName == "A" || e.tagName == "SPAN") { e.style.backgroundImage = "url(" + oc + ")"; e.removeAttribute("data-wpfc-original-src"); e.removeAttribute("data-wpfc-original-srcset"); e.removeAttribute("onload"); } else { if (oc) { e.setAttribute('src', oc); } if (ot) { e.setAttribute('srcset', ot); } if (originalsizes) { e.setAttribute('sizes', originalsizes); } if (e.getAttribute("alt") && e.getAttribute("alt") == "blank") { e.removeAttribute("alt"); } e.removeAttribute("data-wpfc-original-src"); e.removeAttribute("data-wpfc-original-srcset"); e.removeAttribute("data-wpfc-original-sizes"); e.removeAttribute("onload"); if (e.tagName == "IFRAME") { var y = "https://www.youtube.com/embed/"; if (navigator.userAgent.match(/\sEdge?\/\d/i)) { e.setAttribute('src', e.getAttribute("src").replace(/.+\/templates\/youtube\.html\#/, y)); } e.onload = function () { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(e).parent().fitVids({ customSelector: "iframe[src]" }); } } var s = e.getAttribute("src").match(/templates\/youtube\.html\#(.+)/); if (s) { try { var i = e.contentDocument || e.contentWindow; if (i.location.href == "about:blank") { e.setAttribute('src', y + s[1]); } } catch (err) { e.setAttribute('src', y + s[1]); } } } } } } else { if (e.tagName == "NOSCRIPT") { if (jQuery(e).attr("data-type") == "wpfc") { e.removeAttribute("data-type"); jQuery(e).after(jQuery(e).text()); } } } } } catch (error) { console.log(error); console.log("==>", e); } }, ss: function () { var i = Array.prototype.slice.call(document.getElementsByTagName("img")); var f = Array.prototype.slice.call(document.getElementsByTagName("iframe")); var d = Array.prototype.slice.call(document.getElementsByTagName("div")); var a = Array.prototype.slice.call(document.getElementsByTagName("a")); var s = Array.prototype.slice.call(document.getElementsByTagName("span")); var n = Array.prototype.slice.call(document.getElementsByTagName("noscript")); this.s = i.concat(f).concat(d).concat(a).concat(s).concat(n); }, ls: function (pageload) { var s = this;[].forEach.call(s.s, function (e, index) { s.r(e, pageload); }); } }; document.addEventListener('DOMContentLoaded', function () { wpfci(); }); function wpfci() { Wpfcll.i(); }</script>
     </head>
     <body class="home page-template page-template-frontpage page-template-frontpage-php page page-id-28 theme-qualis mmm mega_main_menu-2-1-7 woocommerce-no-js tinvwl-theme-style wpb-js-composer js-comp-ver-6.8.0 vc_responsive">
-      
+
         <div id="preloader"></div>
         <div id="page">
             <header class="sticky-klb-header">
@@ -764,7 +759,7 @@
                         <div class="header-container row">
                             <div class="logo">
                                 <a href="/Home/Index" title="KOF &#8211; Khan Organic Foods">
-                                    <div><img src="/WebContent/qualis/wp-content/uploads/2018/12/navlogo.png" height="65" width="100" alt="KOF &#8211; Khan Organic Food"></div>
+                                    <div><img src="/WebContent/qualis/wp-content/uploads/2018/12/navlogo.png" alt="KOF &#8211; Khan Organic Food"></div>
                                 </a>
                             </div>
                             <div class="fl-nav-menu">
@@ -780,7 +775,7 @@
                                                     <span class="nav_logo"> <span class="mobile_toggle" role="menu" data-target="#main_ul-main-menu" aria-expanded="false" aria-controls="main_ul-main-menu"> <span class="mobile_button"> Menu &nbsp; <span class="symbol_menu">&equiv;</span> <span class="symbol_cross">&#x2573;</span> </span> </span> </span>
                                                     <ul id="main_ul-main-menu" class="mega_main_menu_ul" role="menubar" aria-label="Menu">
                                                         <li id="menu-item-248" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-248 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="/Home/Index" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text"> Home </span> </span> </a> </li>
-                                                         <li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-418 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="/Home/ProductGridView" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text"> Products </span> </span> </a> </li>
+                                                        <li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-418 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="/Home/ProductGridView" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text"> Products </span> </span> </a> </li>
 
                                                         <li id="menu-item-249" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-249 parent drop-menu default_dropdown default_style drop_to_right submenu_default_width columns1">
                                                             <a href="#" class="item_link disable_icon" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text"> Categories </span> </span> </a>
@@ -788,20 +783,12 @@
                                                                 @foreach (var item in categories)
                                                                 {
 
-                                                                    <li id="menu-item-426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-426 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="@Url.Action("ProductGridView","Home",new {id=item.Id })" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text">@item.Name </span> </span> </a> </li>
-
-                                                                }
-                                                              </ul>
+                                                    <li id="menu-item-426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-426 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="@Url.Action("ProductGridView","Home",new {id=item.Id })" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text">@item.Name </span> </span> </a> </li>}
+                                                            </ul>
                                                         </li>
                                                         <li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="/Home/about" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text"> About Us </span> </span> </a> </li>
                                                         <li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="/Home/ContactUs" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content"> <span class="link_text"> Contact Us </span> </span> </a> </li>
-                                                        @if (SignInManager.IsSignedIn(User))
-                                                        {
-                                                            var netuserid = UserManager.GetUserId(User);
-                                                            var username = _dbContext.AllUsers.Where(x => x.IdentityUserId == netuserid).SingleOrDefault().Name;
-                                                            <li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429 default_dropdown default_style drop_to_right submenu_default_width columns1"> <a href="/Home/ContactUs" class="item_link disable_icon" role="menuitem" tabindex="0"> <i></i> <span class="link_content" style="margin-left:150px"> <span class="link_text" >Hi!. @username </span> </span> </a> </li>
 
-                                                        }
                                                     </ul>
                                                 </div>
                                             </div>
@@ -810,30 +797,21 @@
                                 </nav>
                             </div>
                             <div class="fl-header-right">
-                                <div class="fl-links">
+                                @*<div class="fl-links">
                                     <div class="no-js">
                                         <a title="Company" class="clicker"></a>
                                         <div class="fl-nav-links">
                                             <ul id="menu-right-menu" class="links">
-                                                @if (SignInManager.IsSignedIn(User))
-                                                {
-                                                    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                                        @*<li id="menu-item-432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-432"><a asp-page="/Account/Register">Register</a></li>*@
-                                                        <button id="logout" type="submit">Logout</button>
-                                                    </form>
-                                                    @*<li id="menu-item-432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-432"><a asp-page="/Account/Register">Register</a></li>*@
-                                                }
-                                                else
-                                                {
-                                                    <li id="menu-item-432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-432"><a asp-page="/Account/Register">Register</a></li>
-                                                    <li id="menu-item-432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-432"><a asp-page="/Account/Login">Login</a></li>
-                                                }
+
+                         
+                                                <li id="menu-item-432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-432"><a href="/Home/Checkout" class="button wc-forward">View cart</a></li>
+
 
 
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div>*@
                                 <div class="fl-cart-contain">
                                     <div class="mini-cart">
                                         <div class="basket">
@@ -846,47 +824,48 @@
                                             {
 
 
-                                                <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
-                                            }
-                                            else
-                                            {
-                                                <div class="block-subtitle">
-                                                    <div class="top-subtotal">@mycart.Count() items, <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs.</span>@mycart.Sum(x => x.TotalPrice)</bdi></span></span> </div>
-                                                </div>
-                                                foreach (var item in mycart)
+                                <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p> }
+                            else
+                            {
+                <div class="block-subtitle">
+                    <div class="top-subtotal">@mycart.Count() items, <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs.</span>@mycart.Sum(x => x.TotalPrice)</bdi></span></span> </div>
+                </div> foreach (var item in mycart)
                                                 {
                                                     var productname = _dbContext.Products.Where(x => x.Id == item.ProductId).SingleOrDefault().Name;
 
-                                                    var src = _dbContext.ProductImages.Where(x => x.ProductId == item.ProductId).FirstOrDefault().ImageUrl;
-                                                    <ul class="mini-products-list woocommerce-mini-cart cart_list product_list_widget ">
-                                                        <li class="item woocommerce-mini-cart-item mini_cart_item">
-                                                            <div class="item-inner">
-                                                                <a class="product-image"href="@Url.Action("Productdetail","Home",new {id=item.inventoryId })">
-                                                                    <img width="80" height="80" src="/Images/ProductImages/@Url.Content(src)" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="/Images/ProductImages/@Url.Content(src) 80w, /Images/ProductImages/@Url.Content(src) 150w,/Images/ProductImages/@Url.Content(src) 300w,/Images/ProductImages/@Url.Content(src) 768w,/Images/ProductImages/@Url.Content(src),/Images/ProductImages/@Url.Content(src),/Images/ProductImages/@Url.Content(src) 99w,/Images/ProductImages/@Url.Content(src) 800w">
-                                                                </a>
-                                                                <div class="product-details">
-                                                                    <div class="access">
+                                                    var checksrc = _dbContext.ProductImages.Any(x => x.ProductId == item.ProductId);
+                                                    var src = "";
+                                                    if (checksrc)
+                                                    {
+                                                        src = _dbContext.ProductImages.Where(x => x.ProductId == item.ProductId).FirstOrDefault().ImageUrl;
+                                                    }
+<ul class="mini-products-list woocommerce-mini-cart cart_list product_list_widget ">
+    <li class="item woocommerce-mini-cart-item mini_cart_item">
+        <div class="item-inner">
+            <a class="product-image" href="@Url.Action("Productdetail","Home",new {id=item.inventoryId })">
+                <img width="80" height="80" src="/Images/ProductImages/@Url.Content(src)" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="/Images/ProductImages/@Url.Content(src) 80w, /Images/ProductImages/@Url.Content(src) 150w,/Images/ProductImages/@Url.Content(src) 300w,/Images/ProductImages/@Url.Content(src) 768w,/Images/ProductImages/@Url.Content(src),/Images/ProductImages/@Url.Content(src),/Images/ProductImages/@Url.Content(src) 99w,/Images/ProductImages/@Url.Content(src) 800w">
+            </a>
+            <div class="product-details">
+                <div class="access">
 
-                                                                        <a href="@Url.Action("removecart","Home",new {id=item.Id})" class="remove remove_from_cart_button btn-remove1" aria-label="Remove this item" data-product_id="94" data-cart_item_key="f4b9ec30ad9f68f89b29639786cb62ef" data-product_sku="K27SA62">×</a>
-                                                                        <span class="quantity">@item.Quantity (@item.unit) × <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs.</span>@item.PerUnitPrice =@(item.PerUnitPrice* item.Quantity)</bdi></span></span>
+                    <a href="@Url.Action("removecart","Home",new {id=item.inventoryId})" class="remove remove_from_cart_button btn-remove1" aria-label="Remove this item" data-product_id="94" data-cart_item_key="f4b9ec30ad9f68f89b29639786cb62ef" data-product_sku="K27SA62">×</a>
+                    <span class="quantity">@item.Quantity (@item.unit) × <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs.</span>@item.PerUnitPrice =@(item.PerUnitPrice* item.Quantity)</bdi></span></span>
 
 
-                                                                        <p class="product-name"><a href="@Url.Action("Productdetail","Home",new {id=item.inventoryId })">@productname</a></p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                }
+                    <p class="product-name"><a href="@Url.Action("Productdetail","Home",new {id=item.inventoryId })">@productname</a></p>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul> }
 
-                                                <p class="woocommerce-mini-cart__buttons buttons"><a href="/Home/Checkout" class="button wc-forward">View cart</a><a href="/Home/Checkout" class="button checkout wc-forward">Checkout</a></p>
-                                            }
+<p class="woocommerce-mini-cart__buttons buttons"><a href="/Home/Checkout" class="button wc-forward">View cart</a><a href="/Home/Checkout" class="button checkout wc-forward">Checkout</a></p>}
 
                                         </div>
                                     </div>
 
                                 </div>
-                           
+
                             </div>
                         </div>
                     </div>
@@ -895,27 +874,7 @@
             @RenderBody()
             <footer>
                 <div class="footer-inner">
-                    <div class="newsletter-row">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col1">
-                                    <div class="newsletter-wrap">
-                                        <h5>NEWSLETTER</h5>
-
-                                        <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-205" method="post" data-id="205" data-name="">
-                                            <div class="mc4wp-form-fields">
-                                                <div id="container_form_news">
-                                                    <div id="container_form_news2"> <input type="email" id="newsletter1" name="EMAIL" placeholder="Your email address" required /> <button type="submit" class="button subscribe"><span>Subscribe</span></button></div>
-                                                </div>
-                                            </div>
-                                            <label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1643209383" /><input type="hidden" name="_mc4wp_form_id" value="205" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
-                                            <div class="mc4wp-response"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="footer-middle">
                         <div class="container">
                             <div class="row">
@@ -941,7 +900,7 @@
                                             <div class="contacts-info">
                                                 <div class="phone-footer">
                                                     <i class="fa fa-map-marker"></i>
-                                                    <p>G-200 <br> valancia town, Lahore 54000 Pakistan</p>
+                                                    <p>Lahore, Pakistan</p>
                                                 </div>
                                                 <div class="phone-footer">
                                                     <i class="fa fa-phone"></i>
@@ -962,9 +921,9 @@
                 <div class="footer-top">
                     <div class="container">
                         <div class="row">
-                       
+
                             <div class="col-lg-12 coppyright"> © 2021 KOF. All Rights Reserved.</div>
-                      
+
                         </div>
                     </div>
                 </div>

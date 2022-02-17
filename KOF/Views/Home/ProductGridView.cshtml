@@ -109,13 +109,18 @@
                                         }).ToList();
                                         foreach (var item in data)
                                         {
+                                            var checksrc = _context.ProductImages.Any(x => x.ProductId == item.productinfo.Id);
+                                            var src = "";
+                                            if(checksrc)
+                                            {
+                                                 src = _context.ProductImages.Where(x => x.ProductId == item.productinfo.Id).FirstOrDefault().ImageUrl;
+                                            }
 
-                                            var src = _context.ProductImages.Where(x => x.ProductId == item.productinfo.Id).FirstOrDefault().ImageUrl;
                                             <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-12">
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="@Url.Action("Productdetail","Home",new {id=item.invinfo.Id })" title="Fresh Organic Mustard Leaves" class="product-image"> <img onload="Wpfcll.r(this,true);" src="/Images/ProductImages/@Url.Content(src)" data-wpfc-original-src="/Images/ProductImages/@Url.Content(src)" alt="No Imge"></a>
+                                                            <a href="@Url.Action("Productdetail","Home",new {id=item.invinfo.Id })" title="@item.productinfo.Name" class="product-image"> <img onload="Wpfcll.r(this,true);" src="/Images/ProductImages/@Url.Content(src)" data-wpfc-original-src="/Images/ProductImages/@Url.Content(src)" alt="@item.productinfo.Name image"></a>
                                                             @*<div class="sale-label sale-top-left">-34%</div>*@
                                                             <div class="item-box-hover">
                                                                 @*<div class="box-inner">
@@ -137,7 +142,7 @@
                                                     </div>
                                                     <div class="item-info">
                                                         <div class="info-inner">
-                                                            <div class="item-title"><a href="@Url.Action("Productdetail","Home",new {id=item.invinfo.Id })" title="Fresh Organic Mustard Leaves">@item.productinfo.Name</a></div>
+                                                            <div class="item-title"><a href="@Url.Action("Productdetail","Home",new {id=item.invinfo.Id })" title="@item.productinfo.Name">@item.productinfo.Name</a></div>
                                                             <div class="item-content">
                                                                 <div class="rating">
                                                                     <div class="ratings">

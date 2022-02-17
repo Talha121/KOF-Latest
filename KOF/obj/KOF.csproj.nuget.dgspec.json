@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\personal\\KOF-12-2-2022\\KOF\\KOF\\KOF.csproj": {}
+    "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj": {}
   },
   "projects": {
-    "D:\\personal\\KOF-12-2-2022\\KOF\\KOF\\KOF.csproj": {
+    "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\personal\\KOF-12-2-2022\\KOF\\KOF\\KOF.csproj",
+        "projectUniqueName": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj",
         "projectName": "KOF",
-        "projectPath": "D:\\personal\\KOF-12-2-2022\\KOF\\KOF\\KOF.csproj",
-        "packagesPath": "C:\\Users\\Talha Ashraf\\.nuget\\packages\\",
-        "outputPath": "D:\\personal\\KOF-12-2-2022\\KOF\\KOF\\obj\\",
+        "projectPath": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Talha Ashraf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[3.1.21, )"
             },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.22, )"
@@ -84,6 +88,10 @@
               "target": "Package",
               "version": "[3.1.5, )"
             },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -107,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

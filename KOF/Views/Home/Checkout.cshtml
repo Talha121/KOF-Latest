@@ -1,22 +1,25 @@
 ﻿@inject KOF.Context.ApplicationDbContext _dbContext
-@using Microsoft.AspNetCore.Identity
-
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
-@{
-    ViewData["Title"] = "MyAccount";
+@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@using Newtonsoft.Json;
+@{ ViewData["Title"] = "MyAccount";
     Layout = "~/Views/Shared/_LayoutWebsite.cshtml";
-    var mycart = _dbContext.Carts.ToList();
-    var netuserid = UserManager.GetUserId(User);
-    var userid = _dbContext.AllUsers.Where(x => x.IdentityUserId == netuserid).SingleOrDefault().Id;
 
-}
+
+    List<Cart> mycart = new List<Cart>();
+
+    var data = @HttpContextAccessor.HttpContext.Session.GetString("mycart");
+
+    if (data != null)
+    {
+        var data2 = JsonConvert.DeserializeObject<IEnumerable<Cart>>(data);
+        mycart.AddRange(data2);
+    } }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css" integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.all.min.js" integrity="sha512-IZ95TbsPTDl3eT5GwqTJH/14xZ2feLEGJRbII6bRKtE/HC6x3N4cHye7yyikadgAsuiddCY2+6gMntpVHL1gHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-@{
-    if (ViewBag.orderadded == "Success")
+@{ if (ViewBag.orderadded == "Success")
     {
         <script>
 
@@ -30,8 +33,7 @@
 
 
         </script>
-    }
-}
+ } }
 <div class="page-heading">
     <div class="page-title">
         <h2>Cart</h2>
@@ -43,32 +45,11 @@
             <section class="col-main col-sm-12">
                 <div class="one-page-checkout">
                     <div class="woocommerce">
-                        <div class="woocommerce-notices-wrapper"></div><div class="woocommerce-form-coupon-toggle">
 
-                            <div class="woocommerce-info">
-                                Have a coupon? <a href="#" class="showcoupon">Click here to enter your code</a>
-                            </div>
-                        </div>
-
-                        <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
-
-                            <p>If you have a coupon code, please apply it below.</p>
-
-                            <p class="form-row form-row-first">
-                                <input type="text" name="coupon_code" class="input-text" placeholder="Coupon code" id="coupon_code" value="">
-                            </p>
-
-                            <p class="form-row form-row-last">
-                                <button type="submit" class="button" name="apply_coupon" value="Apply coupon">Apply coupon</button>
-                            </p>
-
-                            <div class="clear"></div>
-                        </form>
-                        <div class="woocommerce-notices-wrapper"></div>
-                        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="/Home/Checkout" novalidate="novalidate">
+                        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="/Home/Checkout">
 
 
-                            <input type="hidden" name="userid" value="@userid" />
+
                             <div class="col2-set" id="customer_details">
                                 <div class="col-1">
                                     <div class="woocommerce-billing-fields">
@@ -79,12 +60,12 @@
 
                                         <div class="woocommerce-billing-fields__field-wrapper">
 
-
-                                            <p class="form-row address-field validate-required form-row-wide" id="billing_address_1_field" data-priority="50"><label for="billing_address_1" class="">Street address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="streadaddress" id="billing_address_1" placeholder="House number and street name" value="" autocomplete="address-line1" data-placeholder="House number and street name"></span></p>
+                                            <p class="form-row address-field validate-required form-row-wide" id="billing_address_0_field" data-priority="50"><label for="billing_address_0" class="">Full Name&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input required type="text" class="input-text " name="Name" id="billing_address_0" placeholder="Full Name" ></span></p>
+                                            <p class="form-row address-field validate-required form-row-wide" id="billing_address_1_field" data-priority="50"><label for="billing_address_1" class="">Street address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input required type="text" class="input-text " name="streadaddress" id="billing_address_1" placeholder="House number and street name" value="" autocomplete="address-line1" data-placeholder="House number and street name"></span></p>
                                             <p class="form-row address-field form-row-wide" id="billing_address_2_field" data-priority="60"><label for="billing_address_2" class="screen-reader-text">Apartment, suite, unit, etc.&nbsp;<span class="optional">(optional)</span></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="homeadderess" id="billing_address_2" placeholder="Apartment, suite, unit, etc. (optional)" value="" autocomplete="address-line2" data-placeholder="Apartment, suite, unit, etc. (optional)"></span></p>
-                                            <p class="form-row address-field validate-required form-row-wide" id="billing_city_field" data-priority="70" data-o_class="form-row form-row-wide address-field validate-required"><label for="billing_city" class="">Town / City&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="city" id="billing_city" placeholder="" value="" autocomplete="address-level2"></span></p>
-                                            <p class="form-row form-row-wide validate-required validate-phone" id="billing_phone_field" data-priority="100"><label for="billing_phone" class="">Phone&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="tel" class="input-text " name="phone" id="billing_phone" placeholder="" value="" autocomplete="tel"></span></p>
-                                            <p class="form-row form-row-wide validate-required validate-email" id="billing_email_field" data-priority="110"><label for="billing_email" class="">Email address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="email" class="input-text " name="email" id="billing_email" placeholder="" value="" autocomplete="email"></span></p>
+                                            <p class="form-row address-field validate-required form-row-wide" id="billing_city_field" data-priority="70" data-o_class="form-row form-row-wide address-field validate-required"><label for="billing_city" class="">Town / City&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input required type="text" class="input-text " name="city" id="billing_city" placeholder="" value="" autocomplete="address-level2"></span></p>
+                                            <p class="form-row form-row-wide validate-required validate-phone" id="billing_phone_field" data-priority="100"><label for="billing_phone" class="">Phone&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="tel" class="input-text " required name="phone" id="billing_phone" placeholder="" value="" autocomplete="tel"></span></p>
+                                            <p class="form-row form-row-wide validate-required validate-email" id="billing_email_field" data-priority="110"><label for="billing_email" class="">Email address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="email" required class="input-text " name="email" id="billing_email" placeholder="" value="" autocomplete="email"></span></p>
                                         </div>
 
                                     </div>
@@ -137,8 +118,7 @@
                                                     <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs : </span>@(item.Quantity*item.PerUnitPrice)</bdi></span>
                                                 </td>
                                             </tr>
-
-                                        }
+}
 
                                     </tbody>
                                     <tfoot>
@@ -163,28 +143,7 @@
                                 </table>
 
                                 <div id="payment" class="woocommerce-checkout-payment">
-                                    <ul class="wc_payment_methods payment_methods methods">
-                                        <li class="wc_payment_method payment_method_bacs">
-                                            <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked" data-order_button_text="">
 
-                                            <label for="payment_method_bacs">
-                                                Direct bank transfer
-                                            </label>
-                                            <div class="payment_box payment_method_bacs">
-                                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-                                            </div>
-                                        </li>
-                                        <li class="wc_payment_method payment_method_cod">
-                                            <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method" value="cod" data-order_button_text="">
-
-                                            <label for="payment_method_cod">
-                                                Cash on delivery
-                                            </label>
-                                            <div class="payment_box payment_method_cod" style="display:none;">
-                                                <p>Pay with cash upon delivery.</p>
-                                            </div>
-                                        </li>
-                                    </ul>
                                     <div class="form-row place-order">
                                         <noscript>
                                             Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.			<br /><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Update totals">Update totals</button>
@@ -192,14 +151,12 @@
 
                                         <div class="woocommerce-terms-and-conditions-wrapper">
                                             <div class="woocommerce-privacy-policy-text">
-                                                <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="https://klbtheme.com/qualis/?page_id=3" class="woocommerce-privacy-policy-link" target="_blank">privacy policy</a>.</p>
+                                                <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a class="woocommerce-privacy-policy-link" target="_blank">privacy policy</a>.</p>
                                             </div>
                                         </div>
                                         @if (mycart.Count() > 0)
                                         {
-                                            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">Place order</button>
-
-                                        }
+                                            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">Place order</button>}
 
 
                                     </div>
@@ -217,39 +174,3 @@
     </div>
 </div>
 <!--WPFC_FOOTER_START-->
-<div class="container">
-    <div class="row our-features-box">
-        <ul>
-            <li>
-                <div class="feature-box klb-footer-box">
-                    <i class="fa fa-truck"></i>
-                    <div class="content">FREE SHIPPING on order over $99</div>
-                </div>
-            </li>
-            <li>
-                <div class="feature-box klb-footer-box">
-                    <i class="fa fa-phone"></i>
-                    <div class="content">HAVE A QUESTIONS? <a href="10800 7890000">+10800 789 0000</a></div>
-                </div>
-            </li>
-            <li>
-                <div class="feature-box klb-footer-box">
-                    <i class="fa fa-usd"></i>
-                    <div class="content">100% MONEY BACK GUARANTEE</div>
-                </div>
-            </li>
-            <li>
-                <div class="feature-box klb-footer-box">
-                    <i class="fa fa-briefcase"></i>
-                    <div class="content">30 DAYS RETURN SERVICE</div>
-                </div>
-            </li>
-            <li class="last">
-                <div class="feature-box">
-                    <a href="#"><i class="fa fa-apple"></i> Download</a>
-                    <a href="#"><i class="fa fa-android"></i> Download</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>

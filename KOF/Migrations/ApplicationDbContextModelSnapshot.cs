@@ -70,6 +70,9 @@ namespace KOF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("AllUserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -94,20 +97,20 @@ namespace KOF.Migrations
                     b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.Property<int>("inventoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("sessionid")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("unit")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("AllUserId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ProductId");
 
                     b.HasIndex("inventoryId");
 
@@ -233,6 +236,9 @@ namespace KOF.Migrations
                     b.Property<string>("HouseNo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("OrderFrom")
                         .HasColumnType("nvarchar(max)");
 
@@ -260,7 +266,7 @@ namespace KOF.Migrations
                     b.Property<int>("TotalAmount")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.Property<string>("order_streataddress")
@@ -652,15 +658,13 @@ namespace KOF.Migrations
 
             modelBuilder.Entity("KOF.Models.Cart", b =>
                 {
+                    b.HasOne("KOF.Models.AllUser", null)
+                        .WithMany("Carts")
+                        .HasForeignKey("AllUserId");
+
                     b.HasOne("KOF.Models.Product", "Product")
                         .WithMany("Carts")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("KOF.Models.AllUser", "User")
-                        .WithMany("Carts")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -690,9 +694,7 @@ namespace KOF.Migrations
                 {
                     b.HasOne("KOF.Models.AllUser", "User")
                         .WithMany("Orders")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("KOF.Models.OrderItem", b =>

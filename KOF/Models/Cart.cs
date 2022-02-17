@@ -10,15 +10,14 @@ namespace KOF.Models
     {
         public int ProductId { get; set; }
         public int inventoryId { get; set; }
-        public int UserId { get; set; }
+        public string sessionid { get; set; }
         public string unit { get; set; }
         public int Quantity { get; set; }
         public int PerUnitPrice { get; set; }
         public int PerUnitCost { get; set; }
         public int TotalPrice { get; set; }
         public int TotalCost { get; set; }
-        [JsonIgnore]
-        public virtual AllUser User { get; set; }
+      
 
         [JsonIgnore]
         public virtual Inventory Inventory { get; set; }
