@@ -11,22 +11,41 @@
      
     </div>
     <div class="col-sm-12" >
-      <div class="col-sm-2" style="float: right;padding-bottom: 8px;">
-        <select class="custom-select"#mySelect
-        (change)='onOptionsSelected(mySelect.value)' >
-          <option selected value="0">All</option>
-         <option value="1">Pending</option>
-         <option value="2">Active</option>
-         <option value="3">Completed</option>
-         <option value="4">Cancelled</option>
-    
-        </select>
+      <div class="container">
+        <div class="row" >
+          <div class="col-md-4">
+     
+          </div>
+          <div class="col-md-2">
+            <label style="float: left;">From Date</label>
+             <input type="date" class="form-control" [(ngModel)]="FromDate">
+          </div>
+          <div class="col-md-2">
+            <label style="float: left;">To Date</label>
+             <input type="date" class="form-control"  [(ngModel)]="toDate">
+          </div>
+        
+          <div class="col-md-2" >
+            <br>
+            <select class="custom-select"#mySelect
+            (change)='onOptionsSelected(mySelect.value)' >
+              <option selected value="0">All</option>
+             <option value="1">Pending</option>
+             <option value="2">Active</option>
+             <option value="3">Completed</option>
+             <option value="4">Cancelled</option>
+        
+            </select>
+            </div>
+            <div class="col-md-2">
+              <br>
+            <button type="submit" style="    padding: 5px;" class="btn btn-success" (click)="filterdate()" >filter</button>
+               
+            </div>
         </div>
-      <div class="col-sm-2" style="float: right;">
-        <!-- <input type="text" class="form-control" [(ngModel)]="vendorname" (ngModelChange)="SearchRider()" placeholder="Enter Name to search" >
-            -->
-         
-     </div>
+      </div>
+     
+      
     </div>
   </div>
   <div class="table-responsive" style="padding: 2%;">
@@ -36,9 +55,9 @@
         <th (click)="Sort('id')">#<i class="fa fa-sort"></i></th>
         <th (click)="Sort('code')">Order No.<i class="fa fa-sort"></i></th>
         <th (click)="Sort('storename')">Contact No<i class="fa fa-sort"></i></th>
-        <th (click)="Sort('storename')">Email<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Order Type<i class="fa fa-sort"></i></th>
-        <th (click)="Sort('createDate')">Order From<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('createDate')">Created Date<i class="fa fa-sort"></i></th>
+        <th (click)="Sort('createDate')">Quantity<i class="fa fa-sort"></i></th>
         <th (click)="Sort('createDate')">Total Amount<i class="fa fa-sort"></i></th>
         <th (click)="Sort('status')">Status<i class="fa fa-sort"></i></th>
       <th (click)="Sort('Action')">Action<i class="fa fa-sort"></i></th>
@@ -51,19 +70,24 @@
         <td style="width: 2px;">{{i+1}}</td>
         <td>{{obj.order.orderNumber}}</td>
         <td>{{obj.order.order_phoneno}}</td>
-       <td>{{obj.order.order_emailaddress}}</td> 
         <td>{{obj.order?.orderType}}</td>
-        <td>{{obj.order?.orderFrom}}</td>
+        <td>{{obj.order.createdOn |date :'medium'}}</td>
+        <td>{{obj.qty}}</td>
         <td>{{obj.total}}</td>
-        <td>{{obj.order?.orderStatus}}</td>
+        <td> <p *ngIf="obj.order.orderStatus=='Completed'" class="btn btn-info" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
+          <p *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-danger" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
+          <p *ngIf="obj.order.orderStatus=='Active'" class="btn btn-success" style="    padding: 1px;">{{obj.order?.orderStatus}}</p>  </td>
     
        <td>  
-
-          <i class="fa fa-desktop" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)"  (click)="openOrderDetailLg(OrderDetailcontent,obj)" ></i> 
+          <button class="btn btn-info"  *ngIf="obj.order.orderStatus=='Active'" class="btn btn-info"  style="    padding: 1px;" (click)="changeorderstatus(obj.order,'Completed')" >Complate Now</button>
+          <button class="btn btn-info" *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-success" style="    padding: 1px;"(click)="changeorderstatus(obj.order,'Active')" >Active Now</button>
+       
+          <button class="btn btn-dark" style="    padding: 1px;margin-left: 5px;"   (click)="openOrderUpdateLg(EditStatuscontent,obj.order)">View And Print</button>
+          <!-- <i class="fa fa-desktop" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)"  (click)="openOrderDetailLg(OrderDetailcontent,obj)" ></i> 
        
         <div style="padding: 4px;"*ngIf="obj.order.orderStatus!='Completed'">
           <i class="fa fa-edit" aria-hidden="true" style="font-size:18px;color:rgb(113, 147, 240)"  (click)="openOrderUpdateLg(EditStatuscontent,obj.order)" ></i> 
-        </div>
+        </div> -->
    </td>
       </tr>
      
@@ -87,74 +111,111 @@
         <h4 class="modal-title">Order Detail</h4>
       
       </div>
+      
       <div class="modal-body">
-        <div class="table-responsive">
-          <table class="table table-hover">
-      <thead>
-           <tr>
-             <th>Product Name</th>
-             <th>Unit</th>
-           
-             <th>Qty</th>
-             <th>Unit Price</th>
-             <th>Total price</th>
-           </tr>
-      </thead>
-      <tbody *ngFor="let obj of orderitemns.orderitems">
-        <tr>
-          <th>{{obj?.product}}</th>
-          <th>{{obj?.unit}}</th>
-          <th>{{obj?.item.quantity}}</th>
-          <th>{{obj?.item.perUnitPrice}}</th>
-          <th>{{obj?.item.totalPrice}}</th>
-        </tr>
-      </tbody>
-      <br>
-      <div class="row">
-         <div class="col-md-4">
-             Phone No
-         </div>
-         <div class="col-md-4">
-           :{{orderitemns.order.order_phoneno}}
-         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-            Email
-        </div>
-        <div class="col-md-4">
-           :{{orderitemns.order.order_phoneno}}
-        </div>
-     </div>
-     <div class="row">
-      <div class="col-md-4">
-          City
-      </div>
-      <div class="col-md-4">
-      :{{orderitemns.order.order_city}}
-      </div>
-   </div>
-   <div class="row">
-    <div class="col-md-4">
-        Home No
-    </div>
-    <div class="col-md-4">
-      :{{orderitemns.order.houseNo}}
-    </div>
- </div>
- <div class="row">
-
-<div class="col-md-8">
-  <br>
-  <p>Description:</p>
-  {{orderitemns.order.order_Notes}}
-</div>
- </div>
-    </table>
+           <div id="mytodosItemsId">
+            <div id="invoice-POS">
+              <div id="top">
+                  <div class="logo" style="    margin-left: 25%;"></div>
+                  <div class="info">
+                      <h2 style="    margin-left: 42%;
+                      margin-top: -4px;">KOF</h2>
+                  </div>
+                  <!--End Info-->
+             
+                </div>
+              <!--End InvoiceTop-->
+              <h2>Order No# {{orderNo}}</h2>
+              <div id="mid">
+                  <div class="info">
+                      <h2>Contact Info</h2>
+                      <p>
+                          Address : Lahore, Pakistan<br>
+                          Email:Info@khanorganicfoods.pk<br>
+                          Phone   : +92 3107771866
+                      </p>
+                  </div>
+              </div>
+              <!--End Invoice Mid-->
+              <div id="bot">
+                  <div id="table">
+                      <table>
+                          <tr class="tabletitle">
+                              <td class="item">
+                                  <h2>Item</h2>
+                              </td>
+                              <td class="Hours">
+                                  <h2>Qty</h2>
+                              </td>
+                              <td class="Hours">
+                                <h2>Unit Price</h2>
+                            </td>
+                              <td class="Rate">
+                                  <h2>Sub Total</h2>
+                              </td>
+                          </tr>
+                          <tr class="service" *ngFor="let obj of orderitemns.orderitems">
+                              <td class="tableitem">
+                                  <p class="itemtext">{{obj?.product}}
+                                    <br>({{obj?.unit}} )</p>
+                              </td>
+                              <td class="tableitem">
+                                  <p class="itemtext">{{obj?.item.quantity}}</p>
+                              </td>
+                              <td class="tableitem">
+                                  <p class="itemtext">{{obj?.item.perUnitPrice}}</p>
+                              </td>
+                              <td class="tableitem">
+                                <p class="itemtext">{{obj?.item.perUnitPrice}}</p>
+                            </td>
+                            <td class="tableitem">
+                              <p class="itemtext">{{obj?.item.totalPrice}}</p>
+                          </td>
+                        
+                    
+                          <tr class="tabletitle">
+                              <td></td>
+                              <td></td>
+                          
+                              <td class="Rate">
+                                  <h2>Qty</h2>
+                              </td>
+                            
+                              <td class="payment">
+                                  <h2>{{orderquntity}}</h2>
+                              </td>
+                          </tr>
+                          <tr class="tabletitle">
+                            <td></td>
+                            <td></td>
+                              <td class="Rate">
+                                  <h2>Total</h2>
+                              </td>
+                              <td class="payment">
+                                  <h2>{{orderamount}}</h2>
+                              </td>
+                          </tr>
+                      </table>
+                  </div>
+                  <!--End Table-->
+                  <div id="legalcopy">
+                      <p class="legal">
+                          <strong>Thank you for your business!</strong>  
+                      </p>
+                  </div>
+              </div>
+              <!--End InvoiceBot-->
+          </div>  
            </div>
+      
+   
+    
     
       </div>
       <div class="modal-footer">
+        
+        <button  class="btn btn-info"  printSectionId="mytodosItemsId" [useExistingCss]="true" styleSheetFile="./AllOrders.component.scss" ngxPrint >Print</button>
+        <button (click)="toCanvas()" class="btn btn-success">Download </button>
         <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
       </div>
     </ng-template>
