@@ -24,7 +24,7 @@ const routes: Routes = [
       }, {
         path: 'dashboard',
         loadChildren: () => import('./pages/dashboard/dashboard-default/dashboard-default.module').then(m => m.DashboardDefaultModule),
-         //canActivate: [AuthGuard]
+         canActivate: [AuthGuard]
       },
       //  {
       //   path: 'basic',

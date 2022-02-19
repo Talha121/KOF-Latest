@@ -11,7 +11,7 @@ import { AuthService } from './../../../../_service/auth.service';
   styleUrls: ['./basic-login.component.scss']
 })
 export class BasicLoginComponent implements OnInit {
-loginForm: FormGroup;
+  loginForm: FormGroup;
   constructor(private Model: Login, private authService: AuthService, private router: Router,
     private alertify: AlertifyService) { }
 
@@ -22,18 +22,26 @@ loginForm: FormGroup;
     })
     document.querySelector('body').setAttribute('themebg-pattern', 'theme1');
   }
-   login() {
-     // tslint:disable-next-line: no-debugger
-     
-     this.authService.login(this.loginForm.value).subscribe(next => {
-       this.alertify.success('logged in successfully');
-       this.router.navigate(['/dashboard']);
-     }, error => {
-       this.alertify.error('Login Failed');
-     });
-   }
-   loggedIn() {
-       const token = localStorage.getItem('token');
-       return !!token;
+  login() {
+    let valuse = this.loginForm.value;
+    if (valuse.Email == "admin@khanorganicfoods.pk" && valuse.Password == "KofAdmin@12") {
+      localStorage.setItem('user', valuse.Email);
+      this.router.navigate(['/dashboard']);
     }
+    else {
+      this.alertify.error("Wrong Email and password")
+    }
+    // tslint:disable-next-line: no-debugger
+
+    //  this.authService.login(this.loginForm.value).subscribe(next => {
+    //    this.alertify.success('logged in successfully');
+    //    this.router.navigate(['/dashboard']);
+    //  }, error => {
+    //    this.alertify.error('Login Failed');
+    //  });
+  }
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
 }

@@ -28,9 +28,9 @@ login(form: any){
 }
 loggedIn() {
   
-  const token = localStorage.getItem('token');
-  if(token!=null){
-    return !this.jwtHelper.isTokenExpired(token);
+  const user = localStorage.getItem('user');
+  if(user!=null){
+    return true;
   }
 
 }

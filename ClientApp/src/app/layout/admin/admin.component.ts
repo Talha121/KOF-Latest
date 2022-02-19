@@ -246,7 +246,7 @@ export class AdminComponent implements OnInit {
     });
   }
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this.alertify.message('logout Successfully');
     this.router.navigate(['/authentication/login']);
   }
