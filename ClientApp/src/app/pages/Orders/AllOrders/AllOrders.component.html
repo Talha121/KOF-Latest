@@ -27,20 +27,20 @@
         
           <div class="col-md-2" >
             <br>
-            <select class="custom-select"#mySelect
+            <select class="custom-select" [(ngModel)]="filtertype"
             (change)='onOptionsSelected(mySelect.value)' >
-              <option selected value="0">All</option>
-             <option value="1">Pending</option>
-             <option value="2">Active</option>
-             <option value="3">Completed</option>
-             <option value="4">Cancelled</option>
+              <option selected value="All">All</option>
+             <option value="Pending">Pending</option>
+             <option value="Active">Active</option>
+             <option value="Completed">Completed</option>
+             <option value="Cancelled">Cancelled</option>
         
             </select>
             </div>
             <div class="col-md-2">
               <br>
             <button type="submit" style="    padding: 5px;" class="btn btn-success" (click)="filterdate()" >filter</button>
-               
+            <button type="submit" style="    padding: 5px;margin-left: 8px;" class="btn-dark" (click)="clear()" >Clear</button>
             </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
           <button class="btn btn-info"  *ngIf="obj.order.orderStatus=='Active'" class="btn btn-info"  style="    padding: 1px;" (click)="changeorderstatus(obj.order,'Completed')" >Complate Now</button>
           <button class="btn btn-info" *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-success" style="    padding: 1px;"(click)="changeorderstatus(obj.order,'Active')" >Active Now</button>
        
-          <button class="btn btn-dark" style="    padding: 1px;margin-left: 5px;"   (click)="openOrderUpdateLg(EditStatuscontent,obj.order)">View And Print</button>
+          <button class="btn btn-dark" style="    padding: 1px;margin-left: 5px;"   (click)="openOrderDetailLg(OrderDetailcontent,obj)">View And Print</button>
           <!-- <i class="fa fa-desktop" aria-hidden="true" style="font-size:18px;color:rgb(255, 0, 0)"  (click)="openOrderDetailLg(OrderDetailcontent,obj)" ></i> 
        
         <div style="padding: 4px;"*ngIf="obj.order.orderStatus!='Completed'">

@@ -6,6 +6,7 @@ import { OrderService } from '../../../../../src/app/_service/order.service';
 import { items } from './../../../../../src/app/Models/items.Model';
 import { NgxSpinnerService } from 'ngx-spinner';
 import html2canvas from 'html2canvas';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-AllOrders',
   templateUrl: './AllOrders.component.html',
@@ -36,23 +37,68 @@ export class AllOrdersComponent implements OnInit {
     status: new FormControl('')
   
    });
-   FromDate:Date=new Date();
-   toDate:Date=new Date();
-  constructor(private SpinnerService: NgxSpinnerService,private orderservice:OrderService,private modalService: NgbModal,) { 
+   FromDate:Date;
+   toDate:Date;
+   filtertype:string="All";
+  constructor(private SpinnerService: NgxSpinnerService,private orderservice:OrderService,private modalService: NgbModal,public datepipe: DatePipe) { 
 
   }
 
   ngOnInit() {
-   
     this.GetOrders();
  
   
   }
      filterdate(){
-     debugger;
-     console.log(this.FromDate)
-     console.log(this.toDate)
-      // this.OrdersList2=this.OrdersListdata.filter(x=>new Date(x.order.createdOn)>= new Date(this.FromDate)&&new Date(x.order.createdOn)<=new Date(this.FromDate) );
+       debugger
+ 
+   if(this.filtertype !="All")
+   {
+     if(this.FromDate!=undefined&&this.toDate!=undefined){
+      var date=new Date(this.FromDate);
+      var dd=date.setDate(date.getDate() - 1); 
+      this.OrdersList2 = this.OrdersListdata.filter((item, index) => (new Date(item.order.createdOn).getTime() >= new Date(date).getTime() && new Date(item.order.createdOn).getTime() <= new Date(this.toDate).getTime())&&this.filtertype==item.order.orderStatus);
+
+     }
+     if(this.FromDate!=undefined&&this.toDate==undefined){
+      var date=new Date(this.FromDate);
+      var dd=date.setDate(date.getDate() - 1); 
+      this.OrdersList2 = this.OrdersListdata.filter((item, index) => (new Date(item.order.createdOn).getTime() >= new Date(date).getTime() )&&this.filtertype==item.order.orderStatus);
+
+     }
+     if(this.FromDate==undefined&&this.toDate!=undefined){
+      var date=new Date(this.FromDate);
+      var dd=date.setDate(date.getDate() - 1); 
+      this.OrdersList2 = this.OrdersListdata.filter((item, index) => (new Date(item.order.createdOn).getTime() <= new Date(this.toDate).getTime())&&this.filtertype==item.order.orderStatus);
+
+     }
+     if(this.FromDate==undefined&&this.toDate==undefined){
+      this.OrdersList2 =this.OrdersListdata.filter(x=>x.order.orderStatus ==this.filtertype)
+
+     }
+   
+  
+   }else{
+    if(this.FromDate==undefined&&this.toDate==undefined&&this.filtertype=="All"){
+      this.OrdersList2 =this.OrdersListdata;
+    }else{
+      var date=new Date(this.FromDate);
+      var dd=date.setDate(date.getDate() - 1); 
+      this.OrdersList2 = this.OrdersListdata.filter((item, index) => (new Date(item.order.createdOn).getTime() >= new Date(date).getTime() && new Date(item.order.createdOn).getTime() <= new Date(this.toDate).getTime()));
+  
+    }
+  
+   }
+   
+     //  this.OrdersList2=this.OrdersListdata.filter(x=>new Date(x.order.createdOn)>setDate(date.getDate() - 1) );
+  }
+  clear()
+  {
+    this.FromDate=null;
+    this.toDate=null;
+    this.filtertype="All";
+    this.OrdersList2 = this.OrdersListdata;
+
   }
   public toCanvas() {
         let elem = document.getElementById("invoice-POS");
