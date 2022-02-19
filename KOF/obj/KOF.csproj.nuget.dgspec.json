@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj": {}
+    "D:\\personal\\KOF-Latest\\KOF\\KOF.csproj": {}
   },
   "projects": {
-    "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj": {
+    "D:\\personal\\KOF-Latest\\KOF\\KOF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj",
+        "projectUniqueName": "D:\\personal\\KOF-Latest\\KOF\\KOF.csproj",
         "projectName": "KOF",
-        "projectPath": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\KOF.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "G:\\Projects\\KOF-Latest\\KOF-Latest\\KOF\\obj\\",
+        "projectPath": "D:\\personal\\KOF-Latest\\KOF\\KOF.csproj",
+        "packagesPath": "C:\\Users\\Talha Ashraf\\.nuget\\packages\\",
+        "outputPath": "D:\\personal\\KOF-Latest\\KOF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Talha Ashraf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -115,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
