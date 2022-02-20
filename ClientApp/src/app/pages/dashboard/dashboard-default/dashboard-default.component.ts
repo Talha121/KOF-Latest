@@ -339,7 +339,10 @@ export class DashboardDefaultComponent implements OnInit {
      console.log(error);
    });
   }
-
+Clear()
+{
+ this.Datefilterform.reset();
+}
 
  
 
