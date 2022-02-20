@@ -1,5 +1,6 @@
 using KOF.Context;
 using KOF.Services.CategoryService;
+using KOF.Services.DashboardService;
 using KOF.Services.EmailService;
 using KOF.Services.GenericService;
 using KOF.Services.InventoryService;
@@ -51,6 +52,7 @@ namespace KOF
             services.AddScoped<ISupplierService, SupplierService>();
             services.AddScoped<IProductImageService, ProductImageService>();
             services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<IDashboardService, DashboardService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(60);

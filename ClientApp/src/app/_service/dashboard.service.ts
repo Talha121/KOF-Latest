@@ -6,12 +6,15 @@ import { environment } from '../../../src/environments/environment.prod';
   providedIn: 'root'
 })
 export class DashboardService {
-  baseUrl = environment.apiurl + 'DashboardApi/';
+  baseUrl = environment.apiurl + 'Dashboard/';
 constructor(private http: HttpClient) { }
 GetDashboardData(){
-  return this.http.get<any>(this.baseUrl+'Dashboard')
+  return this.http.get<any>(this.baseUrl+'DashboardData')
+};
+Todaysale(){
+  return this.http.get<any>(this.baseUrl+'Todaysale')
 };
 Datefilter(form: any){
-  return this.http.post<any>(this.baseUrl+'datefilter', form)
+  return this.http.post<any>(this.baseUrl+'MonthlySale', form)
 };
 }

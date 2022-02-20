@@ -28,6 +28,7 @@ namespace KOF.Services.InventoryService
         public async Task<int> addtocart(int inventoryid, int productid, int Qty, int userid,string unit)
         {
             var price = 0;
+            var cost = 0;
             var inv = _context.Inventories.Where(x=>x.Id==inventoryid).SingleOrDefault();
             var cart = new List<Cart>();
           
@@ -43,6 +44,7 @@ namespace KOF.Services.InventoryService
                     {
                         sdata.Quantity = sdata.Quantity + Qty;
                         sdata.TotalPrice = sdata.Quantity * sdata.PerUnitPrice;
+                        sdata.TotalCost = sdata.Quantity * sdata.PerUnitCost;
                         var rs = mysession.Where(x => x.inventoryId == inventoryid).FirstOrDefault();
 
                         mysession.Remove(rs);
@@ -55,10 +57,12 @@ namespace KOF.Services.InventoryService
                         if (unit == "1/2 Kg")
                         {
                             price = (inv.PricePerUnit / 2);
+                            cost= (inv.CostPerUnit / 2);
                         }
                         else
                         {
                             price = inv.PricePerUnit;
+                            cost = inv.CostPerUnit;
                         }
                         Cart obj = new Cart
                         {
@@ -67,6 +71,7 @@ namespace KOF.Services.InventoryService
                             inventoryId = inventoryid,
                             Quantity = Qty,
                             PerUnitPrice = price,
+                            TotalCost= cost * Qty,
                             TotalPrice = price * Qty
 
                         };
@@ -81,10 +86,12 @@ namespace KOF.Services.InventoryService
                     if (unit == "1/2 Kg")
                     {
                         price = (inv.PricePerUnit / 2);
+                        cost = (inv.CostPerUnit / 2);
                     }
                     else
                     {
                         price = inv.PricePerUnit;
+                        cost = inv.CostPerUnit;
                     }
                     Cart obj = new Cart
                     {
@@ -93,6 +100,7 @@ namespace KOF.Services.InventoryService
                         inventoryId = inventoryid,
                         Quantity = Qty,
                         PerUnitPrice = price,
+                        TotalCost = cost * Qty,
                         TotalPrice = price * Qty
 
                     };                  
@@ -108,10 +116,12 @@ namespace KOF.Services.InventoryService
                 if (unit == "1/2 Kg")
                 {
                     price = (inv.PricePerUnit / 2);
+                    cost = (inv.CostPerUnit / 2);
                 }
                 else
                 {
                     price = inv.PricePerUnit;
+                    cost = inv.CostPerUnit;
                 }
                 Cart obj = new Cart
                 {
@@ -120,6 +130,7 @@ namespace KOF.Services.InventoryService
                     inventoryId = inventoryid,
                     Quantity = Qty,
                     PerUnitPrice = price,
+                    TotalCost = cost * Qty,
                     TotalPrice = price * Qty
                 };
                 cart.Add(obj);

@@ -1,14 +1,12 @@
 <div class="row" >
 
-  <div>
 
-  </div>
   <div class="col-md-6 col-xl-3">
     <div class="card widget-card-1">
       <div class="card-block-small">
         <i class="fa fa-money bg-c-blue card1-icon"></i>
         <span class="text-c-blue f-w-600">Today's Orders</span>
-        <h4>{{Dashboarddata?.todaySale}}</h4>
+        <h4>{{Dashboarddata?.todayOrders}}</h4>
         <div>
           <span class="f-left m-t-10 text-muted">
             <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
@@ -21,12 +19,12 @@
   <div class="col-md-6 col-xl-3">
     <div class="card widget-card-1">
       <div class="card-block-small">
-        <i class="fa fa-money bg-c-green card1-icon"></i>
-        <span class="text-c-green f-w-600">Total's Profit</span>
-        <h4>{{Dashboarddata?.todayProfit}}</h4>
+        <i class="fa fa-money  bg-c-blue  card1-icon"></i>
+        <span class="text-c-blue f-w-600">Total's Orders</span>
+        <h4>{{Dashboarddata?.totalOrders}}</h4>
         <div>
           <span class="f-left m-t-10 text-muted">
-            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
           </span>
         </div>
       </div>
@@ -36,8 +34,8 @@
     <div class="card widget-card-1">
       <div class="card-block-small">
         <i class="fa fa-money bg-c-pink card1-icon"></i>
-        <span class="text-c-pink f-w-600">Today's App Sale</span>
-        <h4>{{Dashboarddata?.todayAppdsale}}</h4>
+        <span class="text-c-pink f-w-600">Today's  Sale</span>
+        <h4>{{Dashboarddata?.todaySale}}</h4>
         <div>
           <span class="f-left m-t-10 text-muted">
             <i class="text-c-pink f-16 icofont icofont-refresh m-r-10"></i>Just update
@@ -46,7 +44,48 @@
       </div>
     </div>
   </div>
- 
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-pink card1-icon"></i>
+        <span class="text-c-pink f-w-600">Total  Sale</span>
+        <h4>{{Dashboarddata?.totalSale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-pink f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-pink f-w-600">Today's  Profit</span>
+        <h4>{{Dashboarddata?.todayProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-pink f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-green f-w-600">Total  Profit</span>
+        <h4>{{Dashboarddata?.totalProfit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -62,6 +101,79 @@
 
 
 </div>
+<div class="row">
+<div class="col-md-12">
+  <h5>Monthly Report</h5>
+<hr>
+<div class="row"  [formGroup]="Datefilterform"  >
+  <div class="col-md-6">
+
+  </div>
+  <div class="col-md-2">
+    <label style="float: left;">From Date</label>
+     <input type="date" formControlName="FromDate"   class="form-control">
+  </div>
+  <div class="col-md-2">
+    <label style="float: left;">To Date</label>
+     <input type="date" formControlName="ToDate" class="form-control" >
+  </div>
+
+  
+    <div class="col-md-2">
+      <br>
+    <button type="submit" style="    padding: 5px;" class="btn btn-success" (click)="filterdate()" >filter</button>
+    <button type="submit" style="    padding: 5px;margin-left: 8px;" class="btn-dark" (click)="clear()" >Clear</button>
+    </div>
+</div>
+
+</div>
+
+</div>
+<div class="row"> 
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-blue card1-icon"></i>
+        <span class="text-c-blue f-w-600">Monthly Orders</span>
+        <h4>{{Datewisedata?.orders}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-pink   card1-icon"></i>
+        <span class="text-c-pink f-w-600">Monthly Sale</span>
+        <h4>{{Datewisedata?.sale}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-pink f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
+        <i class="fa fa-money bg-c-green card1-icon"></i>
+        <span class="text-c-pink f-w-600">Monthly  Profit</span>
+        <h4>{{Datewisedata?.profit}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-green f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
   <p style="color: white">Please Wait. </p>  
   </ngx-spinner> 

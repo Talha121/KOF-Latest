@@ -41,15 +41,6 @@ namespace KOF.Services.OrderService
 
             try
             {
-           
-                var sessionid = _session.Id;
-                //EmailInfo obj = new EmailInfo()
-                //{
-                //    EmailTo = email,
-                //    Subject = "test",
-                //    Body = "body"
-                //};
-           
                 var orderno = _context.Orders.Max(x => x.OrderNumber);
                 int no = 10000;
                 if(orderno==null)
@@ -62,7 +53,7 @@ namespace KOF.Services.OrderService
                 }
                 var cartinfo = _session.GetString("mycart");
                 var mysession = JsonConvert.DeserializeObject<IEnumerable<Cart>>(cartinfo);
-                var mycart =  _context.Carts.Where(x => x.sessionid == sessionid).ToList();
+              
                 Order order = new Order()
                 {
                     
@@ -94,6 +85,7 @@ namespace KOF.Services.OrderService
                         TotalCost = item.TotalCost,
                         TotalPrice = item.TotalPrice,
                         Quantity = item.Quantity,
+                        CreatedOn = DateTime.Now
 
                     };
                     _context.OrderItems.Add(items);
@@ -105,8 +97,8 @@ namespace KOF.Services.OrderService
                     UserName = email
 
                 };
-                _emailservice.SendEmailTemplateAsync(useremail,mysession, order);
-             
+                _emailservice.SendEmailTemplateAsync(useremail, mysession, order);
+
                 EmailSource useremail2 = new EmailSource()
                 {
                     EmailTo = "Khanorganicfoods.pk@gmail.com",
@@ -114,7 +106,7 @@ namespace KOF.Services.OrderService
 
                 };
                 _emailservice.SendEmailTemplateAsync(useremail2, mysession, order);
-                 var cart = new List<Cart>();
+                var cart = new List<Cart>();
                 var str = JsonConvert.SerializeObject(cart);
                 _session.SetString("mycart", str);
                 return "Success";
@@ -147,13 +139,13 @@ namespace KOF.Services.OrderService
                 product=_context.Products.Where(p=>p.Id==z.ProductId).Select(p=>p.Name).SingleOrDefault(),
                   unit = _context.Inventories.Where(q => q.ProductId == z.ProductId).Select(p => p.Unit).SingleOrDefault(),
 
-              }).ToList(),
-              userinfo=_context.AllUsers.Where(y=>y.Id==x.UserId).Select(y=> new {
-              name=y.Name,
-              contactno=y.Phone,
-              email=y.Email
+              }).ToList()
+              //userinfo=_context.AllUsers.Where(y=>y.Id==x.UserId).Select(y=> new {
+              //name=y.Name,
+              //contactno=y.Phone,
+              //email=y.Email
                
-              }).SingleOrDefault(),
+              //}).SingleOrDefault(),
             
             }).ToListAsync();
             return data;

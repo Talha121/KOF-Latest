@@ -35,13 +35,15 @@ export class DashboardDefaultComponent implements OnInit {
   totalValueGraphData2 = buildChartJS('#fff', [10, 25, 35, 20, 10, 20, 15, 45, 15, 10], '#e55571', 'transparent');
   totalValueGraphOption = buildChartOption();
    Dashboarddata:any;
+   monthlySale:any;
    Datewisedata:any;
-
+   FromDate:Date;
+   toDate:Date;
   constructor(private fb:FormBuilder,private router: Router,private service:StockinService,private dashboardservice:DashboardService,private SpinnerService: NgxSpinnerService,) { }
   
   ngOnInit() {
     this.dashboard();
-    this.GetInventory();
+
     
     let currentDate=new Date();
     this.Datefilterform.setValue({
@@ -326,11 +328,11 @@ export class DashboardDefaultComponent implements OnInit {
    filterdate(){
      
     // this.SpinnerService.show();
-  
+  debugger;
     console.log(this.Datefilterform.value)
    this.dashboardservice.Datefilter(this.Datefilterform.value).subscribe(next => {
     // this.SpinnerService.hide();
-    this.Datewisedata=next.res;
+    this.Datewisedata=next;
     console.log(this.Datewisedata);
    }, error => {
      console.log(error);
@@ -360,11 +362,12 @@ export class DashboardDefaultComponent implements OnInit {
     this.reverse=!this.reverse;
   }
   dashboard(){
+    debugger;
     // this.SpinnerService.show();
     this.dashboardservice.GetDashboardData().subscribe((next:any) => {
       this.Dashboarddata=[];
- 
-      this.Dashboarddata=next.res;
+ debugger;
+      this.Dashboarddata=next;
       // this.SpinnerService.hide();
       console.log(this.Dashboarddata)
     }, error => {
@@ -372,6 +375,8 @@ export class DashboardDefaultComponent implements OnInit {
     });
 
   }
+ 
+
   onTaskStatusChange(event) {
     const parentNode = (event.target.parentNode.parentNode);
     parentNode.classList.toggle('done-task');
