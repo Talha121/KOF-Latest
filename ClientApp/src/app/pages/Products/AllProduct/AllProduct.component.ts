@@ -79,7 +79,7 @@ export class AllProductComponent implements OnInit {
 		console.log(event);
 		this.files.splice(this.files.indexOf(event), 1);
 	}
-  openLg(content,id:number) {
+  openLg(content) {
     this.Title="Add New Product";
     this.ActionName="Add";
     this.singleproductform.setValue({

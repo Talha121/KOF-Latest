@@ -11,7 +11,6 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PosServiceService } from './../../../../src/app/_service/PosService.service';
 import { NgxPrintModule } from 'ngx-print';
-import { InvoiceComponent } from './Invoice/Invoice.component';
 
 
 @NgModule({
@@ -25,7 +24,7 @@ import { InvoiceComponent } from './Invoice/Invoice.component';
    FormsModule
   ],
   providers: [DatePipe,MatDialog,PosServiceService],
-  declarations: [PosComponent,InvoiceComponent],
+  declarations: [PosComponent],
  
 })
 export class PosModule { }

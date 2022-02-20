@@ -7,7 +7,8 @@ export const environment = {
   production: false,
  
   apiurl:"https://khanorganicfoods.pk/Api/",
- // apiurl:"https://localhost:44370/Api/",
+  //apiurl:"https://localhost:44370/Api/",
   //Imagebaseurl:"https://ewholesalerauth.com/Content/"
-  Imagebaseurl:"https://localhost:44370/Content/"
+  //Imagebaseurl:"https://localhost:44370/Content/"
+  Imagebaseurl:"https://khanorganicfoods.pk/Content/"
 };
