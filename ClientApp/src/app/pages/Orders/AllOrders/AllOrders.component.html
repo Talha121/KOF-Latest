@@ -74,11 +74,14 @@
         <td>{{obj.order.createdOn |date :'medium'}}</td>
         <td>{{obj.qty}}</td>
         <td>{{obj.total}}</td>
-        <td> <p *ngIf="obj.order.orderStatus=='Completed'" class="btn btn-info" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
+        <td>
+          <p *ngIf="obj.order.orderStatus=='Cancelled'" class="btn btn-danger" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
+           <p *ngIf="obj.order.orderStatus=='Completed'" class="btn btn-info" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
           <p *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-danger" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
           <p *ngIf="obj.order.orderStatus=='Active'" class="btn btn-success" style="    padding: 1px;">{{obj.order?.orderStatus}}</p>  </td>
     
        <td>  
+        <button class="btn btn-info"  *ngIf="obj.order.orderStatus!='Completed'&& obj.order.orderStatus!='Cancelled'" class="btn btn-danger"  style="    padding: 1px;" (click)="changeorderstatus(obj.order,'Cancelled')" >Cancel Now</button>
           <button class="btn btn-info"  *ngIf="obj.order.orderStatus=='Active'" class="btn btn-info"  style="    padding: 1px;" (click)="changeorderstatus(obj.order,'Completed')" >Complate Now</button>
           <button class="btn btn-info" *ngIf="obj.order.orderStatus=='Pending'" class="btn btn-success" style="    padding: 1px;"(click)="changeorderstatus(obj.order,'Active')" >Active Now</button>
        
