@@ -48,7 +48,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("ChangeStatus")]
+        [HttpPost("ChangeStatus")]
         public async Task<IActionResult> ChangeStatus(Order dto)
         {
             try

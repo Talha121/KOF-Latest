@@ -67,7 +67,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("updatesupplier")]
+        [HttpPost("updatesupplier")]
         public async Task<IActionResult> Put([FromBody] Supplier dto)
         {
             try
@@ -87,7 +87,7 @@ namespace KOF.Controllers
             }
         }
 
-        [HttpPut("supplierstatus")]
+        [HttpPost("supplierstatus")]
         public async Task<IActionResult> supplierstatus([FromBody] Supplier dto)
         {
             try

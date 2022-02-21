@@ -51,7 +51,7 @@ profileImage.forEach(element => {
   
   formData.append("productId",id);
 
-  return this.http.put(this.baseUrl+apipath, formData, {
+  return this.http.post(this.baseUrl+apipath, formData, {
     reportProgress: true,
     observe: 'events'
   }).pipe(

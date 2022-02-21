@@ -32,7 +32,7 @@ GetSupplier(){
 };
 
 Updatesupplier(form: any){
-  return this.http.put<any>(environment.apiurl+'Supplier/updatesupplier', form)
+  return this.http.post<any>(environment.apiurl+'Supplier/updatesupplier', form)
 };
 postsupplier(form: any){
   
@@ -40,22 +40,22 @@ postsupplier(form: any){
 };
 supplierstatus(form: any){
   
-  return this.http.put<any>(environment.apiurl+'Supplier/supplierstatus', form)
+  return this.http.post<any>(environment.apiurl+'Supplier/supplierstatus', form)
 };
 productstatus(form: any){
   
-  return this.http.put<any>(environment.apiurl+'Product/productstatus', form)
+  return this.http.post<any>(environment.apiurl+'Product/productstatus', form)
 };
 categorystatus(form: any){
   
-  return this.http.put<any>(this.baseUrl+'categorystatus', form)
+  return this.http.post<any>(this.baseUrl+'categorystatus', form)
 };
 
 GetAllProducts(){
   return this.http.get<any>(environment.apiurl+'Product/getproducts')
 };
 UpdateProduct(form: any){
-  return this.http.put<any>(environment.apiurl+'Product/UpdateProduct', form)
+  return this.http.post<any>(environment.apiurl+'Product/UpdateProduct', form)
 };
 Postproduct(form: any){
   
@@ -63,7 +63,7 @@ Postproduct(form: any){
 };
 UpdateCategory(form: any){
   
-  return this.http.put<any>(this.baseUrl+'UpdateCategory', form)
+  return this.http.post<any>(this.baseUrl+'UpdateCategory', form)
 };
 UpdateBrand(form: any){
   return this.http.post<any>(this.baseUrl+'UpdateBrand', form)

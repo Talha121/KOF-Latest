@@ -38,7 +38,7 @@ namespace KOF.Controllers
             }
         }
 
-        [HttpDelete("deleteproductimage")]
+        [HttpPost("deleteproductimage")]
         public async Task<IActionResult> remove(int Id)
         {
             try
@@ -71,7 +71,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("Updateproduct")]
+        [HttpPost("Updateproduct")]
         public async Task<IActionResult> Put([FromBody] ProductDto product)
         {
             try
@@ -98,7 +98,7 @@ namespace KOF.Controllers
             }
         }
 
-        [HttpPut("productstatus")]
+        [HttpPost("productstatus")]
         public async Task<IActionResult> productstatus([FromBody] Product product)
         {
             try
@@ -117,7 +117,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("UpdateProductImage")]
+        [HttpPost("UpdateProductImage")]
         public async Task<IActionResult> updateImage([FromForm] Productimagedto dto)
         {
             try

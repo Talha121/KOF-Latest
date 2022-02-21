@@ -52,8 +52,7 @@ namespace KOF.Services.OrderService
                     no = Convert.ToInt32(orderno)+1;
                 }
                 var cartinfo = _session.GetString("mycart");
-                var mysession = JsonConvert.DeserializeObject<IEnumerable<Cart>>(cartinfo);
-              
+                var mysession = JsonConvert.DeserializeObject<IEnumerable<Cart>>(cartinfo);              
                 Order order = new Order()
                 {
                     

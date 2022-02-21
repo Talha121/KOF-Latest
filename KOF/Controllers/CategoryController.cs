@@ -53,7 +53,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("UpdateCategory")]
+        [HttpPost("UpdateCategory")]
         public async Task<IActionResult> Put([FromForm] CategoreyDto category)
         {
             try
@@ -71,7 +71,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("categorystatus")]
+        [HttpPost("categorystatus")]
         public async Task<IActionResult> changestatus([FromBody] Category category)
         {
             try
@@ -90,7 +90,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("UpdateCategoryImage")]
+        [HttpPost("UpdateCategoryImage")]
         public async Task<IActionResult> updateImage([FromForm] CategoreyDto category)
         {
             try
@@ -108,7 +108,7 @@ namespace KOF.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpDelete("RemoveCategory")]
+        [HttpPost("RemoveCategory")]
         public async Task<IActionResult> Delete([FromBody] int id)
         {
             try
