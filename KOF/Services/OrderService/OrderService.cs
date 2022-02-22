@@ -32,6 +32,14 @@ namespace KOF.Services.OrderService
 
         public async Task<object> Changestatus(Order dto)
         {
+            //var prestauts = await _context.Orders.FindAsync(dto.Id);
+            //var currentstatus = dto.OrderStatus;
+            //if(prestauts.OrderStatus=="Pending"&&currentstatus=="Active")
+            //{
+            //    var orderitems = _context.OrderItems.Where(x => x.OrderId == dto.Id).ToList();
+
+            //}
+
             await UpdateAsync(dto);
             return "success";
         }

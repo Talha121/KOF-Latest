@@ -23,7 +23,7 @@ namespace KOF.Services.DashboardService
             var orders = _context.Orders.ToList();
             data.todayOrders = orders.Where(x=>Convert.ToDateTime(x.CreatedOn).Date==DateTime.Now.Date).Count();
             data.TotalOrders= orders.Count();
-
+            data.TotalPendingOrders = orders.Where(x => x.OrderStatus == "Pending").Count();
             var totalordersitems = await _context.OrderItems.ToListAsync();
             data.TotalSale = totalordersitems.Where(x=>x.Order.OrderStatus== "Completed").Sum(x => x.TotalPrice);
             data.TodaySale = totalordersitems.Where(x => Convert.ToDateTime(x.CreatedOn).Date == DateTime.Now.Date&&x.Order.OrderStatus == "Completed").Sum(x => x.TotalPrice);
