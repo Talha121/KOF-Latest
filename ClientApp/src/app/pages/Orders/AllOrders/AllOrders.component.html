@@ -27,7 +27,7 @@
         
           <div class="col-md-2" >
             <br>
-            <select class="custom-select" [(ngModel)]="filtertype"
+            <select #mySelect class="custom-select" [(ngModel)]="filtertype"
             >
               <option selected value="All">All</option>
              <option value="Pending">Pending</option>
@@ -157,7 +157,7 @@
                                   <h2>Sub Total</h2>
                               </td>
                           </tr>
-                          <tr class="service" *ngFor="let obj of orderitemns.orderitems">
+                          <tr class="service" *ngFor="let obj of orderitemns">
                               <td class="tableitem">
                                   <p class="itemtext">{{obj?.product}}
                                     <br>({{obj?.unit}} )</p>

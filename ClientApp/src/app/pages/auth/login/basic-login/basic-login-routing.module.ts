@@ -7,7 +7,8 @@ const routes: Routes = [
     path: '',
     component: BasicLoginComponent,
     data: {
-      title: 'Simple Login'
+      title: 'Simple Login',
+      breadcrumb: 'Login'
     }
   }
 ];

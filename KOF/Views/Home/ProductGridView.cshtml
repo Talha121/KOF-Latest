@@ -120,22 +120,10 @@
                                                 <div class="item-inner">
                                                     <div class="item-img">
                                                         <div class="item-img-info">
-                                                            <a href="@Url.Action("Productdetail","Home",new {id=item.invinfo.Id })" title="@item.productinfo.Name" class="product-image"> <img onload="Wpfcll.r(this,true);" src="/Images/ProductImages/@Url.Content(src)" data-wpfc-original-src="/Images/ProductImages/@Url.Content(src)" alt="@item.productinfo.Name image"></a>
+                                                            <a href="@Url.Action("Productdetail","Home",new {id=item.invinfo.Id })" title="@item.productinfo.Name" class="product-image"> <img onload="Wpfcll.r(this,true);" src="/Images/ProductImages/@Url.Content(src)" data-wpfc-original-src="/Images/ProductImages/@Url.Content(src)" alt="@item.productinfo.Name image" style="height:245px;"></a>
                                                             @*<div class="sale-label sale-top-left">-34%</div>*@
                                                             <div class="item-box-hover">
-                                                                @*<div class="box-inner">
-                                            <div class="product-detail-bnt"><a class="button detail-bnt" ><span>Quick View</span></a></div>
-                                            <div class="actions">
-                                                <span class="add-to-links">
-                                                    <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-shortcode-add-to-cart" >
-                                                        <div class="tinv-wishlist-clear"></div>
-                                                        <a role="button" tabindex="0" aria-label="Add to Wishlist" class="tinvwl_add_to_wishlist_button tinvwl-icon-heart tinvwl-position-shortcode" ><span class="tinvwl_add_to_wishlist-text">Add to Wishlist</span></a>
-                                                        <div class="tinv-wishlist-clear"></div>
-                                                        <div class="tinvwl-tooltip">Add to Wishlist</div>
-                                                    </div>
-                                                </span>
-                                            </div>
-                                        </div>*@
+                                                            
                                                             </div>
                                                         </div>
                                                         <div class="add_cart"><a href="@Url.Action("Productdetail","Home",new {id=item.invinfo.Id })" data-quantity="1" class="button btn-cart button product_type_simple add_to_cart_button ajax_add_to_cart" aria-label="Read more about &ldquo;Fresh Organic Mustard Leaves&rdquo;" rel="nofollow"><span>Read more</span></a></div>
@@ -251,21 +239,7 @@
                 </div>
             </div>
             <aside class="col-left sidebar shop-sidebar col-sm-3 col-xs-12 col-sm-pull-9">
-                <div class="block woocommerce widget_price_filter">
-                    <div class="block-title">Filter by price</div>
-                    <form method="get" action="https://klbtheme.com/qualis/shop/">
-                        <div class="price_slider_wrapper">
-                            <div class="price_slider" style="display:none;"></div>
-                            <div class="price_slider_amount" data-step="10">
-                                <input type="text" id="min_price" name="min_price" value="0" data-min="0" placeholder="Min price" />
-                                <input type="text" id="max_price" name="max_price" value="60" data-max="60" placeholder="Max price" />
-                                <button type="submit" class="button">Filter</button>
-                                <div class="price_label" style="display:none;"> Price: <span class="from"></span> &mdash; <span class="to"></span></div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            
                 <div class="block woocommerce widget_product_categories">
                     <div class="block-title">Product categories</div>
                     <ul class="product-categories">

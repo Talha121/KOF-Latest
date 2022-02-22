@@ -13,6 +13,7 @@ import { PosServiceService } from './../../../../src/app/_service/PosService.ser
 import { NgxPrintModule } from 'ngx-print';
 
 
+
 @NgModule({
   imports: [
     CommonModule,

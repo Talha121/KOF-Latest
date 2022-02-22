@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './Products.component';
-import { AddProductComponent } from './Add-Product/Add-Product.component';
 import { SharedModule } from './../../shared/shared.module';
 import { ProductsRoutingModule } from './Products-bootstrap-routing.module';
 import { AllProductComponent } from './AllProduct/AllProduct.component';
@@ -53,7 +52,6 @@ import { AddInventoryComponent } from './AddInventory/AddInventory.component';
     NgxSpinnerModule,
   ],
   declarations: [ProductsComponent,
-  AddProductComponent,
 AllProductComponent,
 AllInventoryComponent,AddInventoryComponent],
 providers: [
