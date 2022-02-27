@@ -117,12 +117,12 @@ export class SupplierlistComponent implements OnInit {
   // }
 
   Getsalesmans(){
-   
+    this.SpinnerService.show();
     this.productservice.GetSupplier().subscribe((next:any) => {
       this.supplier=[];
       this.supplier=next;
      // this.supplier=this.supplier;
-     
+     this.SpinnerService.hide();
     }, error => {
       console.log(error);
     });

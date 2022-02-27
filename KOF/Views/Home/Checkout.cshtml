@@ -112,7 +112,7 @@
                                             var productname = _dbContext.Products.Where(x => x.Id == item.ProductId).SingleOrDefault().Name;
                                             <tr class="cart_item">
                                                 <td class="product-name">
-                                                    @productname&nbsp;						 <strong class="product-quantity">(@item.Quantity×&nbsp;@item.PerUnitPrice)</strong>
+                                                    @productname (@item.unit)&nbsp;						 <strong class="product-quantity">(@item.Quantity×&nbsp;@item.PerUnitPrice)</strong>
                                                 </td>
                                                 <td class="product-total">
                                                     <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rs : </span>@(item.Quantity*item.PerUnitPrice)</bdi></span>

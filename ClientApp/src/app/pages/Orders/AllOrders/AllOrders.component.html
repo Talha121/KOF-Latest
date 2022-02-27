@@ -460,7 +460,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let obj of orderitemns.orderitems">
-                    <td class="desc"><h3>{{obj?.product}}</h3>({{obj?.unit}} )</td>
+                    <td class="desc"><h3>{{obj?.product}}</h3>({{obj?.item.unit}} )</td>
                     <td class="qty">{{obj?.item.quantity}}</td>
                     <td class="unit">{{obj?.item.perUnitPrice}}</td>
                     <td class="total">{{obj?.item.totalPrice}}</td>

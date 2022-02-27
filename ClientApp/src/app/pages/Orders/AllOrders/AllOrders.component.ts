@@ -199,13 +199,14 @@ data.orderStatus=status;
 }
   GetOrders(){
     debugger
+    this.SpinnerService.show();
     this.orderservice.GetOrders().subscribe((next:any) => {
       debugger
       this.OrdersList2=[];
       this.OrdersList2=next;
     
       this.OrdersListdata=next;
-   
+      this.SpinnerService.hide();
      
     }, error => {
       console.log(error);

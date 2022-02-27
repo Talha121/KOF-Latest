@@ -80,7 +80,7 @@ const MENUITEMS = [
     ]
   },
   {
-    label: 'Products',
+    label: 'Products & Inventory',
     main: [
       
       {
@@ -90,18 +90,10 @@ const MENUITEMS = [
         type: 'link',
         icon: 'ti-map-alt'
       },
-
-    ]
-  }, 
-
-  {
-    label: 'Inventory Management',
-    main: [
-      
       {
         state: 'inventory',
         short_label: 'V',
-        name: 'All Inventory',
+        name: 'Inventory',
         type: 'link',
         icon: 'ti-map-alt'
       },
@@ -112,11 +104,33 @@ const MENUITEMS = [
         type: 'link',
         icon: 'ti-map-alt'
       },
+
+    ]
+  }, 
+
+  // {
+  //   label: 'Inventory Management',
+  //   main: [
+      
+  //     {
+  //       state: 'inventory',
+  //       short_label: 'V',
+  //       name: 'All Inventory',
+  //       type: 'link',
+  //       icon: 'ti-map-alt'
+  //     },
+  //     {
+  //       state: 'addinventory',
+  //       short_label: 'V',
+  //       name: 'Add Inventory',
+  //       type: 'link',
+  //       icon: 'ti-map-alt'
+  //     },
      
   
      
-    ]
-  },
+  //   ]
+  // },
 
 
   {
