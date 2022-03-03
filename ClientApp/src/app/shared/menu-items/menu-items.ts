@@ -146,22 +146,7 @@ const MENUITEMS = [
       },
      
     ]
-  },
-  {
-    label: 'Messages',
-    main: [
-      
-      {
-        state: 'messages',
-        short_label: '0',
-        name: 'Contact Us',
-        type: 'link',
-        icon: 'ti-map-alt'
-      }
-     
-    ]
-  },
- 
+  }
 ];
 
 @Injectable()

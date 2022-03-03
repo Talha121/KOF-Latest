@@ -25,7 +25,7 @@ export class AllOrdersComponent implements OnInit {
   form: FormGroup;
   orderid:number;
   orderNo:any;
-  orderitemns:items[];
+  orderitemns:any[]=[];
   neworderdata:any;
   vendorname:string;
   statusorderid:number;
