@@ -21,7 +21,7 @@ namespace KOF.Models
         [JsonIgnore]
         public virtual Product Product { get; set; }
 
-        public int InventoryId { get; set; }
+        public int ? InventoryId { get; set; }
         [JsonIgnore]
         public virtual Inventory Inventory { get; set; }
     }

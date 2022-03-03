@@ -9,7 +9,7 @@ namespace KOF.Migrations
             migrationBuilder.AddColumn<int>(
                 name: "InventoryId",
                 table: "OrderItems",
-                nullable: false,
+                nullable: true,
                 defaultValue: 0);
 
             migrationBuilder.CreateIndex(
