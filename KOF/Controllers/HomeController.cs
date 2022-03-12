@@ -95,9 +95,9 @@ namespace KOF.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Checkout(string   streadaddress,string homeadderess,string city,string phone,string    email,string  Ordernote,string Name)
+        public IActionResult Checkout(string   streadaddress,string homeadderess,string city,string phone,string    email,string  Ordernote,string Name,int DeliveryCharges)
         {
-           var data= _orderserviceService.Checkout(streadaddress, homeadderess,  city,  phone,  email, Ordernote,Name);
+          var data= _orderserviceService.Checkout(streadaddress, homeadderess,  city,  phone,  email, Ordernote,Name,  DeliveryCharges);
 
 
             ViewBag.orderadded = "Success";

@@ -73,7 +73,7 @@
         <td>{{obj.order?.orderType}}</td>
         <td>{{obj.order.createdOn |date :'medium'}}</td>
         <td>{{obj.qty}}</td>
-        <td>{{obj.total}}</td>
+        <td>{{obj.total+obj.order.deliveryCharges}}</td>
         <td>
           <p *ngIf="obj.order.orderStatus=='Cancelled'" class="btn btn-danger" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
            <p *ngIf="obj.order.orderStatus=='Completed'" class="btn btn-info" style="    padding: 1px;">{{obj.order?.orderStatus}}</p> 
@@ -478,11 +478,16 @@
                       <td class="unit">Total ITEMS:</td>
                       <td class="total">{{orderquntity}}</td>
                     </tr>
-                  
+                    <tr>
+                      <td class="desc"></td>
+                      <td class="qty"></td>
+                      <td class="unit">Delivery Charges:</td>
+                      <td class="total">{{orderNo.deliveryCharges}}</td>
+                    </tr>
                     <tr>
                       <td class="desc"></td>
                       <td class="unit" colspan="2">TOTAL AMOUNT:</td>
-                      <td class="total">Rs:{{orderamount}}</td>
+                      <td class="total">Rs:{{orderamount+orderNo.deliveryCharges}}</td>
                     </tr>
                   </tbody>
                 </table>

@@ -82,7 +82,7 @@ namespace KOF.Services.OrderService
             return "success";
         }
 
-        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote,string Name)
+        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote,string Name,int DeliveryCharges)
         {
 
             try
@@ -108,6 +108,7 @@ namespace KOF.Services.OrderService
                     Order_city = city,
                     Order_Notes = Ordernote,
                     HouseNo= homeadderess,
+                    DeliveryCharges=DeliveryCharges,
                     OrderFrom = "Web",
                     OrderNumber =no.ToString(),
                     OrderStatus = "Pending",
