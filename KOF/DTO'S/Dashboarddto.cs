@@ -11,7 +11,7 @@ namespace KOF.DTO_S
         public int todayOrders { get; set; }
 
         public int TotalOrders { get; set; }
-
+        public int TotalPendingOrders { get; set; }
         public int TodaySale { get; set; }
         public int TotalSale { get; set; }
 

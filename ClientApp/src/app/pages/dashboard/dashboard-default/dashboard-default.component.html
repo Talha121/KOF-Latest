@@ -33,6 +33,20 @@
   <div class="col-md-6 col-xl-3"  [routerLink]="['/allorders']">
     <div class="card widget-card-1">
       <div class="card-block-small">
+        <i class="fa fa-money  bg-c-blue  card1-icon"></i>
+        <span class="text-c-blue f-w-600">Total Pending  Orders</span>
+        <h4>{{Dashboarddata?.totalPendingOrders}}</h4>
+        <div>
+          <span class="f-left m-t-10 text-muted">
+            <i class="text-c-blue f-16 icofont icofont-refresh m-r-10"></i>Just update
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3"  [routerLink]="['/allorders']">
+    <div class="card widget-card-1">
+      <div class="card-block-small">
         <i class="fa fa-money bg-c-pink card1-icon"></i>
         <span class="text-c-pink f-w-600">Today's  Sale</span>
         <h4>{{Dashboarddata?.todaySale}}</h4>

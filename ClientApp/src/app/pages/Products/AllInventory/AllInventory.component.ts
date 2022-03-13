@@ -26,10 +26,10 @@ export class AllInventoryComponent implements OnInit {
     this.reverse=!this.reverse;
   }
   GetInventory(){
-
+    this.SpinnerService.show();
     this.service.GetstockIn().subscribe((next:any) => {
       this.invertorylist=[];
-      
+      this.SpinnerService.hide();
       this.invertorylist=next;
       this.Searchinvertorylist=next;     
       console.log(this.invertorylist)

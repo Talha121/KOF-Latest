@@ -38,12 +38,12 @@ export class AllcategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.SpinnerService.show();
+  
     this.Getcategorey();
     this.form = this.fb.group({
       avatar: [null],
     });
-    this.SpinnerService.hide();
+
   }
   showinput() {
     this.showform = true;
@@ -102,17 +102,18 @@ export class AllcategoriesComponent implements OnInit {
     this.SpinnerService.show();
     this.productservice.GetCategorey().subscribe(
       (response: any) => {
+     
         
         this.CategoriesList = [];
         this.CategoriesList = response;
-
         console.log(this.CategoriesList);
+        this.SpinnerService.hide();
       },
       (error) => {
         console.log(error);
       }
     );
-    this.SpinnerService.hide();
+ 
   }
   Sort(key) {
     this.key = key;

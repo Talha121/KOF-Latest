@@ -19,6 +19,7 @@ namespace KOF.Models
         public string  HouseNo{ get; set; }
         public string Order_emailaddress { get; set; }
         public string Order_Notes { get; set; }
+        public int DeliveryCharges { get; set; }
         public int TotalAmount { get; set; }
         public int? UserId { get; set; }
         [JsonIgnore]

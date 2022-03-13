@@ -32,11 +32,57 @@ namespace KOF.Services.OrderService
 
         public async Task<object> Changestatus(Order dto)
         {
-            await UpdateAsync(dto);
+            var prestauts =  _context.Orders.Find(dto.Id);
+            var Dbstatus = prestauts.OrderStatus;
+            if ( dto.OrderStatus == "Active"&& Dbstatus == "Pending")
+            {
+                var orderitems = _context.OrderItems.Where(x => x.OrderId == dto.Id).ToList();
+                foreach (var item in orderitems)
+                {
+                    var inventory =  _context.Inventories.Find(item.InventoryId);
+                    if (inventory.Unit==item.Unit)
+                    {
+                        inventory.RemainingQuantity = inventory.RemainingQuantity + item.Quantity;
+                    }
+                    else
+                    {
+                       var add =Convert.ToDouble(item.Quantity * 0.5);
+                          inventory.RemainingQuantity = inventory.RemainingQuantity +add;
+                       
+                    }
+                    _context.Inventories.Update(inventory);
+                    _context.SaveChanges();
+                }
+            }
+            if (dto.OrderStatus == "Cancelled" && Dbstatus == "Active")
+            {
+                var orderitems = _context.OrderItems.Where(x => x.OrderId == dto.Id).ToList();
+                foreach (var item in orderitems)
+                {
+                    var inventory =  _context.Inventories.Find(item.InventoryId);
+                    if (inventory.Unit == item.Unit)
+                    {          
+                        inventory.RemainingQuantity = inventory.RemainingQuantity - item.Quantity;
+                    }
+                    else
+                    {
+                            var add = Convert.ToDouble(item.Quantity * 0.5);
+                            inventory.RemainingQuantity = inventory.RemainingQuantity - add;                      
+
+                    }
+                        _context.Inventories.Update(inventory);
+                        _context.SaveChanges();     
+                
+                }
+
+            }
+            prestauts.OrderStatus = dto.OrderStatus;
+            _context.Orders.Update(prestauts);
+            _context.SaveChanges();
             return "success";
         }
 
-        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote,string Name)
+        public async Task<string> Checkout(string streadaddress, string homeadderess, string city, string phone, string email, string Ordernote,string Name,int DeliveryCharges)
         {
 
             try
@@ -62,6 +108,7 @@ namespace KOF.Services.OrderService
                     Order_city = city,
                     Order_Notes = Ordernote,
                     HouseNo= homeadderess,
+                    DeliveryCharges=DeliveryCharges,
                     OrderFrom = "Web",
                     OrderNumber =no.ToString(),
                     OrderStatus = "Pending",
@@ -79,8 +126,10 @@ namespace KOF.Services.OrderService
                     {
                         OrderId = orderid,
                         PerUnitCost = item.PerUnitCost,
+                        Unit=item.unit,
                         PerUnitPrice = item.PerUnitPrice,
                         ProductId = item.ProductId,
+                        InventoryId=item.inventoryId,
                         TotalCost = item.TotalCost,
                         TotalPrice = item.TotalPrice,
                         Quantity = item.Quantity,

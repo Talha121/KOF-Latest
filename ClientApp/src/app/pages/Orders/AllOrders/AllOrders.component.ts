@@ -24,7 +24,7 @@ export class AllOrdersComponent implements OnInit {
   p:number=1;
   form: FormGroup;
   orderid:number;
-  orderNo:string="";
+  orderNo:any;
   orderitemns:any[]=[];
   neworderdata:any;
   vendorname:string;
@@ -40,8 +40,9 @@ export class AllOrdersComponent implements OnInit {
    FromDate:Date;
    toDate:Date;
    filtertype:string="All";
+   printdate:Date;
   constructor(private SpinnerService: NgxSpinnerService,private orderservice:OrderService,private modalService: NgbModal,public datepipe: DatePipe) { 
-
+    this.printdate=new Date();
   }
 
   ngOnInit() {
@@ -117,7 +118,7 @@ export class AllOrdersComponent implements OnInit {
     this.orderitemns=data;
     this.orderamount=data.total;
     this.orderquntity=data.qty;
-    this.orderNo=data.order.orderNumber;
+    this.orderNo=data.order;
     console.log(data)
     this.modalService.open(content, { size: 'lg' });
   }
@@ -198,13 +199,14 @@ data.orderStatus=status;
 }
   GetOrders(){
     debugger
+    this.SpinnerService.show();
     this.orderservice.GetOrders().subscribe((next:any) => {
       debugger
       this.OrdersList2=[];
       this.OrdersList2=next;
     
       this.OrdersListdata=next;
-   
+      this.SpinnerService.hide();
      
     }, error => {
       console.log(error);

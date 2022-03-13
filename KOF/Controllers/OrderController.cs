@@ -53,7 +53,7 @@ namespace KOF.Controllers
         {
             try
             {
-                var data = await _OrderService.Changestatus(dto);
+                var data =  _OrderService.Changestatus(dto);
                 return Ok(data);
             }
             catch (Exception ex)

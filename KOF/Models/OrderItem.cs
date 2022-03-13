@@ -10,7 +10,8 @@ namespace KOF.Models
     {
         public int ProductId { get; set; }
         public int OrderId { get; set; }
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
+        public string Unit { get; set; }
         public int PerUnitPrice { get; set; }
         public int PerUnitCost { get; set; }
         public int TotalPrice { get; set; }
@@ -19,5 +20,9 @@ namespace KOF.Models
         public virtual Order Order { get; set; }
         [JsonIgnore]
         public virtual Product Product { get; set; }
+
+        public int ? InventoryId { get; set; }
+        [JsonIgnore]
+        public virtual Inventory Inventory { get; set; }
     }
 }
